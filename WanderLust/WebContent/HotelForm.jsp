@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <!--  <link rel="stylesheet" type="text/css" href="HotelForm.css">-->
-<title>Search Hotel</title>
+<title>Search Hotels</title>
 <script src=" http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
 <script>
 $(function() {

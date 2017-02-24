@@ -13,7 +13,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Flight Booking</title>
+<title>Search Flights</title>
 <script>
 $(function() {
     $( "#datepicker" ).datepicker({ minDate: 0});
