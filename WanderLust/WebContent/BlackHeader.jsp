@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -14,14 +14,14 @@
 <body>
 <form action="/action_page.php">
 <br><br><br><br><br><br><br><br><br>
-<nav class="navbar navbar-inverse">
+ <nav class="navbar navbar-inverse"> 
   <div class="container-fluid">
     
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Flight</a></li>
+      <li ><a href="#">Flight</a></li>
       
       
-      <li class="HotelForm.jsp"><a href="#">Hotel</a>  </li>
+      <li><a href="HotelForm.jsp">Hotel</a>  </li>
         
      
       <li><a href="#">Contact</a></li>
@@ -32,7 +32,7 @@
       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
-</nav>
+  </nav>
   
 </form>
 </body>
