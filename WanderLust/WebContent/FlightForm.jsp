@@ -14,6 +14,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Flight Booking</title>
+<script>
+$(function() {
+    $( "#datepicker" ).datepicker({ minDate: 0});
+  });
+  </script>
+ <style>
+  #submit{
+	border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    background-color: black;
+    color: white;
+    padding:5px;
+    font: bold;
+    text-align:center; }
+    
+#form1{
+	text-align:left;
+	font-family:serif;
+	font-weight: 400;
+
+}
+  </style>
 </head>
 <body>
 <form>
@@ -39,39 +62,18 @@
 </select>
 
 
-<div>
-<b>Check In:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label for="datetimepicker1" class="form-label"></label>
-        <input id="datetimepicker1" type="text" data-time-picker="date" placeholder="mm/dd/yyyy" class="form-control"><span class="material-icons-event icon icon-md icon-primary"></span>
+<p>
+<b>Depature-Date:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+        <input id="datetimepicker1" type="date" placeholder="mm/dd/yyyy" /></p>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<b>Check Out: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
-		
-                        <label for="datetimepicker2" class="form-label"></label>
-                        <input id="datetimepicker2" type="text" data-time-picker="date" placeholder="mm/dd/yyyy" class="form-control"><span class="material-icons-event icon icon-md icon-primary"></span>
-                      </div>
-                      <br>
-                      <br>
-                      
-                    <div>
+<p>
                       <b>Number of Seats :</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      
-                       <label for="adults" class="form-label"></label>
-                        <select id="adults" data-placeholder="-" data-minimum-results-for-search="Infinity" class="form-control select-filter">
-                          <option>-</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                        </div>
-                      
-                      <div>
-                      
-                      </div>
+                      <input type="number" value="1" min="1"/>
+  </p>                    
+   <p>    <input type="submit" value="Search" id="submit"/></p>               
+                       
                     
-		
 </form>
 </body>
 </html>
