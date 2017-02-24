@@ -21,7 +21,7 @@
       <li class="active"><a href="#">Flight</a></li>
       
       
-      <li class="active"><a href="#">Hotel</a>  </li>
+      <li class="HotelForm.jsp"><a href="#">Hotel</a>  </li>
         
      
       <li><a href="#">Contact</a></li>
