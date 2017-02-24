@@ -65,7 +65,7 @@ $(function() {
 <p>
 <b>Depature-Date:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         
-        <input id="datetimepicker1" type="date" placeholder="mm/dd/yyyy" /></p>
+        <input id="datetimepicker" type="date" placeholder="mm/dd/yyyy" min="2017-02-27"/></p>
 
 <p>
                       <b>Number of Seats :</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
