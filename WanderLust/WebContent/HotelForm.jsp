@@ -11,23 +11,24 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  <script>
 $(document).ready(function() {
-    /*$( "#from" ).datepicker({
-      changeMonth: true,  
-      changeYear:true,      
-      minDate:0,
-      onSelect: function( selectedDate ) {
-        $( "#to" ).datepicker( "option", "minDate", selectedDate );
-      }
-    });
-    $( "#to" ).datepicker({      
-      changeMonth: true,   
-      changeYear:true,
-      minDate:0,
-      onSelect: function( selectedDate ) {
-        $( "#from" ).datepicker( "option", "maxDate", selectedDate );
-      }
-    });*/
-    
+	var today = new Date();
+	var tomorrow=new Date();
+	var dd = today.getDate();
+	var dd1 = tomorrow.getDate()+1;
+	var mm = today.getMonth()+1; //January is 0!
+	var yyyy = today.getFullYear();
+	 if(dd<10){
+	        dd='0'+dd
+	        
+	    } 
+	    if(mm<10){
+	        mm='0'+mm
+	    } 
+
+	today = yyyy+'-'+mm+'-'+dd;
+	tomorrow=yyyy+'-'+mm+'-'+dd1;
+	document.getElementById("from").setAttribute("min", today);
+	document.getElementById("to").setAttribute("min", tomorrow);
    $("#to").blur(function(){
 	var checkin = new Date($("#from").val());
 	var checkout =new Date($("#to").val());
@@ -50,8 +51,7 @@ $(document).ready(function() {
 		    }
 		    
 		    });
-	
-  });
+	  });
   
   </script>
   <style>
@@ -87,8 +87,8 @@ $(document).ready(function() {
     <option value="Goa">Goa</option>
 </select></p>
 
-<p><b>Check-In</b>&nbsp; &nbsp;&nbsp; <input type="date" id="from" placeholder="dd-mm-yyyy" min="2017-02-27" required/></p>
-<p><b>Check-Out</b> &nbsp;<input type="date" id="to" placeholder="dd-mm-yyyy" min="2017-02-28" required/></p> 
+<p><b>Check-In</b>&nbsp; &nbsp;&nbsp; <input type="date" id="from" placeholder="dd-mm-yyyy" min="" required/></p>
+<p><b>Check-Out</b> &nbsp;<input type="date" id="to" placeholder="dd-mm-yyyy" min="" required/></p> 
 <p><b>Room</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" value="1" min="1"/></p>
 <p><input type="submit" id="submit" value="Search"/></p>
 
