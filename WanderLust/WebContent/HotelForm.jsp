@@ -62,9 +62,9 @@ $(function() {
     <option value="Goa">Goa</option>
 </select></p>
 
-<p><b>Check-In</b>&nbsp; &nbsp;&nbsp; <input type="text" id="from" /></p>
-<p><b>Check-Out</b> &nbsp;<input type="text" id="to" /></p> 
-<p><b>Room</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" value="1" min="1"/></p>
+<p><b>Check-In</b>&nbsp; &nbsp;&nbsp; <input type="date" id="from" placeholder="dd-mm-yyyy" min="2017-02-27" required/></p>
+<p><b>Check-Out</b> &nbsp;<input type="date" id="to" placeholder="dd-mm-yyyy"  min="2017-02-28" required/></p> 
+<p><b>Room</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" value="1" min="1"/></p>
 <p><input type="submit" id="submit" value="Search"/></p>
 
 
