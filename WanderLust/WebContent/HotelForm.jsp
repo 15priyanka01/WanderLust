@@ -39,6 +39,17 @@ $(document).ready(function() {
 	    }
 	    
 	    });
+   $("#from").blur(function(){
+		var checkin = new Date($("#from").val());
+		var checkout =new Date($("#to").val());
+
+		    if(checkin >= checkout){
+		   		alert("Check-Out should be greater than Check-In date");
+		   		
+		   		$("#from").val(" ");
+		    }
+		    
+		    });
 	
   });
   
