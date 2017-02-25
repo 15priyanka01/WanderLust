@@ -16,8 +16,29 @@
 <title>Search Flights</title>
 <script>
 $(function() {
-    $( "#datepicker" ).datepicker({ minDate: 0});
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1; //January is 0!
+	var yyyy = today.getFullYear();
+	 if(dd<10){
+	        dd='0'+dd      
+	    } 
+	    if(mm<10){
+	        mm='0'+mm
+	    } 
+	today = yyyy+'-'+mm+'-'+dd;
+	document.getElementById("departureDate").setAttribute("min", today);
+	
   });
+  function check(){
+	  var source=document.getElementById("source").value;
+	  var destination=document.getElementById("destination").value;
+	  if(source==destination){
+		  alert("Source and Destination cannot be same");
+		  document.getElementById("source").value=" ";
+		  document.getElementById("destination").value=" ";
+	  }
+  }
   </script>
  <style>
   #submit{
@@ -39,11 +60,11 @@ $(function() {
   </style>
 </head>
 <body>
-<form>
+<form action="SearchFlightbySnD">
 <p>
 <b>Source</b>&nbsp; :&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<select id="source">
-	<option value=""></option>
+<select id="source" required="required">
+	
    <option value="New Delhi">New Delhi(Delhi,India)</option>
     <option value="Mumbai">Mumbai(Maharashtra,India)</option>
     <option value="Bangalore">Bangalore</option>
@@ -52,11 +73,10 @@ $(function() {
 </select>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <b>Destination:</b>&nbsp;&nbsp;
-<select id="destination">
-	<option value=""></option>
+<select id="destination" required="required">
+		<option value="Mumbai">Mumbai(Maharashtra,India)</option>
    <option value="New Delhi">New Delhi(Delhi,India)</option>
-    <option value="Mumbai">Mumbai(Maharashtra,India)</option>
-    <option value="Bangalore">Bangalore</option>
+     <option value="Bangalore">Bangalore</option>
     <option value="Chennai">Chennai</option>
     <option value="Goa">Goa</option>
 </select>
@@ -65,13 +85,13 @@ $(function() {
 <p>
 <b>Depature-Date:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         
-        <input id="datetimepicker" type="date" placeholder="mm/dd/yyyy" min="2017-02-27" required/></p>
+<input id="departureDate" type="date" placeholder="dd/mm/yyyy" min="" required/></p>
 
 <p>
                       <b>Number of Seats :</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <input type="number" value="1" min="1"/>
   </p>                    
-   <p>    <input type="submit" value="Search" id="submit"/></p>               
+   <p>    <input type="submit" value="Search" id="submit" onclick="check()"/></p>               
                        
                     
 </form>
