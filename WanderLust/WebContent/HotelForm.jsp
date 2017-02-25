@@ -9,9 +9,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Search Hotels</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script>
-$(function() {
-    $( "#from" ).datepicker({
+ <script>
+$(document).ready(function() {
+    /*$( "#from" ).datepicker({
       changeMonth: true,  
       changeYear:true,      
       minDate:0,
@@ -26,8 +26,22 @@ $(function() {
       onSelect: function( selectedDate ) {
         $( "#from" ).datepicker( "option", "maxDate", selectedDate );
       }
-    });
+    });*/
+    
+   ("#submit").click(function(){
+	var checkin = new Date($("#from").val());
+	var checkout =new Date($("#to").val());
+
+	    if(checkin.getTime() > checkout.getTime()){
+	   		alert("Check-Out should be greater than Check-In date");
+	    }
+	    else{
+	    	alert("not working");
+	    }
+	    });
+	
   });
+  
   </script>
   <style>
   #submit{
@@ -63,9 +77,9 @@ $(function() {
 </select></p>
 
 <p><b>Check-In</b>&nbsp; &nbsp;&nbsp; <input type="date" id="from" placeholder="dd-mm-yyyy" min="2017-02-27" required/></p>
-<p><b>Check-Out</b> &nbsp;<input type="date" id="to" placeholder="dd-mm-yyyy"  min="2017-02-28" required/></p> 
+<p><b>Check-Out</b> &nbsp;<input type="date" id="to" placeholder="dd-mm-yyyy" min="2017-02-28" required/></p> 
 <p><b>Room</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" value="1" min="1"/></p>
-<p><input type="submit" id="submit" value="Search"/></p>
+<p><input type="submit" id="submit" onclick="check()" value="Search"/></p>
 
 
 </fieldset>
