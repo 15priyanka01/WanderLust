@@ -44,4 +44,14 @@
     <servlet-name>ChoosePromoFlightServlet</servlet-name>
     <url-pattern>/ChoosePromoFlight</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChoosePromoHotelServlet</display-name>
+    <servlet-name>ChoosePromoHotelServlet</servlet-name>
+    <servlet-class>com.mmt.controller.ChoosePromoHotelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChoosePromoHotelServlet</servlet-name>
+    <url-pattern>/ChoosePromoHotel</url-pattern>
+  </servlet-mapping>
 </web-app>
