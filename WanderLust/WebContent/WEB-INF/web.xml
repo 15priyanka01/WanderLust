@@ -14,4 +14,14 @@
     <servlet-name>SearchHotelByPlaceServlet</servlet-name>
     <url-pattern>/SearchHotelByPlace</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchFlightBySnDServlet</display-name>
+    <servlet-name>SearchFlightBySnDServlet</servlet-name>
+    <servlet-class>com.mmt.controller.SearchFlightBySnDServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchFlightBySnDServlet</servlet-name>
+    <url-pattern>/SearchFlightBySnD</url-pattern>
+  </servlet-mapping>
 </web-app>

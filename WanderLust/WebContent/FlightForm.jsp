@@ -60,24 +60,24 @@ $(function() {
   </style>
 </head>
 <body>
-<form action="SearchFlightbySnD">
+<form action="./SearchFlightBySnD">
 <p>
 <b>Source</b>&nbsp; :&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<select id="source" required="required">
+<select id="source" name="source" required="required">
 	
    <option value="New Delhi">New Delhi(Delhi,India)</option>
-    <option value="Mumbai">Mumbai(Maharashtra,India)</option>
+    <option value="mumbai">mumbai</option>
     <option value="Bangalore">Bangalore</option>
     <option value="Chennai">Chennai</option>
     <option value="Goa">Goa</option>
 </select>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <b>Destination:</b>&nbsp;&nbsp;
-<select id="destination" required="required">
+<select id="destination" name="destination" required="required">
 		<option value="Mumbai">Mumbai(Maharashtra,India)</option>
    <option value="New Delhi">New Delhi(Delhi,India)</option>
      <option value="Bangalore">Bangalore</option>
-    <option value="Chennai">Chennai</option>
+    <option value="chennai">chennai</option>
     <option value="Goa">Goa</option>
 </select>
 
@@ -85,11 +85,11 @@ $(function() {
 <p>
 <b>Depature-Date:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         
-<input id="departureDate" type="date" placeholder="dd/mm/yyyy" min="" required/></p>
+<input id="departureDate" name="departureDate" type="date" placeholder="dd/mm/yyyy" min="" required/></p>
 
 <p>
                       <b>Number of Seats :</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <input type="number" value="1" min="1"/>
+                      <input type="number" name="seats" value="1" min="1"/>
   </p>                    
    <p>    <input type="submit" value="Search" id="submit" onclick="check()"/></p>               
                        

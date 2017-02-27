@@ -11,24 +11,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.mmt.model.bean.Hotel;
-import com.mmt.model.bl.HotelBlMMT;
+import com.mmt.model.bean.Flight;
+import com.mmt.model.bl.FlightBookingBlMMT;
 
-public class SearchHotelByPlaceServlet extends HttpServlet {
+
+public class SearchFlightBySnDServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
-		
-		String place=request.getParameter("place");
-		String from=request.getParameter("from");
-		String to=request.getParameter("to");
-		int room=Integer.parseInt(request.getParameter("room"));
-		HotelBlMMT hotelBl=new HotelBlMMT();
-		ArrayList<Hotel> arrayListHotel=null;
+		String source=request.getParameter("source");
+		String destination=request.getParameter("destination");
+		String departureDate=request.getParameter("departureDate");
+		int seats=Integer.parseInt(request.getParameter("seats"));
+		FlightBookingBlMMT flightBookBl=new FlightBookingBlMMT();
+		ArrayList<Flight> arrayListFlight=null;
 		try {
-			arrayListHotel=hotelBl.searchHotel1(place);
+			arrayListFlight=flightBookBl.searchFlight(source, destination);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -36,14 +36,14 @@ public class SearchHotelByPlaceServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(arrayListHotel.isEmpty()){
-			String message="No Hotels found in "+place;
+		if(arrayListFlight.isEmpty()){
+			String message="No Flights from  "+source+" to "+destination;
 			session.setAttribute("message", message);
-			response.sendRedirect("NoHotelInPlace.jsp");
+			response.sendRedirect("NoFlightFromStD.jsp");
 		}
 		else{
-			session.setAttribute("arrayListHotel", arrayListHotel);
-			RequestDispatcher dispatch=request.getRequestDispatcher("DisplayAllHotelPlace.jsp");
+			session.setAttribute("arrayListFlight", arrayListFlight);
+			RequestDispatcher dispatch=request.getRequestDispatcher("DisplayAllFlightsStD.jsp");
 			dispatch.forward(request, response);
 			
 		}
