@@ -239,8 +239,8 @@ public class HotelDaoImplMMT implements HotelDaoMMT {
 
 	@Override
 	public ArrayList<Hotel> searchHotel1(String hotelLocation) throws SQLException, ClassNotFoundException, IOException {
-		ArrayList<Hotel> H=new ArrayList<>();
-		Hotel hotel =new Hotel();
+		ArrayList<Hotel> H=new ArrayList<Hotel>();
+		Hotel hotel =null;
 		con=DbConnection.dbConnection();
 		ResultSet rs;
 		PreparedStatement pst=con.prepareStatement("select * from hotel where hotelLocation=?");
@@ -248,7 +248,7 @@ public class HotelDaoImplMMT implements HotelDaoMMT {
 		pst.setString(1, hotelLocation);
 		rs=pst.executeQuery();
 		while(rs.next()){
-			
+			hotel =new Hotel();
 			hotel.setHotelId(rs.getString("hotelId"));
 			hotel.setHotelName(rs.getString("hotelName"));
 			hotel.setHotelLocation(rs.getString("hotelLocation"));
@@ -258,11 +258,12 @@ public class HotelDaoImplMMT implements HotelDaoMMT {
 			pst1.setString(1, (rs.getString("hotelId")));
 			ResultSet rs2=pst1.executeQuery();
 
-			HotelRoom room=new HotelRoom();
+			HotelRoom room=null;
 			ArrayList<HotelRoom> rl=new ArrayList<HotelRoom>();
 			//ResultSet rs2=stmt.executeQuery("select * from Hoteloom where hotelId= "+rs.getString("hotelId"));
 			while(rs2.next())
 			{
+				room=new HotelRoom();
 				room.setHotelRoomNo(rs2.getInt("hotelRoomNo"));
 				room.setHotelRoomType(rs2.getString("hotelRoomType"));
 				room.setHotelRoomPrice(rs2.getDouble("hotelRoomPrice"));

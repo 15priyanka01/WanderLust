@@ -11,11 +11,12 @@ import com.mmt.model.bean.HotelBooking;
 import com.mmt.model.bean.HotelRoom;
 import com.mmt.model.dao.HotelBookingDaoImplMMT;
 import com.mmt.model.dao.HotelDaoImplMMT;
+import com.mmt.model.dao.HotelDaoMMT;
 
 
 
 public class HotelBlMMT {
-	HotelDaoImplMMT hotelDao=new HotelDaoImplMMT();
+	HotelDaoMMT hotelDao=new HotelDaoImplMMT();
 	HotelBookingDaoImplMMT hotelBookingDao=new HotelBookingDaoImplMMT();
 	
 	public ArrayList<Hotel> displayHotel() throws ClassNotFoundException, SQLException, IOException{

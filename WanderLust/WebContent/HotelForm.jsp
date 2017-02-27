@@ -74,22 +74,22 @@ $(document).ready(function() {
   </style>
 </head>
 <body>
-<form id="form1" action="./SearchHotelsByPlace" >
+<form id="form1" action="./SearchHotelByPlace" >
 <fieldset>
 
 
 <p>
-<b>Place</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="places">
+<b>Place</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="places" name="place">
    <option value="New Delhi">New Delhi</option>
-    <option value="Mumbai">Mumbai</option>
-    <option value="Bangalore">Bangalore</option>
+    <option value="mumbai">mumbai</option>
+    <option value="jaipur">Jaipur</option>
     <option value="Chennai">Chennai</option>
     <option value="Goa">Goa</option>
 </select></p>
 
-<p><b>Check-In</b>&nbsp; &nbsp;&nbsp; <input type="date" id="from" placeholder="dd-mm-yyyy" min="" required/></p>
-<p><b>Check-Out</b> &nbsp;<input type="date" id="to" placeholder="dd-mm-yyyy" min="" required/></p> 
-<p><b>Room</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" value="1" min="1"/></p>
+<p><b>Check-In</b>&nbsp; &nbsp;&nbsp; <input type="date" name="from" id="from" placeholder="dd-mm-yyyy" min="" required/></p>
+<p><b>Check-Out</b> &nbsp;<input type="date" id="to" name="to" placeholder="dd-mm-yyyy" min="" required/></p> 
+<p><b>Room</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="room" value="1" min="1"/></p>
 <p><input type="submit" id="submit" value="Search"/></p>
 
 
