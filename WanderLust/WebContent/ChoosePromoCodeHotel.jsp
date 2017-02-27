@@ -22,7 +22,7 @@ function loadDoc() {
       document.getElementById("demo").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "flightPromo.txt", true);
+  xhttp.open("GET", "hotelPromo.txt", true);
   xhttp.send();
 }
 </script>
@@ -40,16 +40,16 @@ function loadDoc() {
 </style>
 </head>
 <body>
-<form action="PaymentFlight">
+<form action="PaymentHotel">
 
 
 <p><b>Select a Promo Code</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<select id="promoflight" name="promoflight">
+<select id="promohotel" name="promohotel">
 
 <!--<c:set var="flightPromo" scope="session" value="${arrayListPromoFlight}"/>-->
-<c:forEach items="${arrayListPromoFlight}" var="flightPromo">
+<c:forEach items="${arrayListPromoHotel}" var="hotelPromo">
 <option value="-">----</option>
-<option value="${flightPromo.getPromotionName()}">${flightPromo.getPromotionName()}</option>
+<option value="${hotelPromo.getPromotionName()}">${hotelPromo.getPromotionName()}</option>
 </c:forEach>
 </select>
 

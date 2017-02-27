@@ -35,7 +35,7 @@ public class ChoosePromoFlightServlet extends HttpServlet {
 		
 			
 			session.setAttribute("arrayListPromoFlight", arrayListPromoFlight);
-			RequestDispatcher dispatch=request.getRequestDispatcher("ChoosePromoCode.jsp");
+			RequestDispatcher dispatch=request.getRequestDispatcher("ChoosePromoCodeFlight.jsp");
 			dispatch.forward(request, response);
 			
 		

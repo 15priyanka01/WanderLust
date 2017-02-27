@@ -21,7 +21,7 @@ public class ChoosePromoHotelServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
-		String flightId=(String) session.getAttribute("hotelId");
+		String hotelId=(String) session.getAttribute("hotelId");
 		PromotionBlMMT promoBl=new PromotionBlMMT();
 		ArrayList<Promotion> arrayListPromoHotel=null;
 		try {
@@ -36,7 +36,7 @@ public class ChoosePromoHotelServlet extends HttpServlet {
 		
 			
 			session.setAttribute("arrayListPromoHotel", arrayListPromoHotel);
-			RequestDispatcher dispatch=request.getRequestDispatcher("ChoosePromoCode.jsp");
+			RequestDispatcher dispatch=request.getRequestDispatcher("ChoosePromoCodeHotel.jsp");
 			dispatch.forward(request, response);
 	}
 
