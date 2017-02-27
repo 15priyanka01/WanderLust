@@ -8,7 +8,7 @@
 </head>
 <body>
 
-
+<jsp:include page="BlackHeader.jsp"></jsp:include>
 <form method="post" action="registration.jsp">
             
            

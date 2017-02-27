@@ -27,8 +27,8 @@
       <li><a href="#">About us</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="logout.jsp"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
-      <li><a href="profile.jsp"><span class="glyphicon glyphicon-log-in"></span> Profile</a></li>
+      <li><a href="logout.jsp"><span class="glyphicon glyphicon-user"></span> Profile </a></li>
+      <li><a href="profile.jsp"><span class="glyphicon glyphicon-log-out"></span>Logout </a></li>
     </ul>
   </div>
   </nav>
