@@ -40,7 +40,7 @@ function loadDoc() {
 </style>
 </head>
 <body>
-<form action="PaymentFlight">
+<form action="login.jsp">
 
 
 <p><b>Select a Promo Code</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -58,7 +58,7 @@ function loadDoc() {
 <p id="demo"></p>
 
 <p>
-<input type="submit" id="continue" value="Continue"/>
+<input type="submit" id="continue" value="Login to Continue"/>
 </p>
 
 </form>

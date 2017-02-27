@@ -7,7 +7,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Flat HTML5/CSS3 Login Form</title>
+  <title>Login</title>
   
   
   
@@ -26,9 +26,9 @@
       <button>create</button>
       <p class="message">Already registered? <a href="#">Sign In</a></p>
     </form>
-    <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
+    <form class="login-form" action="">
+      <input type="text" placeholder="username" required="required"/>
+      <input type="password" placeholder="password" required="required"/>
       <button>login</button>
       <p class="message">Not registered? <a href="Signup.jsp">Create an account</a></p>
     </form>

@@ -11,7 +11,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<style>
+ #submit{
+	border-style: solid;
+    border-width: 1px;
+    border-color: green;
+    background-color: green;
+    color: white;
+    padding:5px;
+    font: bold;
+    text-align:center; }
+</style>
 </head>
 <body>
 
@@ -19,7 +29,7 @@
 
 <div class="container">
   <h2>Enter Information Here</h2>
-  <form class="form-horizontal">
+  <form class="form-horizontal" action="login.jsp">
     <div class="form-group">
       <label class="control-label col-sm-2" for="userId">User Id:</label>
       <div class="col-sm-10">
@@ -66,7 +76,7 @@
     </div>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" id="submit" class="btn btn-default">Submit</button>
       </div>
     </div>
   </form>
