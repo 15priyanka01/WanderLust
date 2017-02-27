@@ -15,5 +15,5 @@ public interface HotelDaoMMT {
 	Hotel searchHotel(String hotelId) throws SQLException, ClassNotFoundException, IOException ;
 	//Hotel searchHotel(String hotelLocation) throws SQLException ;
 	ArrayList<Hotel> searchHotel1(String hotelLocation) throws SQLException, ClassNotFoundException, IOException;
-	public ArrayList<HotelRoom> displayAvailHotelRoom(String hotelId) throws SQLException, ClassNotFoundException, IOException;
+	
 }

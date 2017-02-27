@@ -34,4 +34,14 @@
     <servlet-name>ChooseRoomServlet</servlet-name>
     <url-pattern>/ChooseRoom</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChoosePromoFlightServlet</display-name>
+    <servlet-name>ChoosePromoFlightServlet</servlet-name>
+    <servlet-class>com.mmt.controller.ChoosePromoFlightServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChoosePromoFlightServlet</servlet-name>
+    <url-pattern>/ChoosePromoFlight</url-pattern>
+  </servlet-mapping>
 </web-app>

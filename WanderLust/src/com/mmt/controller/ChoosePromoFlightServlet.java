@@ -11,23 +11,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.mmt.model.bean.Hotel;
-import com.mmt.model.bean.HotelRoom;
-import com.mmt.model.bl.HotelBlMMT;
+import com.mmt.model.bean.Promotion;
+import com.mmt.model.bl.PromotionBlMMT;
 
 
-public class ChooseRoomServlet extends HttpServlet {
+public class ChoosePromoFlightServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
-		String hotelId=(String) session.getAttribute("hotelId");
-		HotelBlMMT hotelBl=new HotelBlMMT();
-		ArrayList<HotelRoom> arrayListHotelRoom=null;
-		
+		String flightId=(String) session.getAttribute("flightId");
+		PromotionBlMMT promoBl=new PromotionBlMMT();
+		ArrayList<Promotion> arrayListPromoFlight=null;
 		try {
-			arrayListHotelRoom=hotelBl.displayAvailHotelRoom(hotelId);
+			arrayListPromoFlight=promoBl.displayPromotion("FLIGHT");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -36,18 +33,12 @@ public class ChooseRoomServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		if(arrayListHotelRoom.isEmpty()){
-			String message="No Hotel Rooms Available" ;
-			session.setAttribute("message", message);
-			response.sendRedirect("NoHotelRoomAvailable.jsp");
-		}
-		else{
 			
-			session.setAttribute("arrayListHotelRoom", arrayListHotelRoom);
-			RequestDispatcher dispatch=request.getRequestDispatcher("ChooseRoom.jsp");
+			session.setAttribute("arrayListPromoFlight", arrayListPromoFlight);
+			RequestDispatcher dispatch=request.getRequestDispatcher("ChoosePromoCode.jsp");
 			dispatch.forward(request, response);
 			
-		}
+		
 	}
 
 	

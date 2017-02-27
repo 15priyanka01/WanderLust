@@ -52,6 +52,7 @@ th {
 	<!-- <c:set var="hotelId" scope="session" value="${hotel.getHotelId()}"/>-->
      <td><c:out value="${hotelRoom.getHotelRoomNo()}" /></td>
      <td><c:out value="${hotelRoom.getHotelRoomType()}" /></td>
+     <td><c:out value="${hotelRoom.getHotelRoomPrice()}" /></td>
       <td><form action=""><button type="submit" id="book">Book Now</button></form></td>
  </tr> 
 </c:forEach>

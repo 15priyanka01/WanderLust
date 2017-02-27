@@ -55,7 +55,13 @@ tr:hover{background-color:#f5f5f5}
       <td> <c:out value="${flight.getFlightDepartureTime()}" /></td>
      <td>  <c:out value="${flight.getFlightArrivalTime()}" /></td>
       <td> <c:out value="${flight.getFlightTicketPrice()}" /></td>
-      <td><a id="book" href="">Book Now</a></td>
+      
+       <td>
+      <form action="./ChoosePromoFlight">
+      <c:set var="flightId" scope="session" value="${flight.getFlightId()}"/>
+      <button type="submit" id="book">Book Now</button>
+      </form>
+      </td>
   </tr>
 </c:forEach> 
 </table>

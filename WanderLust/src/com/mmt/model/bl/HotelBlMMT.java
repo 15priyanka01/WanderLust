@@ -103,13 +103,14 @@ public class HotelBlMMT {
 	
 	
 	public ArrayList<HotelRoom> displayAvailHotelRoom(String hotelId) throws SQLException, ClassNotFoundException, IOException{
-		ArrayList<HotelRoom> hr;
-		
-		hr=hotelDao.displayAvailHotelRoom(hotelId);
+		ArrayList<HotelRoom> hr=null;
+		Hotel hotel=null;
+		hotel=hotelDao.searchHotel(hotelId);
 		ArrayList<HotelRoom> HR=new ArrayList<HotelRoom>();
-		for(HotelRoom r:hr){
-			if(r.getHotelRoomStatus().equals("avail")){
-				HR.add(r);
+		hr=hotel.getHotelRoom();
+		for(HotelRoom room:hr){
+			if(room.getHotelRoomStatus().equals("avail")){
+				HR.add(room);
 			}
 		}
 		return HR;

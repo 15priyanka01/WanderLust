@@ -197,7 +197,7 @@ public class HotelDaoImplMMT implements HotelDaoMMT {
 
 	@Override
 	public Hotel searchHotel(String hotelId) throws  SQLException, ClassNotFoundException, IOException {
-		Hotel hotel =new Hotel();
+		Hotel hotel =null;
 		con=DbConnection.dbConnection();
 		
 		ResultSet rs;
@@ -205,19 +205,20 @@ public class HotelDaoImplMMT implements HotelDaoMMT {
 		pst.setString(1, hotelId);
 		rs=pst.executeQuery();
 		while(rs.next()){
-
+			hotel =new Hotel();
 			hotel.setHotelId(rs.getString("hotelId"));
 			hotel.setHotelName(rs.getString("hotelName"));
 			hotel.setHotelLocation(rs.getString("hotelLocation"));
 			hotel.setHotelInfo(rs.getString("hotelInfo"));
 			PreparedStatement pst1=con.prepareStatement("select * from hotelroom where hotelId=?");
 			pst1.setString(1, hotelId);
-			HotelRoom room=new HotelRoom();
+			HotelRoom room=null;
 			ArrayList<HotelRoom> rl=new ArrayList<HotelRoom>();
 			ResultSet rs2=pst1.executeQuery();
 			//ResultSet rs2=stmt.executeQuery("select * from Hoteloom where hotelId= "+rs.getString("hotelId"));
 			while(rs2.next())
 			{
+				room=new HotelRoom();
 				room.setHotelRoomNo(rs2.getInt("hotelRoomNo"));
 				room.setHotelRoomType(rs2.getString("hotelRoomType"));
 				room.setHotelRoomPrice(rs2.getDouble("hotelRoomPrice"));
@@ -283,46 +284,6 @@ public class HotelDaoImplMMT implements HotelDaoMMT {
 
 
 
-	@Override
-	public ArrayList<HotelRoom> displayAvailHotelRoom(String hotelId) throws SQLException, ClassNotFoundException, IOException {
-		Hotel hotel =null;
-		con=DbConnection.dbConnection();
-		
-		ResultSet rs;
-		PreparedStatement pst=con.prepareStatement("select * from hotel where hotelId=?");
-		pst.setString(1, hotelId);
-		rs=pst.executeQuery();
-		while(rs.next()){
-			hotel =new Hotel();
-			hotel.setHotelId(rs.getString("hotelId"));
-			hotel.setHotelName(rs.getString("hotelName"));
-			hotel.setHotelLocation(rs.getString("hotelLocation"));
-			hotel.setHotelInfo(rs.getString("hotelInfo"));
-			PreparedStatement pst1=con.prepareStatement("select * from hotelroom where hotelId=?");
-			pst1.setString(1, hotelId);
-			HotelRoom room=null;
-			ArrayList<HotelRoom> rl=new ArrayList<HotelRoom>();
-			ResultSet rs2=pst1.executeQuery();
-			//ResultSet rs2=stmt.executeQuery("select * from Hoteloom where hotelId= "+rs.getString("hotelId"));
-			while(rs2.next())
-			{
-				room=new HotelRoom();
-				room.setHotelRoomNo(rs2.getInt("hotelRoomNo"));
-				room.setHotelRoomType(rs2.getString("hotelRoomType"));
-				room.setHotelRoomPrice(rs2.getDouble("hotelRoomPrice"));
-				room.setHotelRoomStatus(rs2.getString("hotelRoomStatus"));
-				rl.add(room);
-			}
-			hotel.setHotelRoom(rl);;
-			
-			con.close();
-			return rl;
-
-		}
-		
-		con.close();
-		return null;
-		
-	}
+	
 
 }

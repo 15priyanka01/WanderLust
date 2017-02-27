@@ -80,11 +80,11 @@ $(document).ready(function() {
 
 <p>
 <b>Place</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="places" name="place">
-   <option value="New Delhi">New Delhi</option>
-    <option value="mumbai">mumbai</option>
+   <option value="delhi">New Delhi</option>
+    <option value="mumbai">Mumbai</option>
     <option value="jaipur">Jaipur</option>
-    <option value="Chennai">Chennai</option>
-    <option value="Goa">Goa</option>
+    <option value="chennai">Chennai</option>
+    <option value="goa">Goa</option>
 </select></p>
 
 <p><b>Check-In</b>&nbsp; &nbsp;&nbsp; <input type="date" name="from" id="from" placeholder="dd-mm-yyyy" min="" required/></p>
