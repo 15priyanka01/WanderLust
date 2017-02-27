@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.mmt.model.bean.Hotel;
+import com.mmt.model.bean.HotelRoom;
 
 public interface HotelDaoMMT {
 	int insertHotel(Hotel h) throws  SQLException, ClassNotFoundException, IOException  ;
@@ -14,4 +15,5 @@ public interface HotelDaoMMT {
 	Hotel searchHotel(String hotelId) throws SQLException, ClassNotFoundException, IOException ;
 	//Hotel searchHotel(String hotelLocation) throws SQLException ;
 	ArrayList<Hotel> searchHotel1(String hotelLocation) throws SQLException, ClassNotFoundException, IOException;
+	public ArrayList<HotelRoom> displayAvailHotelRoom(String hotelId) throws SQLException, ClassNotFoundException, IOException;
 }

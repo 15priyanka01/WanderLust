@@ -24,4 +24,14 @@
     <servlet-name>SearchFlightBySnDServlet</servlet-name>
     <url-pattern>/SearchFlightBySnD</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChooseRoomServlet</display-name>
+    <servlet-name>ChooseRoomServlet</servlet-name>
+    <servlet-class>com.mmt.controller.ChooseRoomServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChooseRoomServlet</servlet-name>
+    <url-pattern>/ChooseRoom</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -29,6 +29,10 @@ th, td {
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
+th {
+    background-color: black;
+    color: white;
+}
 
 tr:hover{background-color:#f5f5f5}
 

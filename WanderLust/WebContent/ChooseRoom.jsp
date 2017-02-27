@@ -1,14 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@page import="com.mmt.model.bean.Hotel"%>
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <jsp:include page="BlackHeader.jsp"></jsp:include>
-<!DOCTYPE html>
+     <jsp:include page="BlackHeader.jsp"></jsp:include>
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>List of Hotels</title>
+<title>List of Rooms</title>
 <style>
 #book{
 	border-style: solid;
@@ -38,26 +36,25 @@ th {
 </style>
 </head>
 <body>
+
 <table border="1">
 	<tr>
 	<th></th>
-	<th>Hotel Id</th>
-	<th>Hotel Name</th>
-	<th>Information</th>
+	<th>HotelRoomNo</th>
+	<th>HotelRoomType</th>
+	<th>HotelRoomPrice</th>
+	
 	<th></th>
 	</tr>
-<c:forEach items="${arrayListHotel}" var="hotel">
+<c:forEach items="${arrayListHotelRoom}" var="hotelRoom">
 <tr>
-	<td><img src="images/hotel1.jpg"  height="100" width="100"/></td>
-	<c:set var="hotelId" scope="session" value="${hotel.getHotelId()}"/>
-     <td><c:out value="${hotel.getHotelId()}" /></td>
-     <td><c:out value="${hotel.getHotelName()}" /></td>
-      <td><c:out value="${hotel.getHotelInfo()}" /></td>
-      
-      <td><form action="./ChooseRoom"><button type="submit" id="book">Choose Room</button></form></td>
+	<td><img src="images/hotelroom.jpg"  height="100" width="100"/></td>
+	<!-- <c:set var="hotelId" scope="session" value="${hotel.getHotelId()}"/>-->
+     <td><c:out value="${hotelRoom.getHotelRoomNo()}" /></td>
+     <td><c:out value="${hotelRoom.getHotelRoomType()}" /></td>
+      <td><form action=""><button type="submit" id="book">Book Now</button></form></td>
  </tr> 
 </c:forEach>
 </table>
-
 </body>
 </html>
