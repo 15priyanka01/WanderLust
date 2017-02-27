@@ -1,4 +1,4 @@
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page import="com.mmt.model.bean.Hotel"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>List of Hotels</title>
 <style>
  
   a{
@@ -26,15 +26,14 @@
 <body>
 <% ArrayList<Hotel> hotelList=(ArrayList<Hotel>)session.getAttribute("arrayListHotel");
 %>
-
-	<%for(Hotel hotel:hotelList){ %>
-		
+<%for(Hotel hotel:hotelList){ %>
+			
 			<%out.print(hotel.getHotelId()); %><br>
 			<%out.print(hotel.getHotelName()); %><br>
 			<%out.print(hotel.getHotelInfo()); %><br><br>
 		
 	<% } %>
 
-<a href="BlackHeader.jsp">Go Back to Home Page</a>
+<a href="BlackHeader.jsp">Home Page</a>
 </body>
 </html>
