@@ -2,7 +2,8 @@
 <%@page import="com.mmt.model.bean.Flight"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    <jsp:include page="BlackHeader.jsp"></jsp:include>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -28,12 +29,12 @@
 %>
 <%for(Flight flight:flightList){ %>
 			
-			<%out.print(flight.getFlightId()); %><br>
-			<%out.print(flight.getFlightCompanyName()); %><br>
-			<%out.print(flight.getFlightSource()); %><br>
-			<%out.print(flight.getFlightDestination()); %><br>
-			<%out.print(flight.getFlightDepartureTime()); %><br>
-			<%out.print(flight.getFlightArrivalTime()); %><br>
+			<%out.print(flight.getFlightId()); %>&nbsp;&nbsp;
+			<%out.print(flight.getFlightCompanyName()); %>&nbsp;&nbsp;
+			<%out.print(flight.getFlightSource()); %>&nbsp;&nbsp;
+			<%out.print(flight.getFlightDestination()); %>&nbsp;&nbsp;
+			<%out.print(flight.getFlightDepartureTime()); %>&nbsp;&nbsp;
+			<%out.print(flight.getFlightArrivalTime()); %>&nbsp;&nbsp;
 			<%out.print(flight.getFlightTicketPrice()); %><br><br>
 			
 		
