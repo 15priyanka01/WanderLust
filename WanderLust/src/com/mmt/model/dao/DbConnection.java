@@ -39,7 +39,7 @@ public class DbConnection {
 		 } catch (ClassNotFoundException | SQLException e) {
 		
 		 e.printStackTrace();
-		 System.out.println("this==============");
+		
 		 }
 
 		 return con;

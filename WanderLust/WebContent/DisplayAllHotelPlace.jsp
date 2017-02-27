@@ -27,6 +27,8 @@
 <body>
 <% ArrayList<Hotel> hotelList=(ArrayList<Hotel>)session.getAttribute("arrayListHotel");
 %>
+
+<%--
 <%for(Hotel hotel:hotelList){ %>
 			
 			<%out.print(hotel.getHotelId()); %><br>
@@ -34,6 +36,15 @@
 			<%out.print(hotel.getHotelInfo()); %><br><br>
 		
 	<% } %>
+ --%>
+
+
+
+<c:forEach var="hotel" items="${hotelList}">
+     <c:out value="${hotel.getHotelId()}" />
+      <c:out value="${hotel.getHotelName()}" />
+       <c:out value="${hotel.getHotelInfo()}" />
+    </c:forEach>
 
 <a href="BlackHeader.jsp">Home Page</a>
 </body>
