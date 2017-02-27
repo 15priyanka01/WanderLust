@@ -65,20 +65,20 @@ $(function() {
 <b>Source</b>&nbsp; :&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <select id="source" name="source" required="required">
 	
-   <option value="New Delhi">New Delhi(Delhi,India)</option>
-    <option value="mumbai">mumbai</option>
-    <option value="Bangalore">Bangalore</option>
-    <option value="Chennai">Chennai</option>
-    <option value="Goa">Goa</option>
+   <option value="delhi">New Delhi</option>
+    <option value="mumbai">Mumbai</option>
+    <option value="bangalore">Bangalore</option>
+    <option value="chennai">Chennai</option>
+    <option value="goa">Goa</option>
 </select>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <b>Destination:</b>&nbsp;&nbsp;
 <select id="destination" name="destination" required="required">
-		<option value="Mumbai">Mumbai(Maharashtra,India)</option>
-   <option value="New Delhi">New Delhi(Delhi,India)</option>
-     <option value="Bangalore">Bangalore</option>
-    <option value="chennai">chennai</option>
-    <option value="Goa">Goa</option>
+		<option value="mumbai">Mumbai</option>
+   <option value="delhi">New Delhi</option>
+     <option value="bangalore">Bangalore</option>
+    <option value="chennai">Chennai</option>
+    <option value="goa">Goa</option>
 </select>
 
 
