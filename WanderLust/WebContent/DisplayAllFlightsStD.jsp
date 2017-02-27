@@ -14,16 +14,23 @@
 <body>
 <% ArrayList<Flight> flightList=(ArrayList<Flight>)session.getAttribute("arrayListFlight");
 %>
+<table border="1"  border-collapse= "collapse">
+	<tr>
+	<th>Flight Id</th>
+	<th>Airline</th>
+	<th>Depart</th>
+	<th>Arrive</th>
+	<th>Price</th>
+	<th></th>
+	</tr>
 <%for(Flight flight:flightList){ %>
-			
-			<%out.print(flight.getFlightId()); %>&nbsp;&nbsp;
-			<%out.print(flight.getFlightCompanyName()); %>&nbsp;&nbsp;
-			<%out.print(flight.getFlightSource()); %>&nbsp;&nbsp;
-			<%out.print(flight.getFlightDestination()); %>&nbsp;&nbsp;
-			<%out.print(flight.getFlightDepartureTime()); %>&nbsp;&nbsp;
-			<%out.print(flight.getFlightArrivalTime()); %>&nbsp;&nbsp;
-			<%out.print(flight.getFlightTicketPrice()); %><br><br>
-			
+			<tr>
+			<td><%out.print(flight.getFlightId()); %></td>
+			<td><%out.print(flight.getFlightCompanyName()); %></td>
+			<td><%out.print(flight.getFlightDepartureTime()); %></td>
+			<td><%out.print(flight.getFlightArrivalTime()); %></td>
+			<td><%out.print(flight.getFlightTicketPrice()); %></td>
+			</tr>
 		
 	<% } %>
 

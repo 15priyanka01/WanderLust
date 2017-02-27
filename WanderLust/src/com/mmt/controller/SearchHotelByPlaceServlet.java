@@ -1,7 +1,10 @@
 package com.mmt.controller;
 
 import java.io.IOException;
+import java.util.Date;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -12,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.mmt.model.bean.Hotel;
+import com.mmt.model.bean.HotelBooking;
 import com.mmt.model.bl.HotelBlMMT;
 
 public class SearchHotelByPlaceServlet extends HttpServlet {
@@ -24,7 +28,20 @@ public class SearchHotelByPlaceServlet extends HttpServlet {
 		String place=request.getParameter("place");
 		String from=request.getParameter("from");
 		String to=request.getParameter("to");
+		Date date1 = null;
+		Date date2 = null;
+		try {
+			date1 = new SimpleDateFormat("dd/MM/yyyy").parse(from);
+			date2 = new SimpleDateFormat("dd/MM/yyyy").parse(to);
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}  
+		
 		int room=Integer.parseInt(request.getParameter("room"));
+		HotelBooking HotelBooking=new HotelBooking();
+		HotelBooking.setHotelCheckInDate( date1);
+		HotelBooking.setHotelCheckOutDate( date2);
 		HotelBlMMT hotelBl=new HotelBlMMT();
 		ArrayList<Hotel> arrayListHotel=null;
 		try {

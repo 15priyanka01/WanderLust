@@ -12,20 +12,6 @@
 
 </head>
 <body>
-<%-- <% ArrayList<Hotel> hotelList=(ArrayList<Hotel>)session.getAttribute("arrayListHotel");%>  --%>
-
-
-<%--
-<%for(Hotel hotel:hotelList){ %>
-			
-			<%out.print(hotel.getHotelId()); %><br>
-			<%out.print(hotel.getHotelName()); %><br>
-			<%out.print(hotel.getHotelInfo()); %><br><br>
-		
-	<% } %>
- --%>
-
-
 <c:forEach items="${arrayListHotel}" var="hotel">
 
      <c:out value="${hotel.getHotelId()}" />
