@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.mmt.model.bean.Flight"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -8,13 +9,33 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>List of Flights</title>
+<style>
+#book{
+	border-style: solid;
+    border-width: 1px;
+    border-color: red;
+    background-color: red;
+    color: white;
+    padding:5px;
+    font: bold;
+    text-align:center; }
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
 
+th, td {
+    padding: 19px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover{background-color:#f5f5f5}
+
+</style>
 </head>
 <body>
-<body>
-<% ArrayList<Flight> flightList=(ArrayList<Flight>)session.getAttribute("arrayListFlight");
-%>
-<table border="1"  border-collapse= "collapse">
+<table border="1">
 	<tr>
 	<th>Flight Id</th>
 	<th>Airline</th>
@@ -23,17 +44,16 @@
 	<th>Price</th>
 	<th></th>
 	</tr>
-<%for(Flight flight:flightList){ %>
-			<tr>
-			<td><%out.print(flight.getFlightId()); %></td>
-			<td><%out.print(flight.getFlightCompanyName()); %></td>
-			<td><%out.print(flight.getFlightDepartureTime()); %></td>
-			<td><%out.print(flight.getFlightArrivalTime()); %></td>
-			<td><%out.print(flight.getFlightTicketPrice()); %></td>
-			</tr>
-		
-	<% } %>
-
-
+<c:forEach items="${arrayListFlight}" var="flight">
+<tr>
+     <td><c:out value="${flight.getFlightId()}" /></td>
+    <td>  <c:out value="${flight.getFlightCompanyName()}" /></td>
+      <td> <c:out value="${flight.getFlightDepartureTime()}" /></td>
+     <td>  <c:out value="${flight.getFlightArrivalTime()}" /></td>
+      <td> <c:out value="${flight.getFlightTicketPrice()}" /></td>
+      <td><a id="book" href="">Book Now</a></td>
+  </tr>
+</c:forEach> 
+</table>
 </body>
 </html>
