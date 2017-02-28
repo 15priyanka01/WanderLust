@@ -11,7 +11,7 @@ public class FlightPaymentBl {
 	
 	public boolean checkFunds(String userId, float valueAfterPromotion ) throws ClassNotFoundException, SQLException, IOException{
 		float amountShort=0;
-		amountShort = (float) (valueAfterPromotion - walletBL.walletBalance(userId));
+		amountShort = (float) ( walletBL.walletBalance(userId)-valueAfterPromotion);
 		if(amountShort<0){
 			return false;
 		}

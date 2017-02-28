@@ -27,7 +27,8 @@ public class WalletBlMMT {
 	public ArrayList<Wallet> displayAll() throws SQLException, ClassNotFoundException, IOException {
 		return walletDao.displayWalletAll();
 	}
-	//comment
+
+	// comment
 	public boolean addWalletMoney(String userId, Double value)
 			throws SQLException, ClassNotFoundException, IOException {
 		Wallet w;
@@ -40,23 +41,18 @@ public class WalletBlMMT {
 
 	public boolean subtractWalletMoney(String userId, Double value)
 			throws SQLException, ClassNotFoundException, IOException {
-		Wallet w=null;
+		Wallet w = null;
 		w = walletDao.displayWallet(userId);
-		if(w==null){
+
+		double temp = w.getWalletBalance() - value;
+		if (temp < 0) {
+			// Exception //Insufficient Funds Add money to wallet
 			return false;
+		} else {
+			w.setWalletBalance(temp);
+			walletDao.updateWallet(userId, w);
+			return true;
 		}
-		else{
-			double temp = w.getWalletBalance() - value;
-			if (temp < 0) {
-				// Exception //Insufficient Funds Add money to wallet
-				return false;
-			} else {
-				w.setWalletBalance(temp);
-				walletDao.updateWallet(userId, w);
-				return true;
-			}
-		}
-		
 
 	}
 }
