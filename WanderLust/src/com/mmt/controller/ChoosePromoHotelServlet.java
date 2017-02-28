@@ -14,18 +14,17 @@ import javax.servlet.http.HttpSession;
 import com.mmt.model.bean.Promotion;
 import com.mmt.model.bl.PromotionBlMMT;
 
-
 public class ChoosePromoHotelServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session=request.getSession();
-		String hotelId=(String) session.getAttribute("hotelId");
-		PromotionBlMMT promoBl=new PromotionBlMMT();
-		ArrayList<Promotion> arrayListPromoHotel=null;
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		String hotelId = (String) session.getAttribute("hotelId");
+		PromotionBlMMT promoBl = new PromotionBlMMT();
+		ArrayList<Promotion> arrayListPromoHotel = null;
 		try {
-			arrayListPromoHotel=promoBl.displayPromotion("HOTEL");
+			arrayListPromoHotel = promoBl.displayPromotion("HOTEL");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -33,16 +32,15 @@ public class ChoosePromoHotelServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-			
-			session.setAttribute("arrayListPromoHotel", arrayListPromoHotel);
-			RequestDispatcher dispatch=request.getRequestDispatcher("ChoosePromoCodeHotel.jsp");
-			dispatch.forward(request, response);
+
+		session.setAttribute("arrayListPromoHotel", arrayListPromoHotel);
+		RequestDispatcher dispatch = request.getRequestDispatcher("ChoosePromoCodeHotel.jsp");
+		dispatch.forward(request, response);
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		doGet(request, response);
 	}
 

@@ -104,4 +104,14 @@
     <servlet-name>MoneyAdddedServlet</servlet-name>
     <url-pattern>/MoneyAddded</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ConfirmFlightBooking</display-name>
+    <servlet-name>ConfirmFlightBooking</servlet-name>
+    <servlet-class>com.mmt.controller.ConfirmFlightBooking</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConfirmFlightBooking</servlet-name>
+    <url-pattern>/ConfirmBooking</url-pattern>
+  </servlet-mapping>
 </web-app>

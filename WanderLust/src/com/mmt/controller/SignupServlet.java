@@ -37,8 +37,10 @@ public class SignupServlet extends HttpServlet {
 				
 			}
 			else{
+				
 				response.sendRedirect("Signup.jsp");
-			}
+
+			} 
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
