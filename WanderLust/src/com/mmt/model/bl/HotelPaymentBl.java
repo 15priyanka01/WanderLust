@@ -10,7 +10,7 @@ public class HotelPaymentBl {
 		return hotelRoomPrice*days;
 	}
 	
-	public boolean checkFunds(String userId, float valueAfterPromotion ) throws ClassNotFoundException, SQLException, IOException{
+	public boolean checkFunds(String userId, double valueAfterPromotion ) throws ClassNotFoundException, SQLException, IOException{
 		float amountShort=0;
 		amountShort = (float) ( walletBL.walletBalance(userId)-valueAfterPromotion);
 		if(amountShort<0){

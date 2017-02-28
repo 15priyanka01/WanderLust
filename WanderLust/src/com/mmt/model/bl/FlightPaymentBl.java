@@ -5,13 +5,13 @@ import java.sql.SQLException;
 
 public class FlightPaymentBl {
 	WalletBlMMT walletBL=new WalletBlMMT();
-	public float cartValue(float flightTicketPrice, int seats){
+	public double cartValue(double flightTicketPrice, int seats){
 		return flightTicketPrice*seats;
 	}
 	
-	public boolean checkFunds(String userId, float valueAfterPromotion ) throws ClassNotFoundException, SQLException, IOException{
-		float amountShort=0;
-		amountShort = (float) ( walletBL.walletBalance(userId)-valueAfterPromotion);
+	public boolean checkFunds(String userId, double valueAfterPromotion ) throws ClassNotFoundException, SQLException, IOException{
+		double amountShort=0;
+		amountShort = (double) ( walletBL.walletBalance(userId)-valueAfterPromotion);
 		if(amountShort<0){
 			return false;
 		}

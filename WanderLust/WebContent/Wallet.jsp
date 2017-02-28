@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <jsp:include page="UserDashBoard.jsp"></jsp:include>
@@ -21,7 +22,11 @@
 Wallet Status&nbsp; :&nbsp;${balance}<br>
 ${msg}
 </div>
-
+<c:if test="${not empty messageflight}">
+<jsp:forward page="ConfirmFlightBooking.jsp" >
+</jsp:forward> 
+    
+</c:if>
 
 </form>
 </body>

@@ -60,7 +60,7 @@ public class PaymentHotelServlet extends HttpServlet {
 		cartValue=hotelPaymentBl.cartValue(roomPrice, duration);
 		
 		PromotionBlMMT promotionBlMMT = new PromotionBlMMT();
-		float valueAfterPromotion = 0;
+		double valueAfterPromotion = 0;
 		
 		try {
 			valueAfterPromotion = promotionBlMMT.applyPromotion(promotionBlMMT.searchPromotion(promoPickedID), userId,

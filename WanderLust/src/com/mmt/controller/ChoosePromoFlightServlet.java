@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.mmt.model.bean.Promotion;
+import com.mmt.model.bean.User;
 import com.mmt.model.bl.PromotionBlMMT;
 
 public class ChoosePromoFlightServlet extends HttpServlet {
@@ -20,7 +21,12 @@ public class ChoosePromoFlightServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		String flightId = (String) session.getAttribute("flightId");
+		String flightId = (String)session.getAttribute("flightId");
+		User user = (User) session.getAttribute("user");
+		if(user==null){
+			RequestDispatcher dispatch = request.getRequestDispatcher("loginUnregistered.jsp");
+			dispatch.forward(request, response);
+		}
 		PromotionBlMMT promoBl = new PromotionBlMMT();
 		ArrayList<Promotion> arrayListPromoFlight = null;
 		try {

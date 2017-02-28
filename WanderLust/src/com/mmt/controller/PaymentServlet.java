@@ -23,29 +23,20 @@ public class PaymentServlet extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String promoPickedID = request.getParameter("promoflight");
+		double flightTicketPrice = (double) session.getAttribute("flightTicketPrice");
 		String flightIDPicked = (String) session.getAttribute("flightId");
 		User user = (User) session.getAttribute("user");
 		String userId = user.getUserId();
 		int noOfSeats =  (int) session.getAttribute("seats");
 		FlightBookingBlMMT flightBookingBlMMT = new FlightBookingBlMMT();
 		FlightPaymentBl flightPaymentBl = new FlightPaymentBl();
-		float cartValue = 0;
-		//System.out.println("Enter loop1:-----");
-		try {
-			//System.out.println("Enter loop2:-----");
-			cartValue = flightPaymentBl.cartValue(
-					(float) (flightBookingBlMMT.searchFlight(flightIDPicked)).getFlightTicketPrice(), noOfSeats);
-			//System.out.println("Enter loop3:----- cartValue:"+cartValue);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		double cartValue = 0;
+		//System.out.println("Enter loop2:-----");
+		cartValue = flightPaymentBl.cartValue(flightTicketPrice, noOfSeats);
+		//System.out.println("Enter loop3:----- cartValue:"+cartValue);
 
 		PromotionBlMMT promotionBlMMT = new PromotionBlMMT();
-		float valueAfterPromotion = 0;
+		double valueAfterPromotion = 0;
 		try {
 			//System.out.println("Enter loop4:----- cartValue:"+cartValue);
 			valueAfterPromotion = promotionBlMMT.applyPromotion(promotionBlMMT.searchPromotion(promoPickedID), userId,
@@ -70,14 +61,14 @@ public class PaymentServlet extends HttpServlet {
 
 				RequestDispatcher dispatch = request.getRequestDispatcher("ConfirmFlightBooking.jsp");
 				dispatch.forward(request, response);
-			} else {
-				
-				
-				
-				
+			} else {				
 				// Insufficient Funds
 				// Redirect to Add money to wallet and then redirect to confirm
 				// payment JSP Page
+				String message="Add atleast "+valueAfterPromotion+" to Wallet ";
+				session.setAttribute("messageFlight", message);
+				RequestDispatcher dispatch = request.getRequestDispatcher("AddMoney.jsp");
+				dispatch.forward(request, response);
 			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block

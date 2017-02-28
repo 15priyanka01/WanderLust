@@ -21,7 +21,7 @@ public class ConfirmFlightBooking extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		float valueAfterPromotion = (float) session.getAttribute("finalValuetobepaid");
+		double valueAfterPromotion = (double) session.getAttribute("finalValuetobepaid");
 		User user = (User) session.getAttribute("user");
 		boolean paymentStatus = false;
 		//System.out.println("Entererd here");
@@ -29,7 +29,7 @@ public class ConfirmFlightBooking extends HttpServlet {
 		try {
 			//System.out.println("UserID------: "+user.getUserId());
 			//System.out.println("valueAfterPromotion------: "+valueAfterPromotion);
-			paymentStatus = walletBlMMT.subtractWalletMoney(user.getUserId(), (double) valueAfterPromotion);
+			paymentStatus = walletBlMMT.subtractWalletMoney(user.getUserId(),valueAfterPromotion);
 		//	System.out.println("paymentStatus: "+paymentStatus);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block

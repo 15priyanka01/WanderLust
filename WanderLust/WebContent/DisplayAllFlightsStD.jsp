@@ -62,6 +62,7 @@ tr:hover{background-color:#f5f5f5}
       <c:set var="flightId" scope="session" value="${flight.getFlightId()}"/>
        <c:set var="arrivalTime" scope="session" value="${flight.getFlightArrivalTime()}"/>
         <c:set var="departureTime" scope="session" value="${flight.getFlightDepartureTime()}"/>
+        <c:set var="flightTicketPrice" scope="session" value="${flight.getFlightTicketPrice()}"/>
       <button type="submit" id="book">Book Now</button>
       </form>
       </td>

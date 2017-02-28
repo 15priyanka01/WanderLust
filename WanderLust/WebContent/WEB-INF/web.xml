@@ -66,6 +66,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>LoginUnregisteredServlet</display-name>
+    <servlet-name>LoginUnregisteredServlet</servlet-name>
+    <servlet-class>com.mmt.controller.LoginUnregisteredServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginUnregisteredServlet</servlet-name>
+    <url-pattern>/LoginUnregistered</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>SignupServlet</display-name>
     <servlet-name>SignupServlet</servlet-name>
     <servlet-class>com.mmt.controller.SignupServlet</servlet-class>
