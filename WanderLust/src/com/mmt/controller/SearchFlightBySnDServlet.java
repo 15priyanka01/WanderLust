@@ -40,7 +40,9 @@ public class SearchFlightBySnDServlet extends HttpServlet {
 			session.setAttribute("message", message);
 			response.sendRedirect("NoFlightFromStD.jsp");
 		} else {
-			session.setAttribute("seats", seats);
+			session.setAttribute("source", source);
+			session.setAttribute("destination", destination);
+			session.setAttribute("departureDate", departureDate);
 			session.setAttribute("arrayListFlight", arrayListFlight);
 			RequestDispatcher dispatch = request.getRequestDispatcher("DisplayAllFlightsStD.jsp");
 			dispatch.forward(request, response);
