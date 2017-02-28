@@ -17,10 +17,10 @@
   <div class="container-fluid">
     
     <ul class="nav navbar-nav">
-      <li ><a href="FlightForm.jsp">Flight</a></li>
+      <li ><a href="LoogedInFlightForm.jsp">Flight</a></li>
       
       
-      <li><a href="HotelForm.jsp">Hotel</a>  </li>
+      <li><a href="LoggInHotelForm.jsp">Hotel</a>  </li>
         
      
       <li><a href="#">Past Flight Bookings</a></li>
