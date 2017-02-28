@@ -37,19 +37,19 @@ public class SearchHotelByPlaceServlet extends HttpServlet {
 		Date date1 = null;
 		Date date2 = null;
 		try {
-			date1 = new SimpleDateFormat("dd/MM/yyyy").parse(from);
-			date2 = new SimpleDateFormat("dd/MM/yyyy").parse(to);
-//			session.setAttribute(date1, "date1");
-//			session.setAttribute(date2, "date2");
+			date1 = new SimpleDateFormat("yyyy-MM-dd").parse(from);
+			date2 = new SimpleDateFormat("yyyy-MM-dd").parse(to);
+			session.setAttribute("date1",date1);
+			session.setAttribute("date2",date2);
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
 		
-		HotelBooking HotelBooking = new HotelBooking();
-		HotelBooking.setHotelCheckInDate(date1);
-		HotelBooking.setHotelCheckOutDate(date2);
+		//HotelBooking HotelBooking = new HotelBooking();
+		//HotelBooking.setHotelCheckInDate(date1);
+		//HotelBooking.setHotelCheckOutDate(date2);
 		HotelBlMMT hotelBl = new HotelBlMMT();
 		ArrayList<Hotel> arrayListHotel = null;
 		try {
