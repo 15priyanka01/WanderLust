@@ -23,7 +23,7 @@
       <li><a href="HotelForm.jsp">Hotel</a>  </li>
         
      
-      <li><a href="#">Contact</a></li>
+      <li><a href="ContactUs.jsp">Contact</a></li>
       <li><a href="#">About us</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
