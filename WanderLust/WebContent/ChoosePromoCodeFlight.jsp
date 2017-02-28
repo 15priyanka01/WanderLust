@@ -51,8 +51,9 @@
 				<!--<c:set var="flightPromo" scope="session" value="${arrayListPromoFlight}"/>-->
 				<c:forEach items="${arrayListPromoFlight}" var="flightPromo">
 					<option value="-">----</option>
-					<option value="${flightPromo.getPromotionName()}">${flightPromo.getPromotionName()}</option>
+					<option value="${flightPromo.getPromotionId()}">${flightPromo.getPromotionName()}</option>
 				</c:forEach>
+				 
 			</select> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input type="button"
 				id="applyPromo" value="Apply" onclick="loadDoc()" />
 		</p>

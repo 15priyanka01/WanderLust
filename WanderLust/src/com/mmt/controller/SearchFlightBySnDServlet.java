@@ -42,9 +42,11 @@ public class SearchFlightBySnDServlet extends HttpServlet {
 			response.sendRedirect("NoFlightFromStD.jsp");
 		}
 		else{
+			session.setAttribute("seats", seats);
 			session.setAttribute("arrayListFlight", arrayListFlight);
 			RequestDispatcher dispatch=request.getRequestDispatcher("DisplayAllFlightsStD.jsp");
 			dispatch.forward(request, response);
+		
 			
 		}
 	}
