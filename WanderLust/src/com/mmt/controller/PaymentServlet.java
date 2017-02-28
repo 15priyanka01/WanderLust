@@ -3,6 +3,7 @@ package com.mmt.controller;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -55,8 +56,14 @@ public class PaymentServlet extends HttpServlet {
 
 		try {
 			if (flightPaymentBl.checkFunds(userId, valueAfterPromotion)) {
+				
 				// THere is sufficient funds in account------------------
 				// Redirect to Confirm Payment JSP Page
+				
+				session.setAttribute("finalValuetobepaid", valueAfterPromotion);
+
+				RequestDispatcher dispatch = request.getRequestDispatcher("ConfirmFlightBooking.jsp");
+				dispatch.forward(request, response);
 			} else {
 				// Insufficient Funds
 				// Redirect to Add money to wallet and then redirect to confirm
