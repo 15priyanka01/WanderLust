@@ -39,7 +39,7 @@ public class PromotionBlMMT {
 		if(p==null)
 			System.out.println("No promotions");
 		System.out.println("Promotion: "+p.getPromotionId());
-		if((currentPrice-p.getPromotionDiscount())>0){
+		if((currentPrice-p.getPromotionMinRequiredAmount())>0){
 			float discount= (float) ((p.getPromotionDiscount()/100)*currentPrice);
 			finalPrice=currentPrice-discount;
 			return finalPrice;
