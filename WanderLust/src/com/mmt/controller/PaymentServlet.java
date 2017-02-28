@@ -30,9 +30,12 @@ public class PaymentServlet extends HttpServlet {
 		FlightBookingBlMMT flightBookingBlMMT = new FlightBookingBlMMT();
 		FlightPaymentBl flightPaymentBl = new FlightPaymentBl();
 		float cartValue = 0;
+		//System.out.println("Enter loop1:-----");
 		try {
+			//System.out.println("Enter loop2:-----");
 			cartValue = flightPaymentBl.cartValue(
 					(float) (flightBookingBlMMT.searchFlight(flightIDPicked)).getFlightTicketPrice(), noOfSeats);
+			//System.out.println("Enter loop3:----- cartValue:"+cartValue);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -44,8 +47,10 @@ public class PaymentServlet extends HttpServlet {
 		PromotionBlMMT promotionBlMMT = new PromotionBlMMT();
 		float valueAfterPromotion = 0;
 		try {
+			//System.out.println("Enter loop4:----- cartValue:"+cartValue);
 			valueAfterPromotion = promotionBlMMT.applyPromotion(promotionBlMMT.searchPromotion(promoPickedID), userId,
 					cartValue);
+			//System.out.println("Enter loop5:----- cartValue:"+cartValue);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -61,6 +66,7 @@ public class PaymentServlet extends HttpServlet {
 				// Redirect to Confirm Payment JSP Page
 				
 				session.setAttribute("finalValuetobepaid", valueAfterPromotion);
+				//System.out.println("Enter loop4:----- ");
 
 				RequestDispatcher dispatch = request.getRequestDispatcher("ConfirmFlightBooking.jsp");
 				dispatch.forward(request, response);
