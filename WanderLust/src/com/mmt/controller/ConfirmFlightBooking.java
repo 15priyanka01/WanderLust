@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.mmt.model.bean.FlightBooking;
 import com.mmt.model.bean.User;
+import com.mmt.model.bl.FlightBookingBlMMT;
 import com.mmt.model.bl.WalletBlMMT;
 
 public class ConfirmFlightBooking extends HttpServlet {
@@ -34,10 +36,28 @@ public class ConfirmFlightBooking extends HttpServlet {
 		}
 		
 		if(paymentStatus){
-			session.setAttribute("flightBookingStatus", paymentStatus);
-
-			RequestDispatcher dispatch = request.getRequestDispatcher("FinalFlightStep.jsp");
-			dispatch.forward(request, response);
+			FlightBookingBlMMT flightBookingBlMMT=new FlightBookingBlMMT();
+			FlightBooking flightBooking=new FlightBooking();
+			String flightIDPicked = (String) session.getAttribute("flightId");
+			String source=(String) session.getAttribute("source");
+			String destination = (String) session.getAttribute("destination");
+			int seats=(int) session.getAttribute("seats");
+			try {
+				flightBooking=flightBookingBlMMT.bookFlight(user.getUserId(), flightIDPicked, source, destination, seats);
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			if(flightBooking!=null){
+				session.setAttribute("flightBooking", flightBooking);
+				RequestDispatcher dispatch = request.getRequestDispatcher("FinalFlightStep.jsp");
+				dispatch.forward(request, response);
+			}
+			
 		}
 	}
 
