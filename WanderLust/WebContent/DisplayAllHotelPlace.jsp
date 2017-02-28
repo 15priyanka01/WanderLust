@@ -57,6 +57,7 @@ th {
       <td>
       <form action="./ChooseRoom">
       <c:set var="hotelId" scope="session" value="${hotel.getHotelId()}"/>
+      <c:set var="hotelName" scope="session" value="${hotel.getHotelName()}"/>
       <button type="submit" id="book">Choose Room</button>
       </form>
       </td>

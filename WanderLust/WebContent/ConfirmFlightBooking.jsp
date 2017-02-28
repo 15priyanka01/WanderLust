@@ -18,7 +18,7 @@ Source:&nbsp; :&nbsp;${source}<br><br>
  Arrival Time: &nbsp; :&nbsp;${arrivalTime}<br><br>
  Amount to be paid: &nbsp; :&nbsp;${finalValuetobepaid}<br><br>
  
-<input type="submit" value="Confirm Flight Booking"></button>
+<input type="submit" value="Confirm Flight Booking">
 
 </form>
 

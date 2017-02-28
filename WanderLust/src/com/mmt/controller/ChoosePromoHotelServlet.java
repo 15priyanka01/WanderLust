@@ -23,6 +23,7 @@ public class ChoosePromoHotelServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String hotelId = (String) session.getAttribute("hotelId");
 		String hotelRoomNo= (String) session.getAttribute("hotelRoomNo");
+		Double roomPrice=(Double) session.getAttribute("RoomPrice");
 		User user = (User) session.getAttribute("user");
 		if(user==null){
 			session.setAttribute("hotelId", hotelId);
@@ -42,7 +43,7 @@ public class ChoosePromoHotelServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		
+		session.setAttribute("roomPrice", roomPrice);
 		session.setAttribute("arrayListPromoHotel", arrayListPromoHotel);
 		RequestDispatcher dispatch = request.getRequestDispatcher("ChoosePromoCodeHotel.jsp");
 		dispatch.forward(request, response);
