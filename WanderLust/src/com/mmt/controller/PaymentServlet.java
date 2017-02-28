@@ -53,7 +53,11 @@ public class PaymentServlet extends HttpServlet {
 		try {
 			if(flightPaymentBl.checkFunds(userId, valueAfterPromotion)){
 				// THere is sufficient funds in account------------------
-				
+				//Redirect to Confirm Payment JSP Page
+			}
+			else{
+				//Insufficient Funds
+				//Redirect to Add money to wallet and then redirect to confirm payment JSP Page
 			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
