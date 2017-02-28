@@ -40,7 +40,7 @@ public class WalletBlMMT {
 
 	public boolean subtractWalletMoney(String userId, Double value)
 			throws SQLException, ClassNotFoundException, IOException {
-		Wallet w;
+		Wallet w=null;
 		w = walletDao.displayWallet(userId);
 		double temp = w.getWalletBalance() - value;
 		if (temp < 0) {

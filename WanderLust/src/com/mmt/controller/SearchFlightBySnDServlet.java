@@ -20,6 +20,7 @@ public class SearchFlightBySnDServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
+		String flightCompanyName=request.getParameter("flightCompanyName");
 		String source = request.getParameter("source");
 		String destination = request.getParameter("destination");
 		String departureDate = request.getParameter("departureDate");
@@ -40,6 +41,8 @@ public class SearchFlightBySnDServlet extends HttpServlet {
 			session.setAttribute("message", message);
 			response.sendRedirect("NoFlightFromStD.jsp");
 		} else {
+			session.setAttribute("flightCompanyName", flightCompanyName);
+			session.setAttribute("seats", seats);
 			session.setAttribute("source", source);
 			session.setAttribute("destination", destination);
 			session.setAttribute("departureDate", departureDate);

@@ -8,16 +8,16 @@
 </head>
 <body>
 
-<form>
-Source:&nbsp; :&nbsp;${source}
- Destination:&nbsp; :&nbsp;${destination}
- Flight Company: &nbsp; :&nbsp;${flightCompany}
- Date of Flight: &nbsp; :&nbsp;${departureDate}
- Departure Time: &nbsp; :&nbsp;${departureTime}
- Arrival Time: &nbsp; :&nbsp;${arrivalTime}
- Amount to be paid: &nbsp; :&nbsp;${finalValue}
+<form action="./ConfirmBooking" >
+Source:&nbsp; :&nbsp;${source}<br><br>
+ Destination:&nbsp; :&nbsp;${destination}<br><br>
+ Flight Company: &nbsp; :&nbsp;${flightCompanyName}<br><br>
+ Date of Flight: &nbsp; :&nbsp;${departureDate}<br><br>
+ Departure Time: &nbsp; :&nbsp;${departureTime}<br><br>
+ Arrival Time: &nbsp; :&nbsp;${arrivalTime}<br><br>
+ Amount to be paid: &nbsp; :&nbsp;${finalValuetobepaid}<br><br>
  
-<button type="submit" formaction="./confirmBooking">Confirm Flight Booking</button>
+<input type="submit" value="Confirm Flight Booking"></button>
 
 </form>
 

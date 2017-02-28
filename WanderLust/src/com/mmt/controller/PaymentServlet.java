@@ -26,8 +26,7 @@ public class PaymentServlet extends HttpServlet {
 		String flightIDPicked = (String) session.getAttribute("flightId");
 		User user = (User) session.getAttribute("user");
 		String userId = user.getUserId();
-		int noOfSeats= Integer.parseInt(request.getParameter("seats"));
-		//int noOfSeats = Integer.parseInt((String) session.getAttribute("seats"));
+		int noOfSeats =  (int) session.getAttribute("seats");
 		FlightBookingBlMMT flightBookingBlMMT = new FlightBookingBlMMT();
 		FlightPaymentBl flightPaymentBl = new FlightPaymentBl();
 		float cartValue = 0;
