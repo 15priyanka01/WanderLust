@@ -8,12 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-  
-  
-  
-      <link rel="stylesheet" href="css/style.css">
-
-  
+  <link rel="stylesheet" href="css/style.css"> 
 </head>
 
 <body>
@@ -29,7 +24,8 @@
     <form class="login-form" action="">
       <input type="text" placeholder="username" required="required"/>
       <input type="password" placeholder="password" required="required"/>
-      <button>login</button>
+      <button><a href="UserDashBoard.jsp ">login</a></button>
+     
       <p class="message">Not registered? <a href="Signup.jsp">Create an account</a></p>
     </form>
   </div>
