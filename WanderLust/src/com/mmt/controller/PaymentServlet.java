@@ -15,6 +15,7 @@ import com.mmt.model.bean.User;
 import com.mmt.model.bl.FlightBookingBlMMT;
 import com.mmt.model.bl.FlightPaymentBl;
 import com.mmt.model.bl.PromotionBlMMT;
+import com.mmt.model.bl.WalletBlMMT;
 
 public class PaymentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -66,7 +67,9 @@ public class PaymentServlet extends HttpServlet {
 				// Redirect to Add money to wallet and then redirect to confirm
 				// payment JSP Page
 				session.setAttribute("finalValuetobepaid", valueAfterPromotion);
-				String message="Add atleast "+valueAfterPromotion+" to Wallet to book flight seat";
+				WalletBlMMT walletBl=new  WalletBlMMT();
+				double moneyToBeAdded=valueAfterPromotion-(walletBl.walletBalance(userId));
+				String message="Add atleast "+moneyToBeAdded+" to Wallet to book flight seat";
 				session.setAttribute("messageFlight", message);
 				RequestDispatcher dispatch = request.getRequestDispatcher("AddMoney.jsp");
 				dispatch.forward(request, response);
