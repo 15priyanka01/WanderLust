@@ -22,13 +22,6 @@ Source:&nbsp; :&nbsp;${source}
 </form>
 
 
- Source:&nbsp; :&nbsp;${source}
- Destination:&nbsp; :&nbsp;${destination}
- Flight Company: &nbsp; :&nbsp;${flightCompany}
- Date of Flight: &nbsp; :&nbsp;${departureDate}
- Departure Time: &nbsp; :&nbsp;${departureTime}
- Arrival Time: &nbsp; :&nbsp;${arrivalTime}
- Amount to be paid: &nbsp; :&nbsp;${finalValue}
  
 </body>
 </html>
