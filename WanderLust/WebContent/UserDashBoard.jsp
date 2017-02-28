@@ -25,7 +25,7 @@
      
       <li><a href="#">Past Flight Bookings</a></li>
       <li><a href="#">Past Hotel Bookings</a></li>
-      <li><a href="#">Add Money to Wallet</a></li>
+      <li><a href="Wallet.jsp"> Wallet</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="logout.jsp"><span class="glyphicon glyphicon-user"></span> Profile </a></li>
