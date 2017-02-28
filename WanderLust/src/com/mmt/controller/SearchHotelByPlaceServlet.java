@@ -39,8 +39,8 @@ public class SearchHotelByPlaceServlet extends HttpServlet {
 		try {
 			date1 = new SimpleDateFormat("yyyy-MM-dd").parse(from);
 			date2 = new SimpleDateFormat("yyyy-MM-dd").parse(to);
-			session.setAttribute("date1",date1);
-			session.setAttribute("date2",date2);
+			session.setAttribute("fromDate",date1);
+			session.setAttribute("toDate",date2);
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -61,7 +61,7 @@ public class SearchHotelByPlaceServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if (arrayListHotel.isEmpty()) {
+		if(arrayListHotel.isEmpty()) {
 			String message = "No Hotels found in " + place;
 			session.setAttribute("message", message);
 			response.sendRedirect("NoHotelInPlace.jsp");

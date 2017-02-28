@@ -14,7 +14,7 @@ import com.mmt.model.bean.HotelRoom;
 
 
 public class HotelDaoImplMMT implements HotelDaoMMT {
-	Connection con;
+	Connection con=null;
 	@Override
 	public int insertHotel(Hotel h) throws SQLException, ClassNotFoundException, IOException {
 		
