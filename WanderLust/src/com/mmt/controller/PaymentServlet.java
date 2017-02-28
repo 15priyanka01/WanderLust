@@ -71,6 +71,10 @@ public class PaymentServlet extends HttpServlet {
 				RequestDispatcher dispatch = request.getRequestDispatcher("ConfirmFlightBooking.jsp");
 				dispatch.forward(request, response);
 			} else {
+				
+				
+				
+				
 				// Insufficient Funds
 				// Redirect to Add money to wallet and then redirect to confirm
 				// payment JSP Page

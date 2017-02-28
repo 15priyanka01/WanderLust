@@ -39,6 +39,8 @@ public class SearchHotelByPlaceServlet extends HttpServlet {
 		try {
 			date1 = new SimpleDateFormat("dd/MM/yyyy").parse(from);
 			date2 = new SimpleDateFormat("dd/MM/yyyy").parse(to);
+//			session.setAttribute(date1, "date1");
+//			session.setAttribute(date2, "date2");
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
