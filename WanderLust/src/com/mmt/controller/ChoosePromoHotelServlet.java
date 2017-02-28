@@ -41,7 +41,8 @@ public class ChoosePromoHotelServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		
+		
 		session.setAttribute("arrayListPromoHotel", arrayListPromoHotel);
 		RequestDispatcher dispatch = request.getRequestDispatcher("ChoosePromoCodeHotel.jsp");
 		dispatch.forward(request, response);
