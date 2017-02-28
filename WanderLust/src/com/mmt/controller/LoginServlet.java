@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.mmt.model.bean.Admin;
+import com.mmt.model.bean.User;
 import com.mmt.model.bl.AdminBlMMT;
 import com.mmt.model.bl.UserBlMMT;
 
@@ -24,27 +26,37 @@ public class LoginServlet extends HttpServlet {
 		UserBlMMT blMMT=new UserBlMMT();
 		String userName=request.getParameter("userName");
 		String password=request.getParameter("password");
-		
+		Admin admin=null;
 		try {
-			if(adminBlMMT.checkAdminLogin(userName, password)!=null){
-				session.setAttribute("admin",userName);
-				RequestDispatcher dispatch=request.getRequestDispatcher("AdminLogin.jsp");
-				dispatch.forward(request, response);
-				
-			}
-			else if(blMMT.checkLogin(userName, password)!=null){
-				session.setAttribute("user",userName);
-				RequestDispatcher dispatch=request.getRequestDispatcher("UserLogin.jsp");
-				dispatch.forward(request, response);
-			}
-			else{
-				session.setAttribute("name",userName);
-				RequestDispatcher dispatch=request.getRequestDispatcher("InvalidUser.jsp");
-				dispatch.forward(request, response);
-			}
-		} catch (ClassNotFoundException | SQLException e) {
+			admin = adminBlMMT.checkAdminLogin(userName, password);
+		} catch (ClassNotFoundException | SQLException e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e1.printStackTrace();
+		}
+		User user=null;
+		try {
+			user = blMMT.checkLogin(userName, password);
+		} catch (ClassNotFoundException | SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		if(admin!=null){
+			
+			session.setAttribute("admin",admin);
+			RequestDispatcher dispatch=request.getRequestDispatcher("AdminLogin.jsp");
+			dispatch.forward(request, response);
+			
+		}
+		else if(user!=null){
+			
+			session.setAttribute("user",user);
+			RequestDispatcher dispatch=request.getRequestDispatcher("UserLogin.jsp");
+			dispatch.forward(request, response);
+		}
+		else{
+			session.setAttribute("name",userName);
+			RequestDispatcher dispatch=request.getRequestDispatcher("InvalidUser.jsp");
+			dispatch.forward(request, response);
 		}
 	}
 

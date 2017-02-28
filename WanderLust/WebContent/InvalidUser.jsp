@@ -8,6 +8,6 @@
 </head>
 <body>
 <jsp:include page="BlackHeader.jsp"></jsp:include>
-<h1>wrong password</h1>
+<h2 style="color:red">Sorry ${name} Invalid Credentials</h2>
 </body>
 </html>
