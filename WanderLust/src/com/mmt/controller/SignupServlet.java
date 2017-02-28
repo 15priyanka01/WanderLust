@@ -38,7 +38,7 @@ public class SignupServlet extends HttpServlet {
 				
 			}
 			else{
-				request.setAttribute("msg", "You are already registered");
+				request.setAttribute("exist", "You are already registered");
 				RequestDispatcher dispatch = request.getRequestDispatcher("Signup.jsp");
 				dispatch.forward(request, response);
 				
