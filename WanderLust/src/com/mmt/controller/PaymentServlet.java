@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.mmt.model.bean.Flight;
+import com.mmt.model.bean.User;
 import com.mmt.model.bl.FlightBookingBlMMT;
 import com.mmt.model.bl.FlightPaymentBl;
 import com.mmt.model.bl.PromotionBlMMT;
@@ -22,7 +23,8 @@ public class PaymentServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String promoPickedID = request.getParameter("promoflight");
 		String flightIDPicked = (String) session.getAttribute("flightId");
-		String userId=(String) session.getAttribute("userID");
+		User user=(User) session.getAttribute("user");
+		String userId=user.getUserId();
 		int noOfSeats = Integer.parseInt((String) session.getAttribute("seats"));
 		FlightBookingBlMMT flightBookingBlMMT = new FlightBookingBlMMT();
 		FlightPaymentBl flightPaymentBl = new FlightPaymentBl();
@@ -39,8 +41,9 @@ public class PaymentServlet extends HttpServlet {
 		}
 
 		PromotionBlMMT promotionBlMMT = new PromotionBlMMT();
+		float valueAfterPromotion=0;
 		try {
-			float valueAfterPromotion=promotionBlMMT.applyPromotion(promotionBlMMT.searchPromotion(promoPickedID), userId, cartValue);
+			valueAfterPromotion=promotionBlMMT.applyPromotion(promotionBlMMT.searchPromotion(promoPickedID), userId, cartValue);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -49,7 +52,22 @@ public class PaymentServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		
+		try {
+			if(flightPaymentBl.checkFunds(userId, valueAfterPromotion)){
+				// THere is sufficient funds in account------------------
+				//Redirect to Confirm Payment JSP Page
+			}
+			else{
+				//Insufficient Funds
+				//Redirect to Add money to wallet and then redirect to confirm payment JSP Page
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
