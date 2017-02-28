@@ -54,7 +54,7 @@ function loadDoc() {
 </select>
 
 &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-<input type="button" id="applyPromo" value="Apply" onclick="loadDoc()"/></p>
+<input type="button" id="applyPromo" value="Apply" onclick="loadDoc()"/></p><br>
 <p id="demo"></p>
 
 <p>

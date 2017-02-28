@@ -22,6 +22,7 @@ public class ChooseRoomServlet extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String hotelId = (String) session.getAttribute("hotelId");
+		//System.out.println(hotelId);
 		HotelBlMMT hotelBl = new HotelBlMMT();
 		ArrayList<HotelRoom> arrayListHotelRoom = null;
 

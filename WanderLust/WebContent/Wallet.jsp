@@ -30,7 +30,7 @@ ${msg}
 </c:if>
 <c:if test="${not empty messageHotel}">
 <jsp:forward page="ConfirmHotelBooking.jsp" >
-<jsp:param name="name" value="${hotelId}" /> 
+<jsp:param name="name" value="${hotelRoomNo}" /> 
 </jsp:forward> 
     
 </c:if>

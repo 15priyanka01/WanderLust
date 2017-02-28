@@ -1,7 +1,7 @@
 package com.mmt.controller;
 
 import java.io.IOException;
-import java.sql.Date;
+import java.util.Date;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -29,18 +29,19 @@ public class PaymentHotelServlet extends HttpServlet {
 		String hotelIDPicked = (String) session.getAttribute("hotelId");
 		User user = (User) session.getAttribute("user");
 		String userId = user.getUserId();
-		double roomPrice=(double) session.getAttribute("roomPrice");
+		double roomPrice=(double) session.getAttribute("RoomPrice");
 		Date dcheckIn = null;
 		Date dcheckOut = null;
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 		try {
-			dcheckIn = (Date) dateFormat.parse((String) session.getAttribute("from"));
+			dcheckIn = (Date)dateFormat.parse((String)session.getAttribute("from"));
+			System.out.println(dcheckIn);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		SimpleDateFormat dateFormat1 = new SimpleDateFormat("dd-MMM-yyyy");
+		SimpleDateFormat dateFormat1 = new SimpleDateFormat("dd-MM-yyyy");
 		try {
 			dcheckOut = (Date) dateFormat1.parse((String) session.getAttribute("to"));
 		} catch (ParseException e) {

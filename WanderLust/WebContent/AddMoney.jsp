@@ -18,8 +18,12 @@ $(document).ready(function(){
 <body>
 <form action="./MoneyAddded">
 <c:if test="${not empty messageFlight}">
-${message}   
+${messageFlight}   
+</c:if><br>
+<c:if test="${not empty messageHotel}">
+${messageHotel}   
 </c:if>
+<br>
 <fieldset>
 
 Amount&nbsp;&nbsp;  :&nbsp; &nbsp; <input type="text" placeholder="Enter Amount" name="amount"/><br>

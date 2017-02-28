@@ -1,8 +1,10 @@
 package com.mmt.controller;
 
 import java.io.IOException;
-import java.sql.Date;
+import java.util.Date;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,7 +24,7 @@ public class ConfirmHotelBooking extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		float valueAfterPromotion = (float) session.getAttribute("finalValuetobepaid");
+		double valueAfterPromotion = (double) session.getAttribute("finalValuetobepaid");
 		User user = (User) session.getAttribute("user");
 		boolean paymentStatus = false;
 		// System.out.println("Entererd here");
@@ -39,11 +41,15 @@ public class ConfirmHotelBooking extends HttpServlet {
 		}
 
 		if (paymentStatus) {
+			SimpleDateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd");
 			HotelBlMMT hotelBlMMT = new HotelBlMMT();
 			HotelBooking hotelBooking = new HotelBooking();
-			Date CheckInDate = (Date) session.getAttribute("checkInDate");
-			Date CheckOutDate = (Date) session.getAttribute("checkOutDate");
-			String hotelId = (String) session.getAttribute("hotelID");
+			
+			Date CheckInDate = null;
+			CheckInDate = (Date)session.getAttribute("checkInDate");
+			Date CheckOutDate = null;
+			CheckOutDate = (Date)session.getAttribute("checkOutDate");
+			String hotelId = (String) session.getAttribute("hotelId");
 			int hotelRoomNo = (int) session.getAttribute("hotelRoomNo");
 			try {
 				hotelBooking = hotelBlMMT.bookHotel(user.getUserId(), hotelId, hotelRoomNo, CheckInDate, CheckOutDate);

@@ -11,7 +11,7 @@
 <body>
 
 <c:set var="userName" scope="session" value="${user.getUserName()}"/>
-<c:if test="${not empty hotelId}">
+<c:if test="${not empty hotelRoomNo}">
    <jsp:forward page="ChoosePromoCodeHotel.jsp" >
    <jsp:param name="hotelId" value="${hotelId}" /> 
    <jsp:param name="hotelRoomNo" value="${hotelRoomNo}" /> 

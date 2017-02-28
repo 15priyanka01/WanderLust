@@ -11,9 +11,7 @@
 	<form action="./HotelBooking">
 		
 			Hotel Name:&nbsp; :&nbsp;${hotelName}<br>
-		
-	<!--  	<br> Hotel Image: &nbsp; :&nbsp;${}<br> -->
-		<br> Room No: &nbsp; :&nbsp;${room}<br>
+		<br> Room No: &nbsp; :&nbsp;${hotelRoomNo}<br>
 		<br> Location:&nbsp; :&nbsp;${place}<br>
 		<br> CheckIn Date: &nbsp; :&nbsp;${from}<br>
 		<br> CheckOut Date: &nbsp; :&nbsp;${to}<br>
