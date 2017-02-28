@@ -124,4 +124,24 @@
     <servlet-name>PaymentHotelServlet</servlet-name>
     <url-pattern>/PaymentHotel</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserProfileServlet</display-name>
+    <servlet-name>UserProfileServlet</servlet-name>
+    <servlet-class>com.mmt.controller.UserProfileServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserProfileServlet</servlet-name>
+    <url-pattern>/UserProfile</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserPastFlightServlet</display-name>
+    <servlet-name>UserPastFlightServlet</servlet-name>
+    <servlet-class>com.mmt.controller.UserPastFlightServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserPastFlightServlet</servlet-name>
+    <url-pattern>/UserPastFlight</url-pattern>
+  </servlet-mapping>
 </web-app>

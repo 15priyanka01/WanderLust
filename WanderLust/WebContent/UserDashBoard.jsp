@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -23,13 +25,17 @@
       <li><a href="LoggInHotelForm.jsp">Hotel</a>  </li>
         
      
-      <li><a href="#">Past Flight Bookings</a></li>
+      <li><a href="./UserPastFlight">Past Flight Bookings</a></li>
       <li><a href="#">Past Hotel Bookings</a></li>
       <li><a href="Wallet.jsp"> Wallet</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="logout.jsp"><span class="glyphicon glyphicon-user"></span> Profile </a></li>
-      <li><a href="profile.jsp"><span class="glyphicon glyphicon-log-out"></span>Logout </a></li>
+    
+    <c:set var="userName" scope="session" value="${user.getUserName()}"/>
+
+    	
+      <li><a href="./UserProfile"><span class="glyphicon glyphicon-user"></span> Hi ${user.getUserName()} </a></li>
+      <li><a href="logout.jsp"><span class="glyphicon glyphicon-log-out"></span>Logout </a></li>
     </ul>
   </div>
   </nav>
