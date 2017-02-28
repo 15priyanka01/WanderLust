@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
      <jsp:include page="UserDashBoard.jsp"></jsp:include>
@@ -16,6 +17,9 @@ $(document).ready(function(){
 </head>
 <body>
 <form action="./MoneyAddded">
+<c:if test="${not empty messageFlight}">
+${messageFlight}   
+</c:if>
 <fieldset>
 
 Amount&nbsp;&nbsp;  :&nbsp; &nbsp; <input type="text" placeholder="Enter Amount" name="amount"/><br>
