@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.mmt.model.bean.Promotion;
+import com.mmt.model.bean.User;
 import com.mmt.model.bl.PromotionBlMMT;
 
 public class ChoosePromoHotelServlet extends HttpServlet {
@@ -21,6 +22,14 @@ public class ChoosePromoHotelServlet extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String hotelId = (String) session.getAttribute("hotelId");
+		String hotelRoomNo= (String) session.getAttribute("hotelRoomNo");
+		User user = (User) session.getAttribute("user");
+		if(user==null){
+			session.setAttribute("hotelId", hotelId);
+			session.setAttribute("hotelRoomNo", hotelRoomNo);
+			RequestDispatcher dispatch = request.getRequestDispatcher("login.jsp");
+			dispatch.forward(request, response);
+		}
 		PromotionBlMMT promoBl = new PromotionBlMMT();
 		ArrayList<Promotion> arrayListPromoHotel = null;
 		try {

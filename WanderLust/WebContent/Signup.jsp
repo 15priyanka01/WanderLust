@@ -27,12 +27,9 @@
 <body>
 
 <jsp:include page="BlackHeader.jsp"></jsp:include>
-<h1> <%= request.getAttribute("msg") %> </h1>
 
-<c:set var="msg"  value=request.getAttribute("msg")/>
-<c:if test="${empty msg}">
-   <p> ${request.getAttribute("msg")} <p>
-</c:if>
+
+   <p style="text-align: center;"> <c:out value="${requestScope.exist}"/></p>   
 
 
 <div class="container">

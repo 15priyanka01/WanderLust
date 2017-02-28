@@ -28,6 +28,12 @@ public class SearchHotelByPlaceServlet extends HttpServlet {
 		String place = request.getParameter("place");
 		String from = request.getParameter("from");
 		String to = request.getParameter("to");
+		int room = Integer.parseInt(request.getParameter("room"));
+		session.setAttribute("place", place);
+		session.setAttribute("from", from);
+		session.setAttribute("to", to);
+		session.setAttribute("room", room);
+		
 		Date date1 = null;
 		Date date2 = null;
 		try {
@@ -38,7 +44,7 @@ public class SearchHotelByPlaceServlet extends HttpServlet {
 			e1.printStackTrace();
 		}
 
-		int room = Integer.parseInt(request.getParameter("room"));
+		
 		HotelBooking HotelBooking = new HotelBooking();
 		HotelBooking.setHotelCheckInDate(date1);
 		HotelBooking.setHotelCheckOutDate(date2);

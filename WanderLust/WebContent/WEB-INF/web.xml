@@ -114,4 +114,14 @@
     <servlet-name>ConfirmFlightBooking</servlet-name>
     <url-pattern>/ConfirmBooking</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PaymentHotelServlet</display-name>
+    <servlet-name>PaymentHotelServlet</servlet-name>
+    <servlet-class>com.mmt.controller.PaymentHotelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PaymentHotelServlet</servlet-name>
+    <url-pattern>/PaymentHotel</url-pattern>
+  </servlet-mapping>
 </web-app>
