@@ -8,11 +8,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Add Money</title>
 <script>
-$(document).ready(function(){
-    $("add").click(function(){
-        alert('Money Successfully added');
-    });
-});
+function check(){
+	if(document.getElementById("amount").value<0)
+	{
+		alert('Add a positive value');
+		document.getElementById("amount").innerHtml="";
+	}
+}
 </script>
 </head>
 <body>
@@ -26,8 +28,8 @@ ${messageHotel}
 <br>
 <fieldset>
 
-Amount&nbsp;&nbsp;  :&nbsp; &nbsp; <input type="text" placeholder="Enter Amount" name="amount"/><br>
-<input type="submit" value="Add" id="add">
+Amount&nbsp;&nbsp;  :&nbsp; &nbsp; <input type="text" placeholder="Enter Amount" id="amount"name="amount"/><br>
+<input type="submit" value="Add" id="add" onclick="check();">
 
 
 </fieldset>
