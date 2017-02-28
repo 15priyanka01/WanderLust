@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.mmt.model.bean.Flight;
+import com.mmt.model.bean.User;
 import com.mmt.model.bl.FlightBookingBlMMT;
 import com.mmt.model.bl.FlightPaymentBl;
 import com.mmt.model.bl.PromotionBlMMT;
@@ -22,7 +23,8 @@ public class PaymentServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String promoPickedID = request.getParameter("promoflight");
 		String flightIDPicked = (String) session.getAttribute("flightId");
-		String userId=(String) session.getAttribute("userID");
+		User user=(User) session.getAttribute("user");
+		String userId=user.getUserId();
 		int noOfSeats = Integer.parseInt((String) session.getAttribute("seats"));
 		FlightBookingBlMMT flightBookingBlMMT = new FlightBookingBlMMT();
 		FlightPaymentBl flightPaymentBl = new FlightPaymentBl();
