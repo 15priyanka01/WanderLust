@@ -3,6 +3,7 @@ package com.mmt.controller;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,8 +38,10 @@ public class SignupServlet extends HttpServlet {
 				
 			}
 			else{
+				request.setAttribute("msg", "You are already registered");
+				RequestDispatcher dispatch = request.getRequestDispatcher("Signup.jsp");
+				dispatch.forward(request, response);
 				
-				response.sendRedirect("Signup.jsp");
 
 			} 
 		} catch (ClassNotFoundException | SQLException e) {

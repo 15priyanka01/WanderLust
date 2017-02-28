@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE>
@@ -26,6 +27,13 @@
 <body>
 
 <jsp:include page="BlackHeader.jsp"></jsp:include>
+<h1> <%= request.getAttribute("msg") %> </h1>
+
+<c:set var="msg"  value=request.getAttribute("msg")/>
+<c:if test="${empty msg}">
+   <p> ${request.getAttribute("msg")} <p>
+</c:if>
+
 
 <div class="container">
   <h2>Enter Information Here</h2>
