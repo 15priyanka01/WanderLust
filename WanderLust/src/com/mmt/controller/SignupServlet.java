@@ -22,17 +22,22 @@ public class SignupServlet extends HttpServlet {
 		UserBlMMT blMMT=new UserBlMMT();
 		user.setUserId(request.getParameter("userId"));
 		user.setUserName(request.getParameter("userName"));
+		
 		user.setUserPhoneNo(Integer.parseInt(request.getParameter("userPhoneNo")));
 		user.setUserEmailId(request.getParameter("userEmailId"));
 		user.setUserAddress(request.getParameter("userAddress"));
+		user.setUserPassword(request.getParameter("userPassword"));
 		
 		try {
 			if(blMMT.searchUser(user.getUserId())==null){
+				//String password=new SendEmail().sendMail(user.getUserEmailId());
+				//user.setUserPassword(password);
 				blMMT.register(user);
+				response.sendRedirect("login.jsp");
 				
 			}
 			else{
-				//call already register
+				response.sendRedirect("Signup.jsp");
 			}
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
