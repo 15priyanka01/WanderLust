@@ -28,8 +28,8 @@ ${messageHotel}
 <br>
 <fieldset>
 
-Amount&nbsp;&nbsp;  :&nbsp; &nbsp; <input type="text" placeholder="Enter Amount" id="amount"name="amount"/><br>
-<input type="submit" value="Add" id="add" onclick="check();">
+Amount&nbsp;&nbsp;  :&nbsp; &nbsp; <input type="text" placeholder="Enter Amount" id="amount"name="amount" onblur="check();"/><br>
+<input type="submit" value="Add" id="add" >
 
 
 </fieldset>
