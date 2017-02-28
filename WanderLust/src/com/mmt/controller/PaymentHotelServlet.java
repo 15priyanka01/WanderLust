@@ -29,7 +29,7 @@ public class PaymentHotelServlet extends HttpServlet {
 		String hotelIDPicked = (String) session.getAttribute("hotelId");
 		User user = (User) session.getAttribute("user");
 		String userId = user.getUserId();
-		float roomPrice=(float) session.getAttribute("roomPrice");
+		double roomPrice=(double) session.getAttribute("roomPrice");
 		Date dcheckIn = null;
 		Date dcheckOut = null;
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
@@ -56,7 +56,7 @@ public class PaymentHotelServlet extends HttpServlet {
 		session.setAttribute("hotelID",hotelIDPicked);
 		HotelBlMMT hotelBlMMT=new HotelBlMMT();
 		HotelPaymentBl hotelPaymentBl=new HotelPaymentBl();
-		float cartValue = 0;
+		double cartValue = 0;
 		cartValue=hotelPaymentBl.cartValue(roomPrice, duration);
 		
 		PromotionBlMMT promotionBlMMT = new PromotionBlMMT();
@@ -85,13 +85,15 @@ public class PaymentHotelServlet extends HttpServlet {
 				RequestDispatcher dispatch = request.getRequestDispatcher("ConfirmHotelBooking.jsp");
 				dispatch.forward(request, response);
 			} else {
-				
-				
-				
-				
 				// Insufficient Funds
 				// Redirect to Add money to wallet and then redirect to confirm
 				// payment JSP Page
+				session.setAttribute("finalValuetobepaid", valueAfterPromotion);
+				String message="Add atleast "+valueAfterPromotion+" to Wallet to book hotel room";
+				session.setAttribute("messageHotel", message);
+				RequestDispatcher dispatch = request.getRequestDispatcher("AddMoney.jsp");
+				dispatch.forward(request, response);
+								
 			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block

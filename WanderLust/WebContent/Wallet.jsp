@@ -28,6 +28,12 @@ ${msg}
 </jsp:forward> 
     
 </c:if>
+<c:if test="${not empty messageHotel}">
+<jsp:forward page="ConfirmHotelBooking.jsp" >
+<jsp:param name="name" value="${hotelId}" /> 
+</jsp:forward> 
+    
+</c:if>
 
 </form>
 </body>

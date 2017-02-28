@@ -66,7 +66,7 @@ public class PaymentServlet extends HttpServlet {
 				// Redirect to Add money to wallet and then redirect to confirm
 				// payment JSP Page
 				session.setAttribute("finalValuetobepaid", valueAfterPromotion);
-				String message="Add atleast "+valueAfterPromotion+" to Wallet ";
+				String message="Add atleast "+valueAfterPromotion+" to Wallet to book flight seat";
 				session.setAttribute("messageFlight", message);
 				RequestDispatcher dispatch = request.getRequestDispatcher("AddMoney.jsp");
 				dispatch.forward(request, response);

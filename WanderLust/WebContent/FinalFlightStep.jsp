@@ -12,7 +12,7 @@
 	<form action="UserLogin.jsp">
 	<c:set var="flightBooing" scope="session" value="${flightBooking}"/>
 	Booking Confirmed!!<br>
-	Booking ID: ${flightBooking.getFlightBookingId()}
+	Booking ID: ${flightBooking.getFlightBookingId()}<br><br>
 	<input type="submit" value="Okay">
 	</form>
 </body>

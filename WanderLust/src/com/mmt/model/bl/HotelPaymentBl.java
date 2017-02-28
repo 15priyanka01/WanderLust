@@ -6,13 +6,13 @@ import java.sql.SQLException;
 public class HotelPaymentBl {
 	WalletBlMMT walletBL=new WalletBlMMT();
 	
-	public float cartValue(float hotelRoomPrice, int days){
-		return hotelRoomPrice*days;
+	public double cartValue(double roomPrice, int days){
+		return roomPrice*days;
 	}
 	
 	public boolean checkFunds(String userId, double valueAfterPromotion ) throws ClassNotFoundException, SQLException, IOException{
-		float amountShort=0;
-		amountShort = (float) ( walletBL.walletBalance(userId)-valueAfterPromotion);
+		double amountShort=0;
+		amountShort = (double) ( walletBL.walletBalance(userId)-valueAfterPromotion);
 		if(amountShort<0){
 			return false;
 		}

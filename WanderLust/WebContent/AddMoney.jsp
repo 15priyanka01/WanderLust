@@ -18,7 +18,7 @@ $(document).ready(function(){
 <body>
 <form action="./MoneyAddded">
 <c:if test="${not empty messageFlight}">
-${messageFlight}   
+${message}   
 </c:if>
 <fieldset>
 
