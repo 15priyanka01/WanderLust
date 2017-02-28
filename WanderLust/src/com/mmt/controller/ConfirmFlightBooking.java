@@ -24,9 +24,13 @@ public class ConfirmFlightBooking extends HttpServlet {
 		float valueAfterPromotion = (float) session.getAttribute("finalValuetobepaid");
 		User user = (User) session.getAttribute("user");
 		boolean paymentStatus = false;
+		//System.out.println("Entererd here");
 		WalletBlMMT walletBlMMT = new WalletBlMMT();
 		try {
+			System.out.println("UserID------: "+user.getUserId());
+			System.out.println("valueAfterPromotion------: "+valueAfterPromotion);
 			paymentStatus = walletBlMMT.subtractWalletMoney(user.getUserId(), (double) valueAfterPromotion);
+			System.out.println("paymentStatus: "+paymentStatus);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

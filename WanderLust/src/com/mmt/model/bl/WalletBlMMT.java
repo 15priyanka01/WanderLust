@@ -42,15 +42,21 @@ public class WalletBlMMT {
 			throws SQLException, ClassNotFoundException, IOException {
 		Wallet w=null;
 		w = walletDao.displayWallet(userId);
-		double temp = w.getWalletBalance() - value;
-		if (temp < 0) {
-			// Exception //Insufficient Funds Add money to wallet
+		if(w==null){
 			return false;
-		} else {
-			w.setWalletBalance(temp);
-			walletDao.updateWallet(userId, w);
-			return true;
 		}
+		else{
+			double temp = w.getWalletBalance() - value;
+			if (temp < 0) {
+				// Exception //Insufficient Funds Add money to wallet
+				return false;
+			} else {
+				w.setWalletBalance(temp);
+				walletDao.updateWallet(userId, w);
+				return true;
+			}
+		}
+		
 
 	}
 }
