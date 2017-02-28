@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <jsp:include page="UserDashBoard.jsp"></jsp:include>
 <!DOCTYPE html >
 <html>
 <head>
@@ -8,13 +9,15 @@
 </head>
 <body>
 <form>
-<fieldset>
+
 <p>
 
 <button type="submit" formaction="AddMoney.jsp">Add Money</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <button type="submit" formaction="./DisplayWallet">Display Wallet</button>
+<br>
+
 </p>
-</fieldset>
+
 </form>
 </body>
 </html>
