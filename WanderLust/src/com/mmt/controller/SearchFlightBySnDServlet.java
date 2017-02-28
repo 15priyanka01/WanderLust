@@ -14,21 +14,20 @@ import javax.servlet.http.HttpSession;
 import com.mmt.model.bean.Flight;
 import com.mmt.model.bl.FlightBookingBlMMT;
 
-
 public class SearchFlightBySnDServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session=request.getSession();
-		String source=request.getParameter("source");
-		String destination=request.getParameter("destination");
-		String departureDate=request.getParameter("departureDate");
-		int seats=Integer.parseInt(request.getParameter("seats"));
-		FlightBookingBlMMT flightBookBl=new FlightBookingBlMMT();
-		ArrayList<Flight> arrayListFlight=null;
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		String source = request.getParameter("source");
+		String destination = request.getParameter("destination");
+		String departureDate = request.getParameter("departureDate");
+		int seats = Integer.parseInt(request.getParameter("seats"));
+		FlightBookingBlMMT flightBookBl = new FlightBookingBlMMT();
+		ArrayList<Flight> arrayListFlight = null;
 		try {
-			arrayListFlight=flightBookBl.searchFlight(source, destination);
+			arrayListFlight = flightBookBl.searchFlight(source, destination);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -36,24 +35,22 @@ public class SearchFlightBySnDServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(arrayListFlight.isEmpty()){
-			String message="No Flights from  "+source+" to "+destination;
+		if (arrayListFlight.isEmpty()) {
+			String message = "No Flights from  " + source + " to " + destination;
 			session.setAttribute("message", message);
 			response.sendRedirect("NoFlightFromStD.jsp");
-		}
-		else{
+		} else {
 			session.setAttribute("seats", seats);
 			session.setAttribute("arrayListFlight", arrayListFlight);
-			RequestDispatcher dispatch=request.getRequestDispatcher("DisplayAllFlightsStD.jsp");
+			RequestDispatcher dispatch = request.getRequestDispatcher("DisplayAllFlightsStD.jsp");
 			dispatch.forward(request, response);
-		
-			
+
 		}
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		doGet(request, response);
 	}
 

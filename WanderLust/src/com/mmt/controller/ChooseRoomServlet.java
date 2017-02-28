@@ -15,19 +15,18 @@ import com.mmt.model.bean.Hotel;
 import com.mmt.model.bean.HotelRoom;
 import com.mmt.model.bl.HotelBlMMT;
 
-
 public class ChooseRoomServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session=request.getSession();
-		String hotelId=(String) session.getAttribute("hotelId");
-		HotelBlMMT hotelBl=new HotelBlMMT();
-		ArrayList<HotelRoom> arrayListHotelRoom=null;
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		String hotelId = (String) session.getAttribute("hotelId");
+		HotelBlMMT hotelBl = new HotelBlMMT();
+		ArrayList<HotelRoom> arrayListHotelRoom = null;
+
 		try {
-			arrayListHotelRoom=hotelBl.displayAvailHotelRoom(hotelId);
+			arrayListHotelRoom = hotelBl.displayAvailHotelRoom(hotelId);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -35,24 +34,23 @@ public class ChooseRoomServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		if(arrayListHotelRoom.isEmpty()){
-			String message="No Hotel Rooms Available" ;
+
+		if (arrayListHotelRoom.isEmpty()) {
+			String message = "No Hotel Rooms Available";
 			session.setAttribute("message", message);
 			response.sendRedirect("NoHotelRoomAvailable.jsp");
-		}
-		else{
-			
+		} else {
+
 			session.setAttribute("arrayListHotelRoom", arrayListHotelRoom);
-			RequestDispatcher dispatch=request.getRequestDispatcher("ChooseRoom.jsp");
+			RequestDispatcher dispatch = request.getRequestDispatcher("ChooseRoom.jsp");
 			dispatch.forward(request, response);
-			
+
 		}
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		doGet(request, response);
 	}
 
