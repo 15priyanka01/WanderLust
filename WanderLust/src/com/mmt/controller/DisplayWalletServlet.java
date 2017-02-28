@@ -22,7 +22,7 @@ public class DisplayWalletServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		WalletBlMMT walletBl = new WalletBlMMT();
 
-		float balance = 0;
+		double balance = 0;
 		User user = (User) session.getAttribute("user");
 		try {
 			balance = walletBl.walletBalance(user.getUserId());

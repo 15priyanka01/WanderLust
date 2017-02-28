@@ -10,14 +10,17 @@
 <body>
 <form>
 
-<p>
+
 
 <button type="submit" formaction="AddMoney.jsp">Add Money</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <button type="submit" formaction="./DisplayWallet">Display Wallet</button>
 <br>
 <br>
- Wallet Status&nbsp; :&nbsp;${balance}
-</p>
+
+<div id="displayBalance">
+Wallet Status&nbsp; :&nbsp;${balance}
+</div>
+
 
 </form>
 </body>

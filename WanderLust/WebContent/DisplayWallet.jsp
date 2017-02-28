@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div id="div">
 Wallet Status&nbsp; :&nbsp;${balance}
+</div>
 </body>
 </html>

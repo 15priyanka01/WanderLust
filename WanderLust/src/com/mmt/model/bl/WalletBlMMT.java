@@ -11,7 +11,7 @@ import com.mmt.model.dao.WalletDaoMMT;
 public class WalletBlMMT {
 	private WalletDaoMMT walletDao = new WalletDaoImplMMT();
 
-	public float walletBalance(String userId) throws SQLException, ClassNotFoundException, IOException {
+	public double walletBalance(String userId) throws SQLException, ClassNotFoundException, IOException {
 		Wallet w;
 
 		w = walletDao.displayWallet(userId);
@@ -19,7 +19,7 @@ public class WalletBlMMT {
 		if (w == null) {
 			return 0;
 		} else {
-			return (float) w.getWalletBalance();
+			return (double) w.getWalletBalance();
 		}
 
 	}

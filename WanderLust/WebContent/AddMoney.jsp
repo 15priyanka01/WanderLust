@@ -6,14 +6,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Add Money</title>
+<script>
+$(document).ready(function(){
+    $("add").click(function(){
+        alert(${msg});
+    });
+});
+</script>
 </head>
 <body>
-<form>
+<form action="./MoneyAddded">
 <fieldset>
 
 Amount&nbsp;&nbsp;  :&nbsp; &nbsp; <input type="text" placeholder="Enter Amount" name="amount"/><br>
-<input type="submit" value="Add">
+<input type="submit" value="Add" id="add">
+
+
 </fieldset>
+<br>
+<br>
 </form>
 </body>
 </html>
