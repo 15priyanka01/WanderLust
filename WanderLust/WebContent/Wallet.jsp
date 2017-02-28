@@ -16,7 +16,7 @@
 <button type="submit" formaction="./DisplayWallet">Display Wallet</button>
 <br>
 <br>
- <jsp:include page="DisplayWallet.jsp"></jsp:include>
+ Wallet Status&nbsp; :&nbsp;${balance}
 </p>
 
 </form>

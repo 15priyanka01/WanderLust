@@ -22,9 +22,9 @@ public class DisplayWalletServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
 		WalletBlMMT walletBl=new WalletBlMMT();
-		ServletRequest context = null;
+		
 		float balance=0;
-		User user=(User)context.getAttribute("user");
+		User user=(User)session.getAttribute("user");
 		try {
 			balance=walletBl.walletBalance(user.getUserId());
 		} catch (ClassNotFoundException | SQLException e) {
@@ -32,7 +32,8 @@ public class DisplayWalletServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		session.setAttribute("balance", balance);
-		RequestDispatcher dispatch=request.getRequestDispatcher("DisplayWallet.jsp");
+		
+		RequestDispatcher dispatch=request.getRequestDispatcher("Wallet.jsp");
 		dispatch.forward(request, response);
 		
 	}
