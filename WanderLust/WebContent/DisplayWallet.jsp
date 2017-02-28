@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Wallet Status  :${balance}
+Wallet Status&nbsp; :&nbsp;${balance}
 </body>
 </html>
