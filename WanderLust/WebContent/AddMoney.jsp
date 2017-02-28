@@ -11,7 +11,7 @@
 <form>
 <fieldset>
 
-Amount&nbsp;&nbsp;  :&nbsp; &nbsp; <input type="text" placeholder="Enter Amount"/><br>
+Amount&nbsp;&nbsp;  :&nbsp; &nbsp; <input type="text" placeholder="Enter Amount" name="amount"/><br>
 <input type="submit" value="Add">
 </fieldset>
 </form>

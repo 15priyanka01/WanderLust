@@ -94,4 +94,14 @@
     <servlet-name>DisplayWalletServlet</servlet-name>
     <url-pattern>/DisplayWallet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MoneyAdddedServlet</display-name>
+    <servlet-name>MoneyAdddedServlet</servlet-name>
+    <servlet-class>com.mmt.controller.MoneyAdddedServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MoneyAdddedServlet</servlet-name>
+    <url-pattern>/MoneyAddded</url-pattern>
+  </servlet-mapping>
 </web-app>
