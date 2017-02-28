@@ -12,5 +12,10 @@
 
  <c:set var="userName" scope="session" value="${user.getUserName()}"/>
 <h1 style="color:blue">welcome ${user.getUserName()}</h1>
+<c:if test="${not empty hotelId}">
+    RequestDispatcher dispatch = request.getRequestDispatcher("ChoosePromoCodeHotel.jsp");
+		dispatch.forward(request, response);
+    
+</c:if>
 </body>
 </html>
