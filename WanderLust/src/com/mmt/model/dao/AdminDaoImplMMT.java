@@ -37,8 +37,9 @@ public class AdminDaoImplMMT implements AdminDao{
 		PreparedStatement pst=con.prepareStatement("select * from admin where ADMINID=?");
 		pst.setString(1, uid);
 		rs=pst.executeQuery();
+		
 		if(rs.next()){
-			
+		
 			admin.setAdminId((rs.getString("ADMINID")));
 			admin.setAdminName((rs.getString("ADMINNAME")));
 			admin.setAdminPhoneNo(rs.getLong("ADMINPHONENO"));

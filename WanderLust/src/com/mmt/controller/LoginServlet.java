@@ -24,13 +24,13 @@ public class LoginServlet extends HttpServlet {
 		UserBlMMT blMMT=new UserBlMMT();
 		String userName=request.getParameter("userName");
 		String password=request.getParameter("password");
-		System.out.println("before try========");
+		
 		try {
 			if(adminBlMMT.checkAdminLogin(userName, password)!=null){
 				session.setAttribute("admin",userName);
 				RequestDispatcher dispatch=request.getRequestDispatcher("AdminLogin.jsp");
 				dispatch.forward(request, response);
-				System.out.println("inside try========");
+				
 			}
 			else if(blMMT.checkLogin(userName, password)!=null){
 				session.setAttribute("user",userName);

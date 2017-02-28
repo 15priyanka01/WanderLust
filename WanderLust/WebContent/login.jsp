@@ -8,12 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-  
-  
-  
-      <link rel="stylesheet" href="css/style.css">
-
-  
+  <link rel="stylesheet" href="css/style.css"> 
 </head>
 
 <body>
@@ -26,12 +21,14 @@
       <button>create</button>
       <p class="message">Already registered? <a href="#">Sign In</a></p>
     </form>
+
     <form class="login-form" action=".\Login">
-      <input type="text" placeholder="username" placeholder="userName" required="required"/>
-      <input type="password" placeholder="password" placeholder="password" required="required"/>
+      <input type="text" placeholder="username" name="userName" placeholder="userName" required="required"/>
+      <input type="password" placeholder="password" name="password" placeholder="password" required="required"/>
       <button>login</button>
+
       <p class="message">Not registered? <a href="Signup.jsp">Create an account</a></p>
-    </form>
+   
   </div>
 </div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

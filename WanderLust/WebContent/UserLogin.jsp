@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="BlackHeader.jsp"></jsp:include>
+<jsp:include page="UserDashBoard.jsp"></jsp:include>
 <h1>welcome user</h1>
 </body>
 </html>
