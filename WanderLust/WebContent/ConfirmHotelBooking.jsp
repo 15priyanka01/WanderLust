@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="./ConfirmHotelBooking">
+	<form action="./HotelBooking">
 		
 			Hotel Name:&nbsp; :&nbsp;${hotelName}<br>
 		

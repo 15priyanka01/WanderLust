@@ -50,8 +50,10 @@ public class PaymentHotelServlet extends HttpServlet {
 		
 		long diff = dcheckOut.getTime() - dcheckIn.getTime();
 		int duration = (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
-		
+		session.setAttribute("checkInDate",dcheckIn );
+		session.setAttribute("checkOutDate", dcheckOut);
 		session.setAttribute("duration", duration);
+		session.setAttribute("hotelID",hotelIDPicked);
 		HotelBlMMT hotelBlMMT=new HotelBlMMT();
 		HotelPaymentBl hotelPaymentBl=new HotelPaymentBl();
 		float cartValue = 0;
