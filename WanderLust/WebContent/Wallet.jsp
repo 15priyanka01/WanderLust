@@ -18,7 +18,8 @@
 <br>
 
 <div id="displayBalance">
-Wallet Status&nbsp; :&nbsp;${balance}
+Wallet Status&nbsp; :&nbsp;${balance}<br>
+${msg}
 </div>
 
 

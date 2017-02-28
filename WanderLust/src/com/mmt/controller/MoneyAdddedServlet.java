@@ -39,8 +39,9 @@ public class MoneyAdddedServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			session.setAttribute("balance", balance);
 			session.setAttribute("msg", msg);
-			RequestDispatcher dispatch=request.getRequestDispatcher("AddMoney.jsp");
+			RequestDispatcher dispatch=request.getRequestDispatcher("Wallet.jsp");
 			dispatch.forward(request, response);
 		}
 	}

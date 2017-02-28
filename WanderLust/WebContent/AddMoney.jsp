@@ -9,7 +9,7 @@
 <script>
 $(document).ready(function(){
     $("add").click(function(){
-        alert(${msg});
+        alert('Money Successfully added');
     });
 });
 </script>
