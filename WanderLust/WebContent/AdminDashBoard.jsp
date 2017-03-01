@@ -10,7 +10,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<SCRIPT type="text/javascript">
+    window.history.forward();
+    function noBack() { window.history.forward(); }
+</SCRIPT>
+
+</head>
+
+<body onload="noBack();"
+    onpageshow="if (event.persisted) noBack();" onunload="">
 <br>
 <br>
 <br>
