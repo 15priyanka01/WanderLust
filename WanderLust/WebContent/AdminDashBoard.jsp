@@ -21,49 +21,55 @@
     
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Flight <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
+         <li><a href="#">Display All</a></li>
+          <li><a href="#">Insert</a></li>
+          <li><a href="#">Delete</a></li>
+           <li><a href="#">Update</a></li>
+            <li><a href="#">Search</a></li>
         </ul>
       </li>
       
        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Hotel <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
+         <li><a href="#">Display All</a></li>
+          <li><a href="#">Insert</a></li>
+          <li><a href="#">Delete</a></li>
+           <li><a href="#">Update</a></li>
+            <li><a href="#">Search</a></li>
         </ul>
       </li>
       
        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Promotion <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
+          <li><a href="#">Display All</a></li>
+          <li><a href="#">Insert</a></li>
+          <li><a href="#">Delete</a></li>
+           <li><a href="#">Update</a></li>
+            <li><a href="#">Search</a></li>
         </ul>
       </li>
       
        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">User <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
+          <li><a href="#">Display All</a></li>
+          <li><a href="#">Delete</a></li>
+         
         </ul>
       </li>
       
        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
+          <li><a href="#">Update Profile</a></li>
+          <li><a href="#">Add Another</a></li>
+          <li><a href="#">Remove Another</a></li>
         </ul>
       </li>
       
      
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      <li><a href="AdminProfile.jsp"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+      <li><a href="./Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>

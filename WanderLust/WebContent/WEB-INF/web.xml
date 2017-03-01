@@ -184,4 +184,14 @@
     <servlet-name>LogoutServlet</servlet-name>
     <url-pattern>/Logout</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminProfileServlet</display-name>
+    <servlet-name>AdminProfileServlet</servlet-name>
+    <servlet-class>com.mmt.controller.AdminProfileSevlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminProfileServlet</servlet-name>
+    <url-pattern>/AdminProfile</url-pattern>
+  </servlet-mapping>
 </web-app>

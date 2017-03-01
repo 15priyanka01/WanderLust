@@ -66,13 +66,13 @@ public class PaymentServlet extends HttpServlet {
 				// Insufficient Funds
 				// Redirect to Add money to wallet and then redirect to confirm
 				// payment JSP Page
-//				session.setAttribute("finalValuetobepaid", valueAfterPromotion);
-//				WalletBlMMT walletBl=new  WalletBlMMT();
-//				double moneyToBeAdded=valueAfterPromotion-(walletBl.walletBalance(userId));
-//				String message="Add atleast "+moneyToBeAdded+" to Wallet to book flight seat";
-//				session.setAttribute("messageFlight", message);
-//				RequestDispatcher dispatch = request.getRequestDispatcher("AddMoney.jsp");
-//				dispatch.forward(request, response);
+				session.setAttribute("finalValuetobepaid", valueAfterPromotion);
+				WalletBlMMT walletBl=new  WalletBlMMT();
+				double moneyToBeAdded=valueAfterPromotion-(walletBl.walletBalance(userId));
+				String message="Add atleast "+moneyToBeAdded+" to Wallet to book flight seat";
+				session.setAttribute("messageFlight", message);
+				RequestDispatcher dispatch = request.getRequestDispatcher("AddMoney.jsp");
+				dispatch.forward(request, response);
 			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
