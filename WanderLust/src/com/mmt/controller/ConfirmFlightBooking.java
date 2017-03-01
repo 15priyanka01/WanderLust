@@ -27,7 +27,6 @@ public class ConfirmFlightBooking extends HttpServlet {
 		//System.out.println("Entererd here");
 		WalletBlMMT walletBlMMT = new WalletBlMMT();
 		try {
-			//System.out.println("UserID------: "+user.getUserId());
 			//System.out.println("valueAfterPromotion------: "+valueAfterPromotion);
 			paymentStatus = walletBlMMT.subtractWalletMoney(user.getUserId(),valueAfterPromotion);
 		//	System.out.println("paymentStatus: "+paymentStatus);
