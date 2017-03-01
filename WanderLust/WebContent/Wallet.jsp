@@ -14,7 +14,7 @@
 
 
 <button type="submit" formaction="AddMoney.jsp">Add Money</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button type="submit" formaction="./DisplayWallet">Display Wallet</button>
+<button type="submit" formaction="./DisplayWallet">Display Wallet Balance</button>
 <br>
 <br>
 

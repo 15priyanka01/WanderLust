@@ -2,6 +2,7 @@ package com.mmt.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,6 +26,7 @@ public class MoneyAdddedServlet extends HttpServlet {
 		boolean value=false;
 		String msg="";
 		double balance = 0;
+		String preciseBalance=null;
 		try {
 			value=walletBl.addWalletMoney(user.getUserId(), moneyToAdd);
 		} catch (ClassNotFoundException | SQLException e) {
@@ -35,11 +37,13 @@ public class MoneyAdddedServlet extends HttpServlet {
 			msg="Successfully Added";
 			try {
 				balance=walletBl.walletBalance(user.getUserId());
+				DecimalFormat df2 = new DecimalFormat(".##");
+				preciseBalance=df2.format(balance);
 			} catch (ClassNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			session.setAttribute("balance", balance);
+			session.setAttribute("balance", preciseBalance);
 			session.setAttribute("msg", msg);
 			RequestDispatcher dispatch=request.getRequestDispatcher("Wallet.jsp");
 			dispatch.forward(request, response);
