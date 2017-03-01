@@ -56,9 +56,9 @@
 				<c:forEach items="${arrayListPromoHotel}" var="hotelPromo">
 					
 					<option value="${hotelPromo.getPromotionId()}">${hotelPromo.getPromotionName()}</option>
-					<c:set var="pidHotel" scope="session"
+					<c:set var="pidHotel" scope="page"
 						value="${hotelPromo.getPromotionId()}" />
-					<c:set var="pdiscountHotel" scope="session"
+					<c:set var="pdiscountHotel" scope="page"
 						value="${hotelPromo.getPromotionDiscount()}" />
 				</c:forEach>
 			</select> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input type="button"
