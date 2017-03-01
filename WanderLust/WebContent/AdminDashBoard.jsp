@@ -39,12 +39,11 @@
       
        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Hotel <span class="caret"></span></a>
         <ul class="dropdown-menu">
-         <li><a href="#">Display All</a></li>
-          <li><a href="#">Add Hotel</a></li>
-           <li><a href="#">Add Hotel Room</a></li>
-          <li><a href="#">Delete</a></li>
-           <li><a href="#">Update</a></li>
-            <li><a href="#">Search</a></li>
+         <li><a href="./AdminHotel?option=display">Display All</a></li>
+          <li><a href="AdminInserHotel.jsp?option=insert">Insert</a></li>
+          <li><a href="./AdminHotel?option=delete">Delete</a></li>
+           <li><a href="./AdminHotel?option=up">Update</a></li>
+            <li><a href="./AdminHotel?option=search">Search</a></li>
         </ul>
       </li>
       
