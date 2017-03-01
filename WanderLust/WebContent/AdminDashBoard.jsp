@@ -3,6 +3,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style >
+body {
+background-image: url(images/img.jpg); /*You will specify your image path here.*/
+
+-moz-background-size: cover;
+-webkit-background-size: cover;
+background-size: cover;
+background-position: top center !important;
+background-repeat: no-repeat; !important;
+background-attachment: fixed;
+}
+</style>
   <title>Bootstrap Case</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">

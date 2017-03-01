@@ -56,7 +56,7 @@ if(session==null || !request.isRequestedSessionIdValid() || session.getAttribute
   <p>...................................</p> 
 </div>
 -->
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br>
 	
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid">
