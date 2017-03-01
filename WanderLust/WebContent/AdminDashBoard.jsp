@@ -42,17 +42,12 @@
         <ul class="dropdown-menu">
  
          <li><a href="./AdminHotel?option=display">Display All</a></li>
-          <li><a href="AdminInserHotel.jsp?option=insert">Insert</a></li>
+          <li><a href="AdminInsertHotel.jsp?option=insert">Insert</a></li>
           <li><a href="./AdminHotel?option=delete">Delete</a></li>
            <li><a href="./AdminHotel?option=up">Update</a></li>
             <li><a href="./AdminHotel?option=search">Search</a></li>
 
-         <li><a href="#">Display All</a></li>
-          <li><a href="#">Add Hotel</a></li>
-           <li><a href="#">Add Hotel</a></li>
-          <li><a href="#">Delete</a></li>
-           <li><a href="#">Update</a></li>
-            <li><a href="#">Search</a></li>
+         
         </ul>
       </li>
       
