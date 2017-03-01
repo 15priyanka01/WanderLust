@@ -164,4 +164,24 @@
     <servlet-name>ConfirmHotelBooking</servlet-name>
     <url-pattern>/HotelBooking</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserPastHotelServlet</display-name>
+    <servlet-name>UserPastHotelServlet</servlet-name>
+    <servlet-class>com.mmt.controller.UserPastHotelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserPastHotelServlet</servlet-name>
+    <url-pattern>/UserPastHotel</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutServlet</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.mmt.controller.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
 </web-app>

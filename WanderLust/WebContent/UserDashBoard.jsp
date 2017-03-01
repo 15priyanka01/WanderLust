@@ -26,7 +26,7 @@
         
      
       <li><a href="./UserPastFlight">Past Flight Bookings</a></li>
-      <li><a href="#">Past Hotel Bookings</a></li>
+      <li><a href="./UserPastHotel">Past Hotel Bookings</a></li>
       <li><a href="Wallet.jsp"> Wallet</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
@@ -34,7 +34,7 @@
     <c:set var="userName" scope="session" value="${user.getUserName()}"/>
 
     	
-      <li><a href="./UserProfile"><span class="glyphicon glyphicon-user"></span> Hi ${user.getUserName()} </a></li>
+      <li><a href="./UserProfile"><span class="glyphicon glyphicon-user"></span>  ${user.getUserName()} </a></li>
       <li><a href="logout.jsp"><span class="glyphicon glyphicon-log-out"></span>Logout </a></li>
     </ul>
   </div>
