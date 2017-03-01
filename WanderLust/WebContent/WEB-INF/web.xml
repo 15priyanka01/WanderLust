@@ -204,4 +204,14 @@
     <servlet-name>AdminUserProfileServlet</servlet-name>
     <url-pattern>/AdminUserProfile</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminPromotionServlet</display-name>
+    <servlet-name>AdminPromotionServlet</servlet-name>
+    <servlet-class>com.mmt.controller.AdminPromotionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminPromotionServlet</servlet-name>
+    <url-pattern>/AdminPromotion</url-pattern>
+  </servlet-mapping>
 </web-app>
