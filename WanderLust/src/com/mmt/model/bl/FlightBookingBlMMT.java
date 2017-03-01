@@ -63,7 +63,7 @@ public class FlightBookingBlMMT {
 				//System.out.println("Seats Available!!");
 				// Date d=new Date();
 				FlightBooking FBD = new FlightBooking();
-				//changes
+				//changess
 				int hbid = 10000 + (int) (Math.random() * 11000);
 				//System.out.println("Random No"+hbid);
 				String id = Integer.toString(hbid);
