@@ -20,6 +20,18 @@
     function noBack() { window.history.forward(); }
 </SCRIPT>
 
+
+<meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .jumbotron {
+      background-color: #f4511e;
+      color: #fff;
+  }
+  </style> 
+
 </head>
 
 <body onload="noBack();"
@@ -44,15 +56,11 @@ if(session==null || !request.isRequestedSessionIdValid() || session.getAttribute
 
 %>
 
-
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+<div class="jumbotron text-center">
+  <h1>Wonder Lust</h1> 
+  <p>...................................</p> 
+</div>
+	
 	<br>
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid">
