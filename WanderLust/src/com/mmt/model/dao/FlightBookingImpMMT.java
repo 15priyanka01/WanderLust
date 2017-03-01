@@ -50,7 +50,7 @@ public class FlightBookingImpMMT implements FlightBookingDaoMMT {
 	public ArrayList<FlightBooking> searchFlightBooking(String userId)
 			throws ClassNotFoundException, SQLException, IOException {
 
-		FlightBooking fb = new FlightBooking();
+		FlightBooking fb =null;
 		ArrayList<FlightBooking> fList = new ArrayList<FlightBooking>();
 		ResultSet rs;
 		con = DbConnection.dbConnection();
@@ -59,6 +59,7 @@ public class FlightBookingImpMMT implements FlightBookingDaoMMT {
 		pst.setString(1, userId);
 		rs = pst.executeQuery();
 		while (rs.next()) {
+			fb= new FlightBooking();
 			fb.setFlightBookingId(rs.getString("flightBookingId"));
 			fb.setFlightId(rs.getString("flightId"));
 			fb.setUserId(rs.getString("userId"));
