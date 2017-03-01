@@ -31,7 +31,7 @@ public class ChoosePromoHotelServlet extends HttpServlet {
 		try {
 			arrayListPromoHotel = promoBl.displayPromotion("HOTEL");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+			// TODO Auto-generated catch block isdhaihsidh
 			e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
