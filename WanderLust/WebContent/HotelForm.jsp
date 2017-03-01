@@ -12,11 +12,17 @@
  <script>
 $(document).ready(function() {
 	var today = new Date();
-	var tomorrow=new Date();
+	var tomorrow = new Date();
 	var dd = today.getDate();
-	var dd1 = tomorrow.getDate()+1;
 	var mm = today.getMonth()+1; //January is 0!
 	var yyyy = today.getFullYear();
+	var dd1 = today.getDate()+1;
+	var mm1 = today.getMonth()+1; 
+	
+	if(mm==2 && dd==28){
+		mm1=3;
+		dd1=1;
+			}
 	 if(dd<10){
 	        dd='0'+dd
 	        
@@ -24,9 +30,16 @@ $(document).ready(function() {
 	    if(mm<10){
 	        mm='0'+mm
 	    } 
+	    if(dd1<10){
+	        dd1='0'+dd1
+	        
+	    } 
+	    if(mm1<10){
+	        mm1='0'+mm1
+	    } 
 
 	today = yyyy+'-'+mm+'-'+dd;
-	tomorrow=yyyy+'-'+mm+'-'+dd1;
+	tomorrow=yyyy+'-'+mm1+'-'+dd1;
 	document.getElementById("from").setAttribute("min", today);
 	document.getElementById("to").setAttribute("min", tomorrow);
    $("#to").blur(function(){

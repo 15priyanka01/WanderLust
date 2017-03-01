@@ -14,7 +14,7 @@ import com.mmt.model.bean.HotelRoom;
 
 
 public class HotelDaoImplMMT implements HotelDaoMMT {
-	Connection con;
+	Connection con=null;
 	@Override
 	public int insertHotel(Hotel h) throws SQLException, ClassNotFoundException, IOException {
 		
@@ -254,6 +254,7 @@ public class HotelDaoImplMMT implements HotelDaoMMT {
 			hotel.setHotelName(rs.getString("hotelName"));
 			hotel.setHotelLocation(rs.getString("hotelLocation"));
 			hotel.setHotelInfo(rs.getString("hotelInfo"));
+			hotel.setHotelImage(rs.getString("hotelImage"));
 			PreparedStatement pst1=con.prepareStatement("select * from hotelroom where hotelId=?");
 			
 			pst1.setString(1, (rs.getString("hotelId")));

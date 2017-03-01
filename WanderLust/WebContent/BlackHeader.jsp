@@ -11,7 +11,7 @@
 <title>Wander Lust</title>
 </head>
 <body>
-<form action="/action_page.php">
+<form action="">
 <br><br><br><br><br><br><br><br><br>
  <nav class="navbar navbar-inverse"> 
   <div class="container-fluid">

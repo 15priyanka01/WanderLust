@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE>
@@ -27,25 +28,29 @@
 
 <jsp:include page="BlackHeader.jsp"></jsp:include>
 
+
+   <p style="text-align: center;"> <c:out value="${requestScope.exist}"/></p>   
+
+
 <div class="container">
   <h2>Enter Information Here</h2>
-  <form class="form-horizontal" action="login.jsp">
+  <form class="form-horizontal" action="./Signup">
     <div class="form-group">
       <label class="control-label col-sm-2" for="userId">User Id:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" name="userId" id="userId" placeholder="Enter user id">
+        <input type="text" class="form-control" name="userId" id="userId" placeholder="Enter user id" required/>
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="userName">Name:</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" name="userName" id="userName" placeholder="Enter name">
+        <input type="text" class="form-control" name="userName" id="userName" placeholder="Enter name"  required/>
       </div>
     </div>
      <div class="form-group">
       <label class="control-label col-sm-2" for="userPhoneNo">Phone no:</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" name="userPhoneNo" id="userPhoneNo" placeholder="Enter phone no">
+        <input type="tel" class="form-control" name="userPhoneNo" id="userPhoneNo" placeholder="Enter phone no"  required/>
       </div>
     </div>
      <div class="form-group">
@@ -57,16 +62,17 @@
      <div class="form-group">
       <label class="control-label col-sm-2" for="userAddress">Address:</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" name="userAddress" id="pwd" placeholder="Enter address">
+        <input type="text" class="form-control" name="userAddress" id="pwd" placeholder="Enter address"  required/>
       </div>
     </div>
+
        <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Password:</label>
       <div class="col-sm-10">          
-        <input type="password" class="form-control" name="userPassword" id="pwd" placeholder="Enter password">
+        <input type="password" class="form-control" name="userPassword" id="pwd" placeholder="Enter password"  required/>
       </div>
     </div>
-    
+
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <div class="checkbox">

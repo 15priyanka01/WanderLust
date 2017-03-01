@@ -40,7 +40,7 @@ function loadDoc() {
 </style>
 </head>
 <body>
-<form action="login.jsp">
+<form action="./PaymentHotel">
 
 
 <p><b>Select a Promo Code</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -49,16 +49,16 @@ function loadDoc() {
 <!--<c:set var="flightPromo" scope="session" value="${arrayListPromoFlight}"/>-->
 <c:forEach items="${arrayListPromoHotel}" var="hotelPromo">
 <option value="-">----</option>
-<option value="${hotelPromo.getPromotionName()}">${hotelPromo.getPromotionName()}</option>
+<option value="${hotelPromo.getPromotionId()}">${hotelPromo.getPromotionName()}</option>
 </c:forEach>
 </select>
 
 &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-<input type="button" id="applyPromo" value="Apply" onclick="loadDoc()"/></p>
+<input type="button" id="applyPromo" value="Apply" onclick="loadDoc()"/></p><br>
 <p id="demo"></p>
 
 <p>
-<input type="submit" id="continue" value="Login to Continue"/>
+<input type="submit" id="continue" value="Pay Now"/>
 </p>
 
 </form>

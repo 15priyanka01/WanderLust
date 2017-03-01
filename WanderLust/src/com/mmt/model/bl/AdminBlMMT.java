@@ -66,9 +66,11 @@ public class AdminBlMMT {
 		
 		Admin admin = (Admin) admindao.search(username);
 		if(admin==null){
+			
 			return null;
 		}
 		else if (admin!=null && (admin.getAdminId().equals(username) && admin.getAdminPassword().equals(password))){
+			
 			return admin;
 		}
 		return null;

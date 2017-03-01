@@ -8,15 +8,18 @@ public class Hotel {
 	private String hotelName;
 	private String hotelLocation;
 	private String hotelInfo;
+	private String hotelImage;
 	private ArrayList<HotelRoom> hotelRoom;
-	public Hotel(String hotelId, String hotelName, String hotelLocation, String hotelInfo, ArrayList<HotelRoom> hotelRoom) {
+	
+	public Hotel(String hotelId, String hotelName, String hotelLocation, String hotelInfo, String hotelImage,
+			ArrayList<HotelRoom> hotelRoom) {
 		super();
 		this.hotelId = hotelId;
 		this.hotelName = hotelName;
 		this.hotelLocation = hotelLocation;
 		this.hotelInfo = hotelInfo;
+		this.hotelImage = hotelImage;
 		this.hotelRoom = hotelRoom;
-		
 	}
 	public Hotel() {
 		super();
@@ -55,8 +58,15 @@ public class Hotel {
 	@Override
 	public String toString() {
 		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", hotelLocation=" + hotelLocation
-				+ ", hotelInfo=" + hotelInfo + ", hotelRoom=" + hotelRoom + "]";
+				+ ", hotelInfo=" + hotelInfo + ", hotelImage=" + hotelImage + ", hotelRoom=" + hotelRoom + "]";
 	}
+	public String getHotelImage() {
+		return hotelImage;
+	}
+	public void setHotelImage(String hotelImage) {
+		this.hotelImage = hotelImage;
+	}
+	
 	
 	
 }

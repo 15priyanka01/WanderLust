@@ -33,20 +33,21 @@ public class PromotionBlMMT {
 		return promotionDao.searchPromotion(promotionId);
 	}
 	
-	public float applyPromotion(Promotion p, String userId, float TicketPrice){
-		float finalPrice;
-		float currentPrice=TicketPrice;
+	public double applyPromotion(Promotion p, String userId, double cartValue){
+		double finalPrice=0;
+		double currentPrice=cartValue;
 		if(p==null)
-			System.out.println("No promotions");
-		System.out.println("Promotion: "+p.getPromotionId());
-		if((currentPrice-p.getPromotionDiscount())>0){
-			float discount= (float) ((p.getPromotionDiscount()/100)*currentPrice);
+			//System.out.println("No promotions");
+			return cartValue;
+	//	System.out.println("Promotion: "+p.getPromotionId());
+		if((currentPrice-p.getPromotionMinRequiredAmount())>0){
+			double discount= (double) ((p.getPromotionDiscount()/100)*currentPrice);
 			finalPrice=currentPrice-discount;
 			return finalPrice;
 		}
 		else{
 			//Make an Exception // Make logic if cart value is less than minimum required amount
-			System.out.println("Cart Value should be greater than "+p.getPromotionMinRequiredAmount());
+			//System.out.println("Cart Value should be greater than "+p.getPromotionMinRequiredAmount());
 			return currentPrice;
 		}
 	}

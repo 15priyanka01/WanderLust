@@ -39,7 +39,7 @@ th {
 
 <table border="1">
 	<tr>
-	<th></th>
+	
 	<th>HotelRoomNo</th>
 	<th>HotelRoomType</th>
 	<th>HotelRoomPrice</th>
@@ -48,14 +48,16 @@ th {
 	</tr>
 <c:forEach items="${arrayListHotelRoom}" var="hotelRoom">
 <tr>
-	<td><img src="images/hotelroom.jpg"  height="100" width="100"/></td>
+	<!--<td><img src="images/hotelroom.jpg"  height="100" width="100"/></td>-->
 	<!-- <c:set var="hotelId" scope="session" value="${hotel.getHotelId()}"/>-->
      <td><c:out value="${hotelRoom.getHotelRoomNo()}" /></td>
      <td><c:out value="${hotelRoom.getHotelRoomType()}" /></td>
      <td><c:out value="${hotelRoom.getHotelRoomPrice()}" /></td>
       <td>
       <form action="./ChoosePromoHotel">
-      <c:set var="hotelId" scope="session" value="${hotel.getHotelId()}"/>
+      <c:set var="hotelRoomNo" scope="session" value="${hotelRoom.getHotelRoomNo()}"/>
+      <c:set var="RoomPrice" scope="session" value="${hotelRoom.getHotelRoomPrice()}"/>
+      <!--<c:set var="hotelId" scope="session" value="${hotel.getHotelId()}"/>-->
       <button type="submit" id="book">Book Now</button>
       </form>
       </td>

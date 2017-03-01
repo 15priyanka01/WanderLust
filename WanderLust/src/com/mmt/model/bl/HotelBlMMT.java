@@ -65,7 +65,7 @@ public class HotelBlMMT {
 			if(r.getHotelRoomNo()==hotelRoomNo)
 			{
 				index=count;
-				if(r.getHotelRoomStatus().equals("not"))
+				if(r.getHotelRoomStatus().equals("booked"))
 				{
 					return null;
 				}
@@ -73,7 +73,7 @@ public class HotelBlMMT {
 				{
 					rnew.setHotelRoomNo(r.getHotelRoomNo());
 					rnew.setHotelRoomPrice(r.getHotelRoomPrice());
-					rnew.setHotelRoomStatus("not");
+					rnew.setHotelRoomStatus("booked");
 					rnew.setHotelRoomType(r.getHotelRoomType());
 					
 				}

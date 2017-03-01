@@ -60,10 +60,10 @@ public class FlightBookingBlMMT {
 				return null;
 			} else {
 				f.setAvailableSeats(f.getAvailableSeats() - rseats);
-				System.out.println("Seats Available!!");
+				//System.out.println("Seats Available!!");
 				// Date d=new Date();
 				FlightBooking FBD = new FlightBooking();
-
+				//changess
 				int hbid = 10000 + (int) (Math.random() * 11000);
 				//System.out.println("Random No"+hbid);
 				String id = Integer.toString(hbid);
@@ -71,9 +71,6 @@ public class FlightBookingBlMMT {
 				FBD.setUserId(UId);
 				FBD.setFlightId(fid);
 				FBD.setFlightBookingId(id);
-				//System.out.println("BOOiinh IDs "+FBD.getFlightBookingId());
-			//	System.out.println("Date: "+FBD.getFlightBookingDate());
-				//System.out.println("BL fbd object:"+FBD);
 				FBD.setFlightBookingDate(date);
 				FBD.setFlag(true);
 				flightBookingDao.insertFlightBooking(FBD);

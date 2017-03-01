@@ -11,7 +11,7 @@ import com.mmt.model.dao.WalletDaoMMT;
 public class WalletBlMMT {
 	private WalletDaoMMT walletDao = new WalletDaoImplMMT();
 
-	public float walletBalance(String userId) throws SQLException, ClassNotFoundException, IOException {
+	public double walletBalance(String userId) throws SQLException, ClassNotFoundException, IOException {
 		Wallet w;
 
 		w = walletDao.displayWallet(userId);
@@ -19,7 +19,7 @@ public class WalletBlMMT {
 		if (w == null) {
 			return 0;
 		} else {
-			return (float) w.getWalletBalance();
+			return (double) w.getWalletBalance();
 		}
 
 	}
@@ -28,6 +28,7 @@ public class WalletBlMMT {
 		return walletDao.displayWalletAll();
 	}
 
+	// comment
 	public boolean addWalletMoney(String userId, Double value)
 			throws SQLException, ClassNotFoundException, IOException {
 		Wallet w;
@@ -40,8 +41,9 @@ public class WalletBlMMT {
 
 	public boolean subtractWalletMoney(String userId, Double value)
 			throws SQLException, ClassNotFoundException, IOException {
-		Wallet w;
+		Wallet w = null;
 		w = walletDao.displayWallet(userId);
+
 		double temp = w.getWalletBalance() - value;
 		if (temp < 0) {
 			// Exception //Insufficient Funds Add money to wallet
