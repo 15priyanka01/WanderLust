@@ -214,4 +214,14 @@
     <servlet-name>AdminPromotionServlet</servlet-name>
     <url-pattern>/AdminPromotion</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminHotelServlet</display-name>
+    <servlet-name>AdminHotelServlet</servlet-name>
+    <servlet-class>com.mmt.controller.AdminHotelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminHotelServlet</servlet-name>
+    <url-pattern>/AdminHotel</url-pattern>
+  </servlet-mapping>
 </web-app>
