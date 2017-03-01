@@ -30,9 +30,11 @@
             <c:forEach items="${bookedFlightList}" var="list">
             <tbody>
                 <tr>
-                    <td>${ list.getFlightBookingId()}</td>
-                    <td>${ list.getFlightId()}</td>
-                    <td>${ list.getFlightBookingDate()}</td>
+                
+                    <td><c:out value="${ list.getFlightBookingId()}" /></td>
+                    <td><c:out value="${ list.getFlightId()}" /></td>
+                    <td><c:out value="${ list.getFlightBookingDate()}" /></td>
+                 
                 </tr>
             </tbody>
             </c:forEach>
