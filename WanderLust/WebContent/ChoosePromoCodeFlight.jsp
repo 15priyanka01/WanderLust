@@ -54,7 +54,7 @@
 				<c:forEach items="${arrayListPromoFlight}" var="flightPromo">
 					<option value="-">----</option>
 					<option value="${flightPromo.getPromotionId()}">${flightPromo.getPromotionName()}</option>
-					<c:set var="pidFlight" scope="page" value="${flightPromo.getPromotionId()}"/>
+					<c:set var="pidFlight" scope="session" value="${flightPromo.getPromotionId()}"/>
 					<c:set var="pdiscountFlight" scope="session" value="${flightPromo.getPromotionDiscount()}"/>
 				</c:forEach>
 				 
