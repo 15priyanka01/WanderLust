@@ -96,7 +96,7 @@ public class AdminFlightServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			if(flightSearched==null){
-				msg="Flight doesn't Exist";
+				msg="Flight doesn't Exist with ID = "+searchFlightId;
 				session.setAttribute("msg",msg);
 			}
 			else{	
@@ -112,7 +112,7 @@ public class AdminFlightServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			if(arrayListFlight.isEmpty()){
-				msg="No Flights Exist";
+				msg="No Flights Exist ";
 				session.setAttribute("msg",msg);
 			}
 			else{
