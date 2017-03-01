@@ -11,6 +11,10 @@ td {
     height: 30px;
     vertical-align: bottom;
 }
+th, td {
+    padding: 5px;
+    text-align: left;
+}
 body{
 color:maroon;
 }</style>
