@@ -31,36 +31,18 @@ public class PaymentHotelServlet extends HttpServlet {
 		User user = (User) session.getAttribute("user");
 		String userId = user.getUserId();
 		double roomPrice=(double) session.getAttribute("RoomPrice");
-		Date dcheckIn = null;
-		Date dcheckOut = null;
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-		try {
-			dcheckIn = (Date)dateFormat.parse((String)session.getAttribute("from"));
-			System.out.println(dcheckIn);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		String dcheckIn = (String)session.getAttribute("from");
+		String dcheckOut = (String) session.getAttribute("to");
 		
-		SimpleDateFormat dateFormat1 = new SimpleDateFormat("dd-MM-yyyy");
-		try {
-			dcheckOut = (Date) dateFormat1.parse((String) session.getAttribute("to"));
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		long diff = dcheckOut.getTime() - dcheckIn.getTime();
-		int duration = (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
-		session.setAttribute("checkInDate",dcheckIn );
-		session.setAttribute("checkOutDate", dcheckOut);
-		session.setAttribute("duration", duration);
+		//session.setAttribute("checkInDate",dcheckIn );
+		//session.setAttribute("checkOutDate", dcheckOut);
+		//session.setAttribute("duration", duration);
+		int duration=(int) session.getAttribute("duration");
 		session.setAttribute("hotelID",hotelIDPicked);
 		HotelBlMMT hotelBlMMT=new HotelBlMMT();
 		HotelPaymentBl hotelPaymentBl=new HotelPaymentBl();
 		double cartValue = 0;
 		cartValue=hotelPaymentBl.cartValue(roomPrice, duration);
-		
 		PromotionBlMMT promotionBlMMT = new PromotionBlMMT();
 		double valueAfterPromotion = 0;
 		
@@ -74,7 +56,9 @@ public class PaymentHotelServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		//System.out.println(Entered );
 		
+		//System.out.println("Enteredn Loop 3!!!! "+status);
 		try {
 			if (hotelPaymentBl.checkFunds(userId, valueAfterPromotion)) {
 				
@@ -82,11 +66,12 @@ public class PaymentHotelServlet extends HttpServlet {
 				// Redirect to Confirm Payment JSP Page
 				
 				session.setAttribute("finalValuetobepaid", valueAfterPromotion);
-				//System.out.println("Enter loop4:----- ");
+				//System.out.println("Enter loop4:----- "+valueAfterPromotion);
 
 				RequestDispatcher dispatch = request.getRequestDispatcher("ConfirmHotelBooking.jsp");
 				dispatch.forward(request, response);
 			} else {
+				//System.out.println("Enter loop5:----- "+valueAfterPromotion);
 				// Insufficient Funds
 				// Redirect to Add money to wallet and then redirect to confirm
 				// payment JSP Page

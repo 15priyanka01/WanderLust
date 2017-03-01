@@ -46,10 +46,10 @@ public class ConfirmHotelBooking extends HttpServlet {
 			HotelBooking hotelBooking = new HotelBooking();
 			
 			Date CheckInDate = null;
-			CheckInDate = (Date)session.getAttribute("checkInDate");
+			CheckInDate = (Date)session.getAttribute("din");
 			Date CheckOutDate = null;
-			CheckOutDate = (Date)session.getAttribute("checkOutDate");
-			String hotelId = (String) session.getAttribute("hotelId");
+			CheckOutDate = (Date)session.getAttribute("dout");
+			String hotelId = (String) session.getAttribute("hID");
 			int hotelRoomNo = (int) session.getAttribute("hotelRoomNo");
 			try {
 				hotelBooking = hotelBlMMT.bookHotel(user.getUserId(), hotelId, hotelRoomNo, CheckInDate, CheckOutDate);

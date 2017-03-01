@@ -10,9 +10,9 @@
 </head>
 <body>
 <form action="UserLogin.jsp">
-	<c:set var="hotelBooing" scope="session" value="${hotelBooking}"/>
+	<c:set var="hotelBooking" scope="session" value="${hotelBooking}"/>
 	Booking Confirmed!!<br>
-	Booking ID: ${hotelbooking.getHotelBookingId()}<br><br>
+	Booking ID: ${hotelBooking.getHotelBookingId()}<br><br>
 	<input type="submit" value="Okay">
 	</form>
 </body>
