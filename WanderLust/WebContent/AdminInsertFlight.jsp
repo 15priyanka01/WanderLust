@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <jsp:include page="AdminDashBoard.jsp"></jsp:include>
 <!DOCTYPE html >
 <html>
 <head>
@@ -9,7 +10,7 @@
 </head>
 <body>
 
-<form action="">
+<form action="./AdminFlight">
 <c:set var="option" scope="session" value="${option}"/>
 <fieldset>
 <legend>Fill Flight Details</legend>

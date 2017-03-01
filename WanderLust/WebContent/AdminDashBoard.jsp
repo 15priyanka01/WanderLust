@@ -40,7 +40,8 @@
        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Hotel <span class="caret"></span></a>
         <ul class="dropdown-menu">
          <li><a href="#">Display All</a></li>
-          <li><a href="#">Insert</a></li>
+          <li><a href="#">Add Hotel</a></li>
+           <li><a href="#">Add Hotel Room</a></li>
           <li><a href="#">Delete</a></li>
            <li><a href="#">Update</a></li>
             <li><a href="#">Search</a></li>
