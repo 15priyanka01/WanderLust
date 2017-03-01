@@ -7,13 +7,13 @@
 <head>
 <style >
 body {
-background-image: url(images/bgd.jpg); /*You will specify your image path here.*/
+background-image: url(images/img.jpg); /*You will specify your image path here.*/
 
 -moz-background-size: cover;
 -webkit-background-size: cover;
 background-size: cover;
 background-position: top center !important;
-background-repeat: no-repeat !important;
+background-repeat: no-repeat; !important;
 background-attachment: fixed;
 }
 </style>
