@@ -37,13 +37,6 @@
 <body onload="noBack();"
     onpageshow="if (event.persisted) noBack();" onunload="">
 
-
-
-
-
-
-
-
 <%@ page errorPage="Logout.jsp" %>
 
 <%
@@ -61,7 +54,6 @@ if(session==null || !request.isRequestedSessionIdValid() || session.getAttribute
   <p>...................................</p> 
 </div>
 	
-	<br>
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid">
 
