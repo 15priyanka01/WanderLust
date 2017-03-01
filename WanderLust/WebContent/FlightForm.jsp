@@ -57,12 +57,19 @@ $(function() {
 	font-weight: 400;
 
 }
+td {
+    height: 50px;
+    vertical-align: bottom;
+}
+body{
+color:maroon;}
   </style>
 </head>
 <body>
 <form action="./SearchFlightBySnD">
-<p>
-<b>Source</b>&nbsp; :&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<table style="padding-bottom: 40px;padding-top: 50px;">
+<tr>
+<td><b>Source</b></td><td>
 <select id="source" name="source" required="required">
 	
    <option value="delhi">New Delhi</option>
@@ -70,29 +77,31 @@ $(function() {
     <option value="bangalore">Bangalore</option>
     <option value="chennai">Chennai</option>
     <option value="goa">Goa</option>
-</select>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<b>Destination:</b>&nbsp;&nbsp;
+</select></td></tr>
+<tr>
+<td>
+<b>Destination:</b></td><td>
 <select id="destination" name="destination" required="required">
 		<option value="mumbai">Mumbai</option>
    <option value="delhi">New Delhi</option>
      <option value="bangalore">Bangalore</option>
     <option value="chennai">Chennai</option>
     <option value="goa">Goa</option>
-</select>
+</select></td>
+
+</tr>
+<tr><td>
+<b>Depature-Date:</b></td>
+     <td>   
+<input id="departureDate" name="departureDate" type="date" placeholder="dd/mm/yyyy" min="" required/></td></tr>
 
 
-<p>
-<b>Depature-Date:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        
-<input id="departureDate" name="departureDate" type="date" placeholder="dd/mm/yyyy" min="" required/></p>
-
-<p>
-                      <b>Number of Seats :</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <input type="number" name="seats" value="1" min="1"/>
-  </p>                    
-   <p>    <input type="submit" value="Search" id="submit" onclick="check()"/></p>               
-                       
+                  <tr> <td> <b>Number of Seats :</b></td>
+                    <td> <input type="number" name="seats" value="1" min="1"/></td></tr>
+       <tr>  <td></td>  <td><input type="submit" value="Search" id="submit" onclick="check()"/>  </td>  </tr>          
+                      
+       </table>             
+                      
                     
 </form>
 </body>
