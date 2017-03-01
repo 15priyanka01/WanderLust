@@ -116,4 +116,16 @@ public class HotelBlMMT {
 		return HR;
 	}
 	
+	
+	public ArrayList<String> getHotelLocationList() throws ClassNotFoundException, SQLException, IOException{
+		ArrayList<Hotel> hotelList=hotelDao.displayHotel();
+		ArrayList<String> list=new ArrayList<String>();
+		for(Hotel hotel:hotelList){
+			list.add(hotel.getHotelLocation());
+		
+		}
+		return list;
+		
+	}
+	
 }

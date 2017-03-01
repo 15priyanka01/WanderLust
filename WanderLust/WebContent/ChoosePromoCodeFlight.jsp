@@ -9,7 +9,7 @@
 <title>Choose Promo</title>
 <script>
 	function loadDoc() {
-		var xhttp;
+	/*	var xhttp;
 		if (window.XMLHttpRequest) {
 			// code for modern browsers
 			xhttp = new XMLHttpRequest();
@@ -23,7 +23,9 @@
 			}
 		};
 		xhttp.open("GET", "flightPromo.txt", true);
-		xhttp.send();
+		xhttp.send();*/
+		
+		document.getElementById("demo").innerHTML="Congrats! You got a discount of "+'${pdiscountFlight}' +"%<br>Your Promotion ID is "+ ' ${pidFlight}';
 	}
 </script>
 <style>
@@ -52,10 +54,12 @@
 				<c:forEach items="${arrayListPromoFlight}" var="flightPromo">
 					<option value="-">----</option>
 					<option value="${flightPromo.getPromotionId()}">${flightPromo.getPromotionName()}</option>
+					<c:set var="pidFlight" scope="page" value="${flightPromo.getPromotionId()}"/>
+					<c:set var="pdiscountFlight" scope="session" value="${flightPromo.getPromotionDiscount()}"/>
 				</c:forEach>
 				 
 			</select> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input type="button"
-				id="applyPromo" value="Apply" onclick="loadDoc()" />
+				id="applyPromo" value="Apply" onclick="loadDoc();" />
 		</p>
 		<p id="demo"></p>
 

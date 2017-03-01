@@ -1,4 +1,8 @@
+<%@page import="com.mmt.model.bl.HotelBlMMT"%>
+<%@page import="java.util.ArrayList"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page import="java.text.SimpleDateFormat"%>
+
 <%@ page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="ISO-8859-1"%>
@@ -91,6 +95,35 @@ $(document).ready(function() {
 <fieldset>
 
 
+
+	
+
+
+
+<%-- "${new HotelBlMMT().getHotelLocationList()}"  
+<c:set var="hotelLocationList"   value=<%= new HotelBlMMT().getHotelLocationList() %>/>
+<c:forEach items="${ hotelLocationList}" var="location">
+<c:out value="${location}" />
+
+</c:forEach>
+
+--%>
+
+
+
+<p>
+<b>Place</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="places" name="place">
+
+<%
+ArrayList<String >hotelLocationList=new HotelBlMMT().getHotelLocationList() ;
+for(String location:hotelLocationList){
+	%>
+	   <option value="<%=location %>"><%=location %></option>
+
+<% }%>
+</select></p>
+
+<%--
 <p>
 <b>Place</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="places" name="place">
    <option value="delhi">New Delhi</option>
@@ -99,6 +132,8 @@ $(document).ready(function() {
     <option value="chennai">Chennai</option>
     <option value="goa">Goa</option>
 </select></p>
+
+--%>
 
 <p><b>Check-In</b>&nbsp; &nbsp;&nbsp; <input type="date" name="from" id="from" placeholder="dd-mm-yyyy" min="" required/></p>
 <p><b>Check-Out</b> &nbsp;<input type="date" id="to" name="to" placeholder="dd-mm-yyyy" min="" required/></p> 
