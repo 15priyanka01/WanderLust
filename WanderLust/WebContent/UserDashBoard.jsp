@@ -14,7 +14,7 @@ background-image: url(images/bg.jpg); /*You will specify your image path here.*/
 background-size: cover;
 background-position: top center !important;
 background-repeat: no-repeat !important;
-background-attachment: scroll;
+background-attachment: fixed;
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
