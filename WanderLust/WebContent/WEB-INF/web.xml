@@ -224,4 +224,14 @@
     <servlet-name>AdminHotelServlet</servlet-name>
     <url-pattern>/AdminHotel</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminFlightServlet</display-name>
+    <servlet-name>AdminFlightServlet</servlet-name>
+    <servlet-class>com.mmt.controller.AdminFlightServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminFlightServlet</servlet-name>
+    <url-pattern>/AdminFlight</url-pattern>
+  </servlet-mapping>
 </web-app>
