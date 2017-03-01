@@ -17,7 +17,7 @@ import com.mmt.model.bl.HotelBlMMT;
 
 public class ChooseRoomServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+//Test Code
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
