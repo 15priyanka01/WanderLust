@@ -52,17 +52,19 @@ public class AdminFlightServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			if(row>0){
-				msg="Flight Successfully Added";
-				session.setAttribute("msg",msg);
-				RequestDispatcher dispatch = request.getRequestDispatcher("FailedFlightInsertion.jsp");
-				dispatch.forward(request, response);
-			}
-			else{
 				
-				msg="Flight Insertion Failed";
+				msg="Flight Successfully Added";
 				session.setAttribute("msg",msg);
 				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulFlightInsertion.jsp");
 				dispatch.forward(request, response);
+				
+			}
+			else{
+				msg="Flight Insertion Failed";
+				session.setAttribute("msg",msg);
+				RequestDispatcher dispatch = request.getRequestDispatcher("FailedFlightInsertion.jsp");
+				dispatch.forward(request, response);
+				
 			}
 		}
 		else if(option=="delete")
