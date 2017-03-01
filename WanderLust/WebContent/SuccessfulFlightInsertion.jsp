@@ -5,9 +5,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Success</title>
 </head>
 <body>
-
+<h3>${msg}</h3>
 </body>
 </html>

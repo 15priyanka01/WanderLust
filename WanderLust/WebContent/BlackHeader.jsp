@@ -24,7 +24,7 @@
         
      
       <li><a href="ContactUs.jsp">Contact</a></li>
-      <li><a href="AboutUs.jsp">About us</a></li>
+      <li><a href="#">About us</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="Signup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

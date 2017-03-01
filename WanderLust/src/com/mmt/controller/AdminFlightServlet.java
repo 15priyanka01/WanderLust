@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,8 +23,7 @@ public class AdminFlightServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		String option = request.getParameter("option");
-		//Flight flight=(Flight)session.getAttribute("flight");
+		String option=(String)request.getParameter("option");
 		Flight newFlight=(Flight)session.getAttribute("newFlight");
 		String flightId=(String) session.getAttribute("flightId");
 		String oldFlightId=(String) session.getAttribute("oldFlightId");
@@ -34,7 +34,7 @@ public class AdminFlightServlet extends HttpServlet {
 		FlightBookingBlMMT flightBl=new FlightBookingBlMMT();
 		int row=0;
 		String msg=null;
-		if(option.equals("insert"))
+		if(option.equalsIgnoreCase("insert"))
 		{
 			Flight flight=new Flight();
 			flight.setFlightId(request.getParameter("flightId"));
@@ -54,15 +54,18 @@ public class AdminFlightServlet extends HttpServlet {
 			if(row>0){
 				msg="Flight Successfully Added";
 				session.setAttribute("msg",msg);
-				
+				RequestDispatcher dispatch = request.getRequestDispatcher("FailedFlightInsertion.jsp");
+				dispatch.forward(request, response);
 			}
 			else{
 				
-				msg="Hotel Successfully Added";
+				msg="Flight Insertion Failed";
 				session.setAttribute("msg",msg);
+				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulFlightInsertion.jsp");
+				dispatch.forward(request, response);
 			}
 		}
-		else if(option.equals("delete"))
+		else if(option=="delete")
 		{
 			try {
 				row=adminFlight.deleteFlight(flightId);
@@ -80,7 +83,7 @@ public class AdminFlightServlet extends HttpServlet {
 				session.setAttribute("msg",msg);
 			}
 		}
-		else if(option.equals("update"))
+		else if(option=="update")
 		{
 			try {
 				row=adminFlight.modifyFlight(oldFlightId, newFlight);
@@ -98,7 +101,7 @@ public class AdminFlightServlet extends HttpServlet {
 				session.setAttribute("msg",msg);
 			}
 		}
-		else if(option.equals("search"))
+		else if(option=="search")
 		{
 			try {
 				flightSearched=flightBl.searchFlight(searchFlightId);
@@ -114,7 +117,7 @@ public class AdminFlightServlet extends HttpServlet {
 				session.setAttribute("flightSearched",flightSearched);
 			}
 		}
-		else if(option.equals("display"))
+		else if(option=="display")
 		{
 			try {
 				arrayListFlight=flightBl.displayFlight();
