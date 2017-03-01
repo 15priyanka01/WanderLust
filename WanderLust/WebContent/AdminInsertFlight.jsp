@@ -9,19 +9,23 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<form action="./AdminFlight">
 <c:set var="option" scope="session" value="${option}"/>
+<c:out value="${option}"></c:out>
+<form action="./AdminFlight">
 <fieldset>
-<legend>Fill Flight Details</legend>
-<input type="text" name="flightId" placeholder="Enter flightId" required/><br>
-<input type="text" name="flightCompanyName" placeholder="Enter flightCompanyName" required/><br>
-<input type="text" name="flightSource" placeholder="Enter flightSource" required/><br>
-<input type="text" name="flightDestination" placeholder="Enter flightDestination" required/><br>
-<input type="text" name="flightDepartureTime" placeholder="Enter flightDepartureTime" required/><br>
-<input type="text" name="flightArrivalTime" placeholder="Enter flightArrivalTime" required/><br>
-<input type="text" name="flightTicketPrice" placeholder="Enter flightTicketPrice" required/><br>
-<input type="number" name="availableSeats" placeholder="Enter Total Seats" required/><br>
+<legend>Fill Flight Details</legend><br><br>
+<input type="hidden" name="option" value="insert"/>
+<table>
+
+<tr><td>Flight ID</td><td><input type="text" name="flightId" placeholder="Enter Id" required/></td></tr>
+<tr><td>Company Name</td><td><input type="text" name="flightCompanyName" placeholder="Enter CompanyName" required/></td></tr>
+<tr><td>Source</td><td><input type="text" name="flightSource" placeholder="Enter Source" required/></td></tr>
+<tr><td>Destination</td><td><input type="text" name="flightDestination" placeholder="Enter Destination" required/></td></tr>
+<tr><td>Depart</td><td><input type="text" name="flightDepartureTime" placeholder="Enter DepartureTime" required/></td></tr>
+<tr><td>Arrive</td><td><input type="text" name="flightArrivalTime" placeholder="Enter ArrivalTime" required/></td></tr>
+<tr><td>Ticket Price</td><td><input type="text" name="flightTicketPrice" placeholder="Enter TicketPrice" required/></td></tr>
+<tr><td>Total Seats</td><td><input type="number" name="availableSeats" placeholder="Enter Total Seats" required/></td></tr>
+</table>
 <input type="submit" value="Insert"/>
 </fieldset>
 </form>
