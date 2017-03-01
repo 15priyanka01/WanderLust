@@ -15,9 +15,6 @@ import com.mmt.model.bean.FlightBooking;
 import com.mmt.model.bean.User;
 import com.mmt.model.bl.UserBlMMT;
 
-/**
- * Servlet implementation class UserPastFlightServlet
- */
 public class UserPastFlightServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
