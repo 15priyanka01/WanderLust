@@ -28,21 +28,17 @@ public class PaymentServlet extends HttpServlet {
 		String flightIDPicked = (String) session.getAttribute("flightId");
 		User user = (User) session.getAttribute("user");
 		String userId = user.getUserId();
-		int noOfSeats =  (int) session.getAttribute("seats");
+		int noOfSeats = (int) session.getAttribute("seats");
 		FlightBookingBlMMT flightBookingBlMMT = new FlightBookingBlMMT();
 		FlightPaymentBl flightPaymentBl = new FlightPaymentBl();
 		double cartValue = 0;
-		//System.out.println("Enter loop2:-----");
 		cartValue = flightPaymentBl.cartValue(flightTicketPrice, noOfSeats);
-		//System.out.println("Enter loop3:----- cartValue:"+cartValue);
 
 		PromotionBlMMT promotionBlMMT = new PromotionBlMMT();
 		double valueAfterPromotion = 0;
 		try {
-			//System.out.println("Enter loop4:----- cartValue:"+cartValue);
 			valueAfterPromotion = promotionBlMMT.applyPromotion(promotionBlMMT.searchPromotion(promoPickedID), userId,
 					cartValue);
-			//System.out.println("Enter loop5:----- cartValue:"+cartValue);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -53,23 +49,21 @@ public class PaymentServlet extends HttpServlet {
 
 		try {
 			if (flightPaymentBl.checkFunds(userId, valueAfterPromotion)) {
-				
+
 				// THere is sufficient funds in account------------------
 				// Redirect to Confirm Payment JSP Page
-				
-				session.setAttribute("finalValuetobepaid", valueAfterPromotion);
-				//System.out.println("Enter loop4:----- ");
 
+				session.setAttribute("finalValuetobepaid", valueAfterPromotion);
 				RequestDispatcher dispatch = request.getRequestDispatcher("ConfirmFlightBooking.jsp");
 				dispatch.forward(request, response);
-			} else {				
+			} else {
 				// Insufficient Funds
 				// Redirect to Add money to wallet and then redirect to confirm
 				// payment JSP Page
 				session.setAttribute("finalValuetobepaid", valueAfterPromotion);
-				WalletBlMMT walletBl=new  WalletBlMMT();
-				double moneyToBeAdded=valueAfterPromotion-(walletBl.walletBalance(userId));
-				String message="Add atleast "+moneyToBeAdded+" to Wallet to book flight seat";
+				WalletBlMMT walletBl = new WalletBlMMT();
+				double moneyToBeAdded = valueAfterPromotion - (walletBl.walletBalance(userId));
+				String message = "Add atleast " + moneyToBeAdded + " to Wallet to book flight seat";
 				session.setAttribute("messageFlight", message);
 				RequestDispatcher dispatch = request.getRequestDispatcher("AddMoney.jsp");
 				dispatch.forward(request, response);

@@ -15,29 +15,28 @@ import com.mmt.model.bean.HotelBooking;
 import com.mmt.model.bean.User;
 import com.mmt.model.bl.UserBlMMT;
 
-
 public class UserPastHotelServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		UserBlMMT blMMT=new UserBlMMT();
-		User user= (User) session.getAttribute("user");
+		UserBlMMT blMMT = new UserBlMMT();
+		User user = (User) session.getAttribute("user");
 		try {
-			ArrayList<HotelBooking> bookedHotelList= blMMT.pastHbooking(user.getUserId());
+			ArrayList<HotelBooking> bookedHotelList = blMMT.pastHbooking(user.getUserId());
 			session.setAttribute("bookedHotelList", bookedHotelList);
 		} catch (ClassNotFoundException | SQLException e) {
-			
+
 			e.printStackTrace();
 		}
-		RequestDispatcher rd= request.getRequestDispatcher("UserPastHotel.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("UserPastHotel.jsp");
 		rd.forward(request, response);
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		doGet(request, response);
 	}
 

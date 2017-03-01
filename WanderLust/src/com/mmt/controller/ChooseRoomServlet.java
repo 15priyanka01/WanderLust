@@ -22,7 +22,7 @@ public class ChooseRoomServlet extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String hotelId = (String) session.getAttribute("hotelId");
-		session.setAttribute("hID",hotelId);
+		session.setAttribute("hID", hotelId);
 		HotelBlMMT hotelBl = new HotelBlMMT();
 		ArrayList<HotelRoom> arrayListHotelRoom = null;
 

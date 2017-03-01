@@ -22,13 +22,13 @@ public class DisplayWalletServlet extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		WalletBlMMT walletBl = new WalletBlMMT();
-		String preciseBalance=null;
+		String preciseBalance = null;
 		double balance = 0;
 		User user = (User) session.getAttribute("user");
 		try {
 			balance = walletBl.walletBalance(user.getUserId());
 			DecimalFormat df2 = new DecimalFormat(".##");
-			preciseBalance=df2.format(balance);
+			preciseBalance = df2.format(balance);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -27,7 +27,6 @@ public class ConfirmHotelBooking extends HttpServlet {
 		double valueAfterPromotion = (double) session.getAttribute("finalValuetobepaid");
 		User user = (User) session.getAttribute("user");
 		boolean paymentStatus = false;
-		// System.out.println("Entererd here");
 		WalletBlMMT walletBlMMT = new WalletBlMMT();
 
 		try {
@@ -44,11 +43,11 @@ public class ConfirmHotelBooking extends HttpServlet {
 			SimpleDateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd");
 			HotelBlMMT hotelBlMMT = new HotelBlMMT();
 			HotelBooking hotelBooking = new HotelBooking();
-			
+
 			Date CheckInDate = null;
-			CheckInDate = (Date)session.getAttribute("din");
+			CheckInDate = (Date) session.getAttribute("din");
 			Date CheckOutDate = null;
-			CheckOutDate = (Date)session.getAttribute("dout");
+			CheckOutDate = (Date) session.getAttribute("dout");
 			String hotelId = (String) session.getAttribute("hID");
 			int hotelRoomNo = (int) session.getAttribute("hotelRoomNo");
 			try {
@@ -62,7 +61,7 @@ public class ConfirmHotelBooking extends HttpServlet {
 			}
 
 			if (hotelBooking != null) {
-				
+
 				session.setAttribute("hotelBooking", hotelBooking);
 				RequestDispatcher dispatch = request.getRequestDispatcher("FinalHotelStep.jsp");
 				dispatch.forward(request, response);

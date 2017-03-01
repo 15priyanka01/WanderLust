@@ -21,9 +21,9 @@ public class ChoosePromoFlightServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		String flightId = (String)session.getAttribute("flightId");
+		String flightId = (String) session.getAttribute("flightId");
 		User user = (User) session.getAttribute("user");
-		if(user==null){
+		if (user == null) {
 			RequestDispatcher dispatch = request.getRequestDispatcher("loginUnregistered.jsp");
 			dispatch.forward(request, response);
 		}

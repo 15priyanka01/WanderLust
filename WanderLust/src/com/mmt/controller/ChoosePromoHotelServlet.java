@@ -22,7 +22,7 @@ public class ChoosePromoHotelServlet extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
-		if(user==null){
+		if (user == null) {
 			RequestDispatcher dispatch = request.getRequestDispatcher("loginUnregistered.jsp");
 			dispatch.forward(request, response);
 		}
@@ -37,7 +37,7 @@ public class ChoosePromoHotelServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		session.setAttribute("arrayListPromoHotel", arrayListPromoHotel);
 		RequestDispatcher dispatch = request.getRequestDispatcher("ChoosePromoCodeHotel.jsp");
 		dispatch.forward(request, response);

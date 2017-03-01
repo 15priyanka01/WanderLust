@@ -24,12 +24,9 @@ public class ConfirmFlightBooking extends HttpServlet {
 		double valueAfterPromotion = (double) session.getAttribute("finalValuetobepaid");
 		User user = (User) session.getAttribute("user");
 		boolean paymentStatus = false;
-		//System.out.println("Entererd here");
 		WalletBlMMT walletBlMMT = new WalletBlMMT();
 		try {
-			//System.out.println("valueAfterPromotion------: "+valueAfterPromotion);
-			paymentStatus = walletBlMMT.subtractWalletMoney(user.getUserId(),valueAfterPromotion);
-		//	System.out.println("paymentStatus: "+paymentStatus);
+			paymentStatus = walletBlMMT.subtractWalletMoney(user.getUserId(), valueAfterPromotion);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -37,16 +34,17 @@ public class ConfirmFlightBooking extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		if(paymentStatus){
-			FlightBookingBlMMT flightBookingBlMMT=new FlightBookingBlMMT();
-			FlightBooking flightBooking=new FlightBooking();
+
+		if (paymentStatus) {
+			FlightBookingBlMMT flightBookingBlMMT = new FlightBookingBlMMT();
+			FlightBooking flightBooking = new FlightBooking();
 			String flightIDPicked = (String) session.getAttribute("flightId");
-			String source=(String) session.getAttribute("source");
+			String source = (String) session.getAttribute("source");
 			String destination = (String) session.getAttribute("destination");
-			int seats=(int) session.getAttribute("seats");
+			int seats = (int) session.getAttribute("seats");
 			try {
-				flightBooking=flightBookingBlMMT.bookFlight(user.getUserId(), flightIDPicked, source, destination, seats);
+				flightBooking = flightBookingBlMMT.bookFlight(user.getUserId(), flightIDPicked, source, destination,
+						seats);
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -54,16 +52,15 @@ public class ConfirmFlightBooking extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			if(flightBooking!=null){
-				
-				
+
+			if (flightBooking != null) {
+
 				session.setAttribute("flightBooking", flightBooking);
 				RequestDispatcher dispatch = request.getRequestDispatcher("FinalFlightStep.jsp");
 				dispatch.forward(request, response);
 			}
-			
-			else{
+
+			else {
 				RequestDispatcher dispatch = request.getRequestDispatcher("NoFlightBooking.jsp");
 				dispatch.forward(request, response);
 			}
