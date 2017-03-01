@@ -194,4 +194,14 @@
     <servlet-name>AdminProfileServlet</servlet-name>
     <url-pattern>/AdminProfile</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminUserProfileServlet</display-name>
+    <servlet-name>AdminUserProfileServlet</servlet-name>
+    <servlet-class>com.mmt.controller.AdminUserProfileServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminUserProfileServlet</servlet-name>
+    <url-pattern>/AdminUserProfile</url-pattern>
+  </servlet-mapping>
 </web-app>
