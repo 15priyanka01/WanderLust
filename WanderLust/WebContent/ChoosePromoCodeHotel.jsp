@@ -54,7 +54,7 @@
 
 				<!--<c:set var="flightPromo" scope="session" value="${arrayListPromoFlight}"/>-->
 				<c:forEach items="${arrayListPromoHotel}" var="hotelPromo">
-					<option value="-">----</option>
+					
 					<option value="${hotelPromo.getPromotionId()}">${hotelPromo.getPromotionName()}</option>
 					<c:set var="pidHotel" scope="session"
 						value="${hotelPromo.getPromotionId()}" />
