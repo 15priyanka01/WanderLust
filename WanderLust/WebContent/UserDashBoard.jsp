@@ -33,7 +33,7 @@
   </style> 
 
 </head>
-
+<body background="images/bg.jpg" >
 <body onload="noBack();"
     onpageshow="if (event.persisted) noBack();" onunload="">
 
@@ -50,7 +50,7 @@ if(session==null || !request.isRequestedSessionIdValid() || session.getAttribute
 %>
 
 <div class="jumbotron text-center">
-  <h1>Wonder Lust</h1> 
+  <h1>Wander Lust</h1> 
   <p>...................................</p> 
 </div>
 	
