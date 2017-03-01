@@ -35,7 +35,7 @@
 
     	
       <li><a href="./UserProfile"><span class="glyphicon glyphicon-user"></span>  ${user.getUserName()} </a></li>
-      <li><a href="logout.jsp"><span class="glyphicon glyphicon-log-out"></span>Logout </a></li>
+      <li><a href="./Logout"><span class="glyphicon glyphicon-log-out"></span>Logout </a></li>
     </ul>
   </div>
   </nav>
