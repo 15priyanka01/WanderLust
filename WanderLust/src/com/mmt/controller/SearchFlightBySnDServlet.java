@@ -46,9 +46,15 @@ public class SearchFlightBySnDServlet extends HttpServlet {
 			session.setAttribute("destination", destination);
 			session.setAttribute("departureDate", departureDate);
 			session.setAttribute("arrayListFlight", arrayListFlight);
+			if(session.getAttribute("user")!=null){
+				RequestDispatcher dispatch = request.getRequestDispatcher("LoggedInDisplayAllFlightsStD.jsp");
+				dispatch.forward(request, response);
+
+			}
+			else{
 			RequestDispatcher dispatch = request.getRequestDispatcher("DisplayAllFlightsStD.jsp");
 			dispatch.forward(request, response);
-
+			}
 		}
 	}
 

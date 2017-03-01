@@ -43,8 +43,16 @@ public class ChooseRoomServlet extends HttpServlet {
 		} else {
 
 			session.setAttribute("arrayListHotelRoom", arrayListHotelRoom);
-			RequestDispatcher dispatch = request.getRequestDispatcher("ChooseRoom.jsp");
-			dispatch.forward(request, response);
+			if(session.getAttribute("user")!=null){
+				RequestDispatcher dispatch = request.getRequestDispatcher("LoggedInChooseRoom.jsp");
+				dispatch.forward(request, response);
+
+			}
+			else{
+				RequestDispatcher dispatch = request.getRequestDispatcher("ChooseRoom.jsp");
+				dispatch.forward(request, response);
+			}
+			
 
 		}
 	}
