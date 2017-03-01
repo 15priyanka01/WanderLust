@@ -42,16 +42,23 @@ public class PaymentHotelServlet extends HttpServlet {
 		PromotionBlMMT promotionBlMMT = new PromotionBlMMT();
 		double valueAfterPromotion = 0;
 
-		try {
-			valueAfterPromotion = promotionBlMMT.applyPromotion(promotionBlMMT.searchPromotion(promoPickedID), userId,
-					cartValue);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(promoPickedID.equals("-")){
+			valueAfterPromotion=cartValue;
 		}
+		else{
+			try {
+				valueAfterPromotion = promotionBlMMT.applyPromotion(promotionBlMMT.searchPromotion(promoPickedID), userId,
+						cartValue);
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+			
+		
 		try {
 			if (hotelPaymentBl.checkFunds(userId, valueAfterPromotion)) {
 
