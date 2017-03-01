@@ -5,6 +5,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style >
+body {
+background-image: url(images/bg.jpg); /*You will specify your image path here.*/
+
+-moz-background-size: cover;
+-webkit-background-size: cover;
+background-size: cover;
+background-position: top center !important;
+background-repeat: no-repeat !important;
+background-attachment: scroll;
+}
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -21,19 +33,9 @@
 </SCRIPT>
 
 
-<meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-  .jumbotron {
-      background-color: #f4511e;
-      color: #fff;
-  }
-  </style> 
+
 
 </head>
-<body background="images/bg.jpg" >
 <body onload="noBack();"
     onpageshow="if (event.persisted) noBack();" onunload="">
 
@@ -49,10 +51,12 @@ if(session==null || !request.isRequestedSessionIdValid() || session.getAttribute
 
 %>
 
-<div class="jumbotron text-center">
+<!--  <div class="jumbotron text-center">
   <h1>Wander Lust</h1> 
   <p>...................................</p> 
 </div>
+-->
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid">
