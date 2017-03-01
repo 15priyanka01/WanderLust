@@ -7,7 +7,7 @@
 <head>
 <style >
 body {
-background-image: url(images/bg.jpg); /*You will specify your image path here.*/
+background-image: url(images/bgd.jpg); /*You will specify your image path here.*/
 
 -moz-background-size: cover;
 -webkit-background-size: cover;
