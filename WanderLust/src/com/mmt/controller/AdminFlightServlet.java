@@ -3,6 +3,7 @@ package com.mmt.controller;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +23,7 @@ public class AdminFlightServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String option = request.getParameter("option");
-		Flight flight=(Flight)session.getAttribute("flight");
+		//Flight flight=(Flight)session.getAttribute("flight");
 		Flight newFlight=(Flight)session.getAttribute("newFlight");
 		String flightId=(String) session.getAttribute("flightId");
 		String oldFlightId=(String) session.getAttribute("oldFlightId");
@@ -35,6 +36,15 @@ public class AdminFlightServlet extends HttpServlet {
 		String msg=null;
 		if(option.equals("insert"))
 		{
+			Flight flight=new Flight();
+			flight.setFlightId(request.getParameter("flightId"));
+			flight.setFlightCompanyName(request.getParameter("flightCompanyName"));
+			flight.setFlightSource(request.getParameter("flightSource"));
+			flight.setFlightDestination(request.getParameter("flightDestination"));
+			flight.setFlightDepartureTime(request.getParameter("flightDepartureTime"));
+			flight.setFlightArrivalTime(request.getParameter("flightArrivalTime"));
+			flight.setFlightTicketPrice(Double.parseDouble(request.getParameter("flightTicketPrice")));
+			flight.setAvailableSeats(Integer.parseInt(request.getParameter("availableSeats")));
 			try {
 				row=adminFlight.insertFlight(flight);
 			} catch (ClassNotFoundException | SQLException e) {
@@ -44,6 +54,7 @@ public class AdminFlightServlet extends HttpServlet {
 			if(row>0){
 				msg="Flight Successfully Added";
 				session.setAttribute("msg",msg);
+				
 			}
 			else{
 				
