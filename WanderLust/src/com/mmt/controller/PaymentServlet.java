@@ -36,8 +36,8 @@ public class PaymentServlet extends HttpServlet {
 
 		PromotionBlMMT promotionBlMMT = new PromotionBlMMT();
 		double valueAfterPromotion = 0;
-		System.out.println("PromoPickedISD:: "+promoPickedID);
-		if (promoPickedID.equals("-") ) {
+		System.out.println("PromoPickedISD:: " + promoPickedID);
+		if (promoPickedID.equals("-")) {
 			valueAfterPromotion = cartValue;
 		} else {
 			try {
