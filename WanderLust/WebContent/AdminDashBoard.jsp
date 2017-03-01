@@ -21,11 +21,11 @@
     
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Flight <span class="caret"></span></a>
         <ul class="dropdown-menu">
-         <li><a href="#">Display All</a></li>
-          <li><a href="#">Insert</a></li>
-          <li><a href="#">Delete</a></li>
-           <li><a href="#">Update</a></li>
-            <li><a href="#">Search</a></li>
+         <li><a href="./AdminFlight?option=display">Display All</a></li>
+          <li><a href="./AdminFlight?option=insert">Insert</a></li>
+          <li><a href="./AdminFlight?option=delete">Delete</a></li>
+           <li><a href="./AdminFlight?option=up">Update</a></li>
+            <li><a href="./AdminFlight?option=search">Search</a></li>
         </ul>
       </li>
       
