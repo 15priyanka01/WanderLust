@@ -14,6 +14,10 @@ function check(){
 		alert('Add a positive value');
 		document.getElementById("amount").innerHtml="";
 	}
+	if(document.getElementById("amount").value=="")
+	{
+		document.getElementById("amount").value=0;
+	}
 }
 </script>
 </head>
@@ -28,7 +32,7 @@ ${messageHotel}
 <br>
 <fieldset>
 
-Amount&nbsp;&nbsp;  :&nbsp; &nbsp; <input type="text" placeholder="Enter Amount" id="amount"name="amount" onblur="check();"/><br>
+Amount&nbsp;&nbsp;  :&nbsp; &nbsp; <input type="number" placeholder="Enter Amount" id="amount"name="amount" onblur="check();"/><br>
 <input type="submit" value="Add" id="add" >
 
 

@@ -11,6 +11,6 @@
 <body>
 
  <c:set var="userName" scope="session" value="${user.getUserName()}"/>
-<h1 style="color:blue">welcome ${user.getUserName()}</h1>
+<h1 style="color:light grey">Welcome ${user.getUserName()}</h1>
 </body>
 </html>

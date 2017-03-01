@@ -61,7 +61,7 @@ public class ConfirmHotelBooking extends HttpServlet {
 			}
 
 			if (hotelBooking != null) {
-
+				session.setAttribute("messageHotel",null);
 				session.setAttribute("hotelBooking", hotelBooking);
 				RequestDispatcher dispatch = request.getRequestDispatcher("FinalHotelStep.jsp");
 				dispatch.forward(request, response);
