@@ -58,7 +58,7 @@ public class AdminFlightServlet extends HttpServlet {
 			}
 			else{
 				
-				msg="Hotel Successfully Added";
+				msg="Flight Insertion Failed";
 				session.setAttribute("msg",msg);
 			}
 		}
