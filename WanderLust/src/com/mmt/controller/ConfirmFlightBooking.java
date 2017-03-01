@@ -63,6 +63,10 @@ public class ConfirmFlightBooking extends HttpServlet {
 				dispatch.forward(request, response);
 			}
 			
+			else{
+				RequestDispatcher dispatch = request.getRequestDispatcher("NoFlightBooking.jsp");
+				dispatch.forward(request, response);
+			}
 		}
 	}
 
