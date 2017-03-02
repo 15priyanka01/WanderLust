@@ -14,9 +14,9 @@
 <form action="./AdminProfile">
 <fieldset>
 <legend>Fill Flight Details</legend><br><br>
-<input type="hidden" name="option" value="update"/>
+<input type="hidden" name="option" value="insert"/>
 <table>
-<tr><td>Old Admin ID</td><td><input type="text" name="oldadminId" placeholder="Enter Id" required/></td></tr>
+
 <tr><td>Admin ID</td><td><input type="text" name="adminId" placeholder="Enter New Admin Id" required/></td></tr>
 <tr><td>Admin Name</td><td><input type="text" name="adminName" placeholder="Enter New Admin Name" required/></td></tr>
 <tr><td>Admin Phone No</td><td><input type="number" name="adminPhoneNo" placeholder="Enter New Phone No" required/></td></tr>
@@ -25,7 +25,7 @@
 <tr><td>Admin Password</td><td><input type="text" name="adminPassword" placeholder="Enter New Password" required/></td></tr>
 
 </table>
-<input type="submit" value="Update"/>
+<input type="submit" value="Add"/>
 </fieldset>
 </form>
 </body>
