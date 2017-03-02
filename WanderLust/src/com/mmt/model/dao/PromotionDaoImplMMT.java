@@ -73,7 +73,7 @@ public class PromotionDaoImplMMT implements PromotionDaoMMT {
 
 	@Override
 	public ArrayList<Promotion> displayPromotion() throws SQLException, ClassNotFoundException, IOException {
-		Promotion pro = new Promotion();
+		Promotion pro = null;
 		con = DbConnection.dbConnection();
 
 		ArrayList<Promotion> proList = new ArrayList<Promotion>();
@@ -81,6 +81,7 @@ public class PromotionDaoImplMMT implements PromotionDaoMMT {
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery("select * from Promotion ");
 		while (rs.next()) {
+			 pro = new Promotion();
 			pro.setPromotionId(rs.getString(1));
 			pro.setPromotionName(rs.getString(2));
 			pro.setPromotionDiscount(rs.getFloat(3));
@@ -119,7 +120,7 @@ public class PromotionDaoImplMMT implements PromotionDaoMMT {
 	public ArrayList<Promotion> displayPromotion(String promotionType)
 			throws SQLException, ClassNotFoundException, IOException {
 		con = DbConnection.dbConnection();
-		Promotion pro = new Promotion();
+		Promotion pro = null;
 		ArrayList<Promotion> proList = new ArrayList<Promotion>();
 		PreparedStatement pst;
 		pst = con.prepareStatement("select * from  Promotion where promotionType=?");
@@ -127,6 +128,7 @@ public class PromotionDaoImplMMT implements PromotionDaoMMT {
 		ResultSet rs = pst.executeQuery();
 
 		while (rs.next()) {
+			pro = new Promotion();
 			pro.setPromotionId(rs.getString(1));
 			pro.setPromotionName(rs.getString(2));
 			pro.setPromotionDiscount(rs.getFloat(3));
