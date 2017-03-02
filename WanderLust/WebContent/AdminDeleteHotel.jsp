@@ -11,13 +11,13 @@
 <body>
 <c:set var="option" scope="session" value="${option}"/>
 <c:out value="${option}"></c:out>
-<form action="./AdminFlight">
+<form action="./AdminHotel">
 <fieldset>
-<legend>Fill Flight Details</legend><br><br>
+
 <input type="hidden" name="option" value="delete"/>
 <table>
 
-<tr><td>Flight ID</td><td><input type="text" name="flightId" placeholder="Enter Id" required/></td></tr>
+<tr><td>Hotel ID</td><td><input type="text" name="hotelId" placeholder="Enter Id" required/></td></tr>
 
 </table>
 <input type="submit" value="Delete"/>

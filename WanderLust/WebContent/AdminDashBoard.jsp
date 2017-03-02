@@ -54,10 +54,10 @@ background-attachment: fixed;
         <ul class="dropdown-menu">
  
          <li><a href="./AdminHotel?option=display">Display All</a></li>
-          <li><a href="AdminInsertHotel.jsp?option=insert">Insert</a></li>
+          <!--  <li><a href="AdminInsertHotel.jsp?option=insert">Insert</a></li>-->
          
           <li><a href="AdminDeleteHotel.jsp?option=delete">Delete</a></li>
-           <li><a href="AdminUpdateHotel.jsp?option=update">Update</a></li>
+         <!--   <li><a href="AdminUpdateHotel.jsp?option=update">Update</a></li>-->
             <li><a href="AdminSearchHotel.jsp?option=search">Search</a></li>
 
          

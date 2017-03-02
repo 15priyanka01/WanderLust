@@ -27,9 +27,9 @@ public class AdminHotelServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String option=(String)request.getParameter("option");
 		Hotel newHotel=(Hotel)session.getAttribute("newHotel");
-		String hotelId=(String) session.getAttribute("hotelId");
+		
 		String oldHotelId=(String) session.getAttribute("oldhotelId");
-		String searchHotelId=(String) session.getAttribute("searchHotelId");
+		
 		Hotel hotelSearched=null;
 		ArrayList<Hotel> arrayListHotel=null;
 		AdminBlMMT adminHotel=new AdminBlMMT();
@@ -69,6 +69,7 @@ public class AdminHotelServlet extends HttpServlet {
 		}
 		else if(option.equals("delete"))
 		{
+			String hotelId=request.getParameter("hotelId");
 			try {
 				row=adminHotel.deleteHotel(hotelId);
 			} catch (ClassNotFoundException | SQLException e) {
@@ -78,11 +79,15 @@ public class AdminHotelServlet extends HttpServlet {
 			if(row>0){
 				msgHotel="hotel Successfully Deleted";
 				session.setAttribute("msgHotel",msgHotel);
+				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulHotelInsertion.jsp");
+				dispatch.forward(request, response);
 			}
 			else{
 				
-				msgHotel="flight Successfully Deleted";
+				msgHotel="Hotel Deletion Failed";
 				session.setAttribute("msgHotel",msgHotel);
+				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulHotelInsertion.jsp");
+				dispatch.forward(request, response);
 			}
 		}
 		else if(option.equals("update"))
@@ -105,6 +110,7 @@ public class AdminHotelServlet extends HttpServlet {
 		}
 		else if(option.equals("search"))
 		{
+			String searchHotelId=request.getParameter("hotelId");
 			try {
 				hotelSearched=hotelBl.searchHotel(searchHotelId);
 			} catch (ClassNotFoundException | SQLException e) {
@@ -114,9 +120,13 @@ public class AdminHotelServlet extends HttpServlet {
 			if(hotelSearched==null){
 				msgHotel="Hotel doesn't Exist with ID = "+searchHotelId;
 				session.setAttribute("msgHotel",msgHotel);
+				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulHotelInsertion.jsp");
+				dispatch.forward(request, response);
 			}
 			else{	
 				session.setAttribute("hotelSearched",hotelSearched);
+				RequestDispatcher dispatch = request.getRequestDispatcher("AdminSearchedHotel.jsp");
+				dispatch.forward(request, response);
 			}
 		}
 		else if(option.equalsIgnoreCase("display"))
