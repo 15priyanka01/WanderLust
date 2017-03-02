@@ -9,12 +9,14 @@
   <meta charset="UTF-8">
   <title>Login</title>
   <link rel="stylesheet" href="css/style.css"> 
-</head>
 
 <SCRIPT type="text/javascript">
     window.history.forward();
     function noBack() { window.history.forward(); }
 </SCRIPT>
+</head>
+
+
 
 
 
