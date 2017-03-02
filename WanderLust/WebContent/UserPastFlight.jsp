@@ -12,13 +12,13 @@
 
 	
 <div class="panel panel-default">
-    <div class="panel-heading">Details of booked Flights</div>
+    <div class="panel-heading" style="background-image: url('images/bg1.jpg'); background-attachment: fixed;">Details of booked Flights</div>
     <div class="panel-body">
         
     </div>
 
     <div class="table-responsive">
-        <table class="table table-bordered">
+        <table class="table table-bordered" style="background-image: url('images/bg1.jpg'); background-attachment: fixed;">
             <thead>
                 <tr>
                     <th>flightBookingId</th>
