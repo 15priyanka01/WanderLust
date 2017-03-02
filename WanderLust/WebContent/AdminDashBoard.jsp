@@ -77,9 +77,9 @@ background-attachment: fixed;
       
        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Update Profile</a></li>
-          <li><a href="#">Add Another</a></li>
-          <li><a href="#">Remove Another</a></li>
+          <li><a href="AdminUpdateAdmin.jsp?option=update">Update Profile</a></li>
+          <li><a href="AdminInsertAdmin.jsp?option=insert">Add Another</a></li>
+          <li><a href="AdminDeleteAdmin.jsp?option=delete">Remove Another</a></li>
         </ul>
       </li>
       
