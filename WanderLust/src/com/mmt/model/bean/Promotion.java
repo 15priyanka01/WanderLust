@@ -47,8 +47,8 @@ public class Promotion {
 	public double getPromotionMinRequiredAmount() {
 		return promotionMinRequiredAmount;
 	}
-	public void setPromotionMinRequiredAmount(float promotionMinRequiredAmount) {
-		this.promotionMinRequiredAmount = promotionMinRequiredAmount;
+	public void setPromotionMinRequiredAmount(double d) {
+		this.promotionMinRequiredAmount = d;
 	}
 	public String getPromotionType() {
 		return promotionType;
