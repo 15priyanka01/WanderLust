@@ -70,7 +70,7 @@ background-attachment: fixed;
        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">User <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="AdminSearchUser.jsp?option=search">Search</a></li>
-          <li><a href="AdminDeleteUser.jsp?option=delete">Delete</a></li>
+         
          
         </ul>
       </li>
