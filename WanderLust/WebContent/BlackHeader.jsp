@@ -4,6 +4,15 @@
 <html>
 <head>
 <style >
+h2 span{
+color: dark grey; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   font-size:100px;
+   letter-spacing: -1px;  
+   padding: 10px;
+}
+</style>
+<style >
 body {
 background-image: url(images/img.jpg); /*You will specify your image path here.*/
 
@@ -24,7 +33,8 @@ background-attachment: fixed;
 </head>
 <body>
 <form action="">
-<br><br><br><br><br><br><br><br><br>
+<h2><span><center>WanderLust</center></span></h2>
+
  <nav class="navbar navbar-inverse"> 
   <div class="container-fluid">
     
