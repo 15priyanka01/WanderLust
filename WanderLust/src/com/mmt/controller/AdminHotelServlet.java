@@ -25,7 +25,7 @@ public class AdminHotelServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
-		String option = request.getParameter("option");
+		String option=(String)request.getParameter("option");
 		Hotel newHotel=(Hotel)session.getAttribute("newHotel");
 		String hotelId=(String) session.getAttribute("hotelId");
 		String oldHotelId=(String) session.getAttribute("oldhotelId");
@@ -36,7 +36,7 @@ public class AdminHotelServlet extends HttpServlet {
 		HotelBlMMT hotelBl=new HotelBlMMT();
 		int row=0;
 		String msgHotel=null;
-		if(option.equals("insert"))
+		if(option.equalsIgnoreCase("insert"))
 			{
 			System.out.println("Inside insert of hotel");
 			Hotel hotel=new Hotel();
@@ -119,7 +119,7 @@ public class AdminHotelServlet extends HttpServlet {
 				session.setAttribute("hotelSearched",hotelSearched);
 			}
 		}
-		else if(option.equals("display"))
+		else if(option.equalsIgnoreCase("display"))
 		{
 			try {
 				arrayListHotel=hotelBl.displayHotel();
@@ -130,9 +130,13 @@ public class AdminHotelServlet extends HttpServlet {
 			if(arrayListHotel.isEmpty()){
 				msgHotel="No hotels Exist ";
 				session.setAttribute("msgHotel",msgHotel);
+				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulHotelInsertion.jsp");
+				dispatch.forward(request, response);
 			}
 			else{
 				session.setAttribute("arrayListHotel",arrayListHotel);
+				RequestDispatcher dispatch = request.getRequestDispatcher("AdminDisplayAllHotels.jsp");
+				dispatch.forward(request, response);
 			}
 		}
 		
