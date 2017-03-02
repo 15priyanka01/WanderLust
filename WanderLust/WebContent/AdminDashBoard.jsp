@@ -44,9 +44,9 @@ background-attachment: fixed;
          <li><a href="./AdminFlight?option=display">Display All</a></li>
           <li><a href="AdminInsertFlight.jsp?option=insert">Insert</a></li>
          
-          <li><a href="./AdminFlight?option=delete">Delete</a></li>
-           <li><a href="./AdminFlight?option=up">Update</a></li>
-            <li><a href="./AdminFlight?option=search">Search</a></li>
+          <li><a href="AdminDeleteFlight.jsp?option=delete">Delete</a></li>
+           <li><a href="AdminUpdateFlight.jsp?option=update">Update</a></li>
+            <li><a href="AdminSearchFlight.jsp?option=search">Search</a></li>
         </ul>
       </li>
       
@@ -55,9 +55,10 @@ background-attachment: fixed;
  
          <li><a href="./AdminHotel?option=display">Display All</a></li>
           <li><a href="AdminInsertHotel.jsp?option=insert">Insert</a></li>
-          <li><a href="./AdminHotel?option=delete">Delete</a></li>
-           <li><a href="./AdminHotel?option=up">Update</a></li>
-            <li><a href="./AdminHotel?option=search">Search</a></li>
+         
+          <li><a href="AdminDeleteHotel.jsp?option=delete">Delete</a></li>
+           <li><a href="AdminUpdateHotel.jsp?option=update">Update</a></li>
+            <li><a href="AdminSearchHotel.jsp?option=search">Search</a></li>
 
          
         </ul>
