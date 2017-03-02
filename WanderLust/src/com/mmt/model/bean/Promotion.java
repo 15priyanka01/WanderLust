@@ -35,7 +35,7 @@ public class Promotion {
 	public double getPromotionDiscount() {
 		return promotionDiscount;
 	}
-	public void setPromotionDiscount(float promotionDiscount) {
+	public void setPromotionDiscount(double promotionDiscount) {
 		this.promotionDiscount = promotionDiscount;
 	}
 	public String getPromotionExpiryDate() {
