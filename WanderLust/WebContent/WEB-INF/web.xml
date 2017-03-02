@@ -234,4 +234,14 @@
     <servlet-name>AdminFlightServlet</servlet-name>
     <url-pattern>/AdminFlight</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewPastFlightServlet</display-name>
+    <servlet-name>ViewPastFlightServlet</servlet-name>
+    <servlet-class>com.mmt.controller.ViewPastFlightServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewPastFlightServlet</servlet-name>
+    <url-pattern>/ViewPastFlight</url-pattern>
+  </servlet-mapping>
 </web-app>

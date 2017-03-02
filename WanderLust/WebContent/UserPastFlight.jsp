@@ -24,19 +24,24 @@
                     <th>flightBookingId</th>
                     <th>flightId</th>
                     <th>flightBookingDate</th>
+                    <th></th>
                    
                 </tr>
             </thead>
             <c:forEach items="${bookedFlightList}" var="list">
+            <form action="./ViewPastFlight">
+            
             <tbody>
                 <tr>
                 
                     <td><c:out value="${ list.getFlightBookingId()}" /></td>
                     <td><c:out value="${ list.getFlightId()}" /></td>
                     <td><c:out value="${ list.getFlightBookingDate()}" /></td>
-                 
+               		 <c:set var="viewFlightId" scope="session" value="${ list.getFlightId()}"/>
+                 	<td><button type="submit" class="btn btn-info" id="view">View Details</button></td>
                 </tr>
             </tbody>
+            </form>
             </c:forEach>
         </table>
     </div>
