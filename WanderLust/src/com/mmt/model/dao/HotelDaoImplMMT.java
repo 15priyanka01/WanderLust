@@ -15,6 +15,8 @@ import com.mmt.model.bean.HotelRoom;
 
 public class HotelDaoImplMMT implements HotelDaoMMT {
 	Connection con=null;
+	
+	//insert the hotel detail
 	@Override
 	public int insertHotel(Hotel h) throws SQLException, ClassNotFoundException, IOException {
 		
@@ -56,7 +58,7 @@ public class HotelDaoImplMMT implements HotelDaoMMT {
 		
 	}
 
-
+//delet the hotel details
 
 	@Override
 	public int deleteHotel(String hotelId) throws  SQLException, ClassNotFoundException, IOException {
@@ -79,6 +81,8 @@ public class HotelDaoImplMMT implements HotelDaoMMT {
 			con.close();
 			return 0;}
 	}
+	
+	//update function to update hotel detials
 
 	@Override
 	public int updateHotel(String hotelId, Hotel newhotel) throws  SQLException, ClassNotFoundException, IOException {
@@ -147,6 +151,7 @@ public class HotelDaoImplMMT implements HotelDaoMMT {
 		
 	}
 
+	// display function to display hotel list
 	@Override
 	public ArrayList<Hotel> displayHotel() throws  SQLException, ClassNotFoundException, IOException {
 		Hotel hotel;

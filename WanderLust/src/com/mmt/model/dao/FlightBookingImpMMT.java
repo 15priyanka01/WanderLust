@@ -13,7 +13,7 @@ import com.mmt.model.bean.FlightBooking;
 
 public class FlightBookingImpMMT implements FlightBookingDaoMMT {
 	Connection con;
-
+	//display the details of flightbooking
 	@Override
 	public ArrayList<FlightBooking> displayFlightBooking() throws ClassNotFoundException, SQLException, IOException {
 		{
@@ -80,7 +80,7 @@ public class FlightBookingImpMMT implements FlightBookingDaoMMT {
 
 		return fList;
 	}
-
+	// insert function for the flight booking 
 	@Override
 	public int insertFlightBooking(FlightBooking fb) throws ClassNotFoundException, SQLException, IOException {
 
@@ -107,6 +107,7 @@ public class FlightBookingImpMMT implements FlightBookingDaoMMT {
 		return row;
 	}
 
+	// delete function for the flight booking
 	@Override
 	public int deleteFlightBooking(String flightBookingId) throws ClassNotFoundException, SQLException, IOException {
 

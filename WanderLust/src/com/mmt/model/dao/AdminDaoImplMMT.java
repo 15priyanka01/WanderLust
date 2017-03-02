@@ -11,6 +11,8 @@ import com.mmt.model.bean.Admin;
 
 public class AdminDaoImplMMT implements AdminDao{
 	
+	//insert function for the admin board
+	
 	@Override
 	public int insert(Admin admin) throws SQLException, ClassNotFoundException, IOException {
 		int row;
@@ -29,6 +31,7 @@ public class AdminDaoImplMMT implements AdminDao{
 		return row;
 	}
 
+		// search function for admin
 	@Override
 	public Admin search(String uid) throws SQLException, ClassNotFoundException, IOException {
 		Admin admin=new Admin();
@@ -53,6 +56,7 @@ public class AdminDaoImplMMT implements AdminDao{
 		return null;
 	}
 
+	//delete function to delete Admin
 	@Override
 	public int delete(String uid) throws SQLException, ClassNotFoundException, IOException {
 		
@@ -65,6 +69,8 @@ public class AdminDaoImplMMT implements AdminDao{
 		return row;
 	}
 
+	//update function to update the admin details
+		
 	@Override
 	public int update(String uid, Admin admin) throws SQLException, ClassNotFoundException, IOException {
 		int row;

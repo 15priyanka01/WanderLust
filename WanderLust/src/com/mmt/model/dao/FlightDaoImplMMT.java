@@ -15,6 +15,8 @@ import com.mmt.model.bean.Flight;
 
 public class FlightDaoImplMMT implements FlightDaoMMT {
 	Connection con;
+	
+	//insert function for the flight details
 	@Override
 	public int insertFlight(Flight flight) throws ClassNotFoundException, SQLException, IOException {	
 		
@@ -35,6 +37,7 @@ public class FlightDaoImplMMT implements FlightDaoMMT {
 		return row;
 	}
 
+		//delete function to delete flight
 	@Override
 	public int deleteFlight(String flightId) throws ClassNotFoundException, SQLException, IOException {
 		con=DbConnection.dbConnection();
@@ -51,6 +54,7 @@ public class FlightDaoImplMMT implements FlightDaoMMT {
 		return row;
 	}
 
+	//function to update flight
 	@Override
 	public int updateFlight(String flightId, Flight newflight) throws ClassNotFoundException, SQLException, IOException {
 		Connection con=DbConnection.dbConnection();
@@ -75,6 +79,8 @@ public class FlightDaoImplMMT implements FlightDaoMMT {
 		return row;
 	}
 
+	
+		//search function to search flight
 	@Override
 	public Flight searchFlight(String flightId) throws ClassNotFoundException, SQLException, IOException {
 		Flight flight =new Flight();
@@ -100,7 +106,9 @@ public class FlightDaoImplMMT implements FlightDaoMMT {
 
 		return flight;
 	}
-
+	
+	//display function to display all details of flight	
+	
 	@Override
 	public ArrayList<Flight> displayFlight() throws ClassNotFoundException, SQLException, IOException {
 		ArrayList<Flight> F =new ArrayList<Flight>();
@@ -127,6 +135,8 @@ public class FlightDaoImplMMT implements FlightDaoMMT {
 		return F;
 	}
 
+	//search flight on the basis of source and destination
+	
 	@Override
 	public ArrayList<Flight> searchFlight(String flightSource, String flightDestination)
 			throws ClassNotFoundException, SQLException, IOException {
