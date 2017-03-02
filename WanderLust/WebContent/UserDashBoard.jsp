@@ -17,7 +17,6 @@ color: dark grey;
 <style >
 body {
 background-image: url(images/img.jpg); /*You will specify your image path here.*/
-
 -moz-background-size: cover;
 -webkit-background-size: cover;
 background-size: cover;
