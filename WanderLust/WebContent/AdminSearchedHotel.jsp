@@ -41,7 +41,7 @@ tr:hover{background-color:#f5f5f5}
 <body>
 <table border="1">
 	<tr>
-	<th></th>
+	
 	<th>Hotel Id</th>
 	<th>Hotel Name</th>
 	<th>Information</th>
@@ -49,7 +49,7 @@ tr:hover{background-color:#f5f5f5}
 	</tr>
 <tr>
 <c:set var="hotel" scope="page" value="${hotelSearched}"/>
-<td><img src="images/${hotel.getHotelImage()}"  height="100" width="100"/></td>
+
 	
      <td><c:out value="${hotel.getHotelId()}" /></td>
      <td><c:out value="${hotel.getHotelName()}" /></td>
