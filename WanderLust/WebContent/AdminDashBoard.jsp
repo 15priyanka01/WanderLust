@@ -58,11 +58,12 @@ background-attachment: fixed;
       
        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Promotion <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Display All</a></li>
-          <li><a href="#">Insert</a></li>
-          <li><a href="#">Delete</a></li>
-           <li><a href="#">Update</a></li>
-            <li><a href="#">Search</a></li>
+         <li><a href="./AdminPromotion?option=display">Display All</a></li>
+          <li><a href="AdminInsertPromotion.jsp?option=insert">Insert</a></li>
+         
+          <li><a href="AdminDeletePromotion.jsp?option=delete">Delete</a></li>
+           <li><a href="AdminUpdatePromotion.jsp?option=update">Update</a></li>
+            <li><a href="AdminSearchPromotion.jsp?option=search">Search</a></li>
         </ul>
       </li>
       
