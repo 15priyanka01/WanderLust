@@ -56,7 +56,7 @@
      <div class="form-group">
       <label class="control-label col-sm-2" for="userEmailId">Email id:</label>
       <div class="col-sm-10">          
-        <input type="email" class="form-control" name="userEmailId" id="userEmailId" placeholder="Enter Email id">
+        <input type="email" class="form-control" name="userEmailId" id="userEmailId" placeholder="Enter Email id"required/>
       </div>
     </div>
      <div class="form-group">

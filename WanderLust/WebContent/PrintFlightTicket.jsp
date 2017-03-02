@@ -41,6 +41,7 @@ button{
                     <th>Flight Departure Time</th>
                     <th>Flight Arrival Time</th>
                     <th>Flight Ticket Price</th>
+                    <th>Flight Booking Date</th>
                    
                 </tr>
             </thead>
@@ -54,6 +55,8 @@ button{
                      <td><c:out value="${ viewedFlightDetails.getFlightDepartureTime()}" /></td>
                       <td><c:out value="${ viewedFlightDetails.getFlightArrivalTime()}" /></td>
                        <td><c:out value="${ viewedFlightDetails.getFlightTicketPrice()}" /></td>
+                       <td><c:out value="${ viewFlightBookingDate}" /></td>
+                       
                  
                 </tr>
             </tbody>

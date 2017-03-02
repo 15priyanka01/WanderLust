@@ -37,7 +37,9 @@
                     <td><c:out value="${ list.getFlightBookingId()}" /></td>
                     <td><c:out value="${ list.getFlightId()}" /></td>
                     <td><c:out value="${ list.getFlightBookingDate()}" /></td>
-               		 <c:set var="viewFlightId" scope="session" value="${ list.getFlightId()}"/>
+                    
+                    <c:set var="viewFlightBookingDate" scope="session" value="${ list.getFlightBookingDate()}"/>
+               		 <c:set var="viewFlightId" scope="session" value="${list.getFlightId()}"/>
                  	<td><button type="submit" class="btn btn-info" id="view">View Details</button></td>
                 </tr>
             </tbody>
