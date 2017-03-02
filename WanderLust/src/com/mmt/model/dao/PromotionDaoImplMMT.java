@@ -15,7 +15,7 @@ import com.mmt.model.bean.Promotion;
 public class PromotionDaoImplMMT implements PromotionDaoMMT {
 
 	Connection con = null;
-
+	//insert function to add the promo details
 	@Override
 	public int insertPromotion(Promotion p) throws SQLException, ClassNotFoundException, IOException {
 		int row;
@@ -34,7 +34,7 @@ public class PromotionDaoImplMMT implements PromotionDaoMMT {
 		return row;
 
 	}
-
+	//delet function to delete the promo
 	@Override
 	public int deletePromotion(String promotionId) throws SQLException, ClassNotFoundException, IOException {
 		con = DbConnection.dbConnection();
@@ -49,7 +49,7 @@ public class PromotionDaoImplMMT implements PromotionDaoMMT {
 		con.close();
 		return row;
 	}
-
+		//update function to update the promo details
 	@Override
 	public int updatePromotion(String promotionId, Promotion newp)
 			throws SQLException, ClassNotFoundException, IOException {
