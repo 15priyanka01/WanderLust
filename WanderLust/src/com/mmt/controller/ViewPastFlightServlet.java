@@ -29,7 +29,7 @@ public class ViewPastFlightServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		session.setAttribute("viewedFlightDetails", flight);
-		System.out.println("===="+flight.getFlightCompanyName());
+		
 		request.getRequestDispatcher("PrintFlightTicket.jsp").forward(request, response);
 	}
 

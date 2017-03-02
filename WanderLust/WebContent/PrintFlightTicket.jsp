@@ -6,13 +6,27 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+
+
+<script>
+function myFunction() {
+    window.print();
+}
+</script>
+
+<style>
+button{
+ text-align:center;
+ margin-left: 150px;
+}
+</style>
 </head>
 <body>
 <jsp:include page="UserDashBoard.jsp"></jsp:include>
 
 	
 <div class="panel panel-default">
-    <div class="panel-heading">Details of booked ticket</div>
+    <div class="panel-heading">User name: ${user.getUserName()}  <br>  User Email id: ${user.getUserEmailId()} </div>
     <div class="panel-body">
         
     </div>
@@ -21,12 +35,12 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>flightCompanyName</th>
-                    <th>flightSource</th>
-                    <th>flightDestination</th>
-                    <th>flightDepartureTime</th>
-                    <th>flightArrivalTime</th>
-                    <th>flightTicketPrice</th>
+                    <th>Flight Company Name</th>
+                    <th>Flight Source</th>
+                    <th>Flight Destination</th>
+                    <th>Flight Departure Time</th>
+                    <th>Flight Arrival Time</th>
+                    <th>Flight Ticket Price</th>
                    
                 </tr>
             </thead>
@@ -45,7 +59,15 @@
             </tbody>
            
         </table>
+   		
     </div>
+  
 </div>
+
+<div class="centered">
+				<button type="button" class="btn btn-success"   onclick="myFunction()">Print</button>
+				
+     			
+			</div>
 </body>
 </html>
