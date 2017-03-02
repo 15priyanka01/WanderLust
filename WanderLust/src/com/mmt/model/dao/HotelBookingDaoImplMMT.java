@@ -17,6 +17,7 @@ import com.mmt.model.bean.HotelBooking;
 public class HotelBookingDaoImplMMT implements HotelBookingDaoMMT {
 	Connection con;
 
+	//Insert function to add hotel details
 	@Override
 	public int insertHotelBooking(HotelBooking hb) throws SQLException, ClassNotFoundException, IOException {
 		int row;
@@ -40,6 +41,7 @@ public class HotelBookingDaoImplMMT implements HotelBookingDaoMMT {
 		return row;
 	}
 
+	//search function to search hotel
 	@Override
 	public ArrayList<HotelBooking> searchHotelBooking(String userId) throws SQLException, ClassNotFoundException, IOException {
 		ArrayList<HotelBooking> hb =new ArrayList<HotelBooking>();
@@ -64,7 +66,7 @@ public class HotelBookingDaoImplMMT implements HotelBookingDaoMMT {
 		return hb;
 	}
 	
-	
+	//function to cancle the hotel booking
 	@Override
 	public int cancelHotelBooking(String hotelBookingId) throws SQLException, ClassNotFoundException, IOException {
 		con=DbConnection.dbConnection();
@@ -80,6 +82,7 @@ public class HotelBookingDaoImplMMT implements HotelBookingDaoMMT {
 			return 0;
 	}
 
+	// function to display the hotel list
 	@Override
 	public ArrayList<HotelBooking> display() throws SQLException, ClassNotFoundException, IOException {
 		ArrayList<HotelBooking> hb =new ArrayList<HotelBooking>();
