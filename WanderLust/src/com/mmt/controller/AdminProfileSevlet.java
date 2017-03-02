@@ -24,34 +24,37 @@ public class AdminProfileSevlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String option=(String)request.getParameter("option");
-		Flight flightSearched=null;
-		ArrayList<Flight> arrayListFlight=null;
-		AdminBlMMT adminFlight=new AdminBlMMT();
-		FlightBookingBlMMT flightBl=new FlightBookingBlMMT();
+		AdminBlMMT adminBl=new AdminBlMMT();
+		boolean value=false;
 		int row=0;
 		String msg=null;
 		if(option.equalsIgnoreCase("insert"))
 		{
-			Flight flight=new Flight();
+			//Flight flight=new Flight();
 			Admin admin=new Admin();
-			admin.setAdminId((request.getParameter("adminId")));          
+			admin.setAdminId(request.getParameter("adminId"));  
+			admin.setAdminName(request.getParameter("adminName"));
+			admin.setAdminPhoneNo(Long.parseLong(request.getParameter("adminPhoneNo")));
+			admin.setAdminEmailId(request.getParameter("adminEmailId"));
+			admin.setAdminAddress(request.getParameter("adminAddress"));
+			admin.setAdminPassword(request.getParameter("adminPassword"));
 			
 			try {
-				row=adminFlight.insertFlight(flight);
+				value=adminBl.addAdmin(admin);
 			} catch (ClassNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			if(row>0){
+			if(value){
 				
-				msg="Flight Successfully Added";
+				msg="Admin Successfully Added";
 				session.setAttribute("msg",msg);
 				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulFlightInsertion.jsp");
 				dispatch.forward(request, response);
 				
 			}
 			else{
-				msg="Flight Insertion Failed";
+				msg="Admin Addition Failed";
 				session.setAttribute("msg",msg);
 				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulFlightInsertion.jsp");
 				dispatch.forward(request, response);
@@ -60,23 +63,23 @@ public class AdminProfileSevlet extends HttpServlet {
 		}
 		else if(option.equalsIgnoreCase("delete"))
 		{
-			System.out.println("Inside delete of flight");
-			String flightId=request.getParameter("flightId");
+			
+			String adminId=request.getParameter("adminId");
 			try {
-				row=adminFlight.deleteFlight(flightId);
+				row=adminBl.removeAdmin(adminId);
 			} catch (ClassNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			if(row>0){
-				msg="Flight Successfully Deleted";
+				msg="Admin Successfully Deleted";
 				session.setAttribute("msg",msg);
 				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulFlightInsertion.jsp");
 				dispatch.forward(request, response);
 			}
 			else{
 				
-				msg="Flight deletion Failed";
+				msg="Admin deletion Failed";
 				session.setAttribute("msg",msg);
 				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulFlightInsertion.jsp");
 				dispatch.forward(request, response);
@@ -84,78 +87,39 @@ public class AdminProfileSevlet extends HttpServlet {
 		}
 		else if(option.equalsIgnoreCase("update"))
 		{
-			System.out.println("Inside update of flight");
-			Flight newFlight=new Flight();
-			String oldFlightId=request.getParameter("oldflightId");
-			newFlight.setFlightId(request.getParameter("newflightId"));
-			newFlight.setFlightCompanyName(request.getParameter("flightCompanyName"));
-			newFlight.setFlightSource(request.getParameter("flightSource"));
-			newFlight.setFlightDestination(request.getParameter("flightDestination"));
-			newFlight.setFlightDepartureTime(request.getParameter("flightDepartureTime"));
-			newFlight.setFlightArrivalTime(request.getParameter("flightArrivalTime"));
-			newFlight.setFlightTicketPrice(Double.parseDouble(request.getParameter("flightTicketPrice")));
-			newFlight.setAvailableSeats(Integer.parseInt(request.getParameter("availableSeats")));
+			
+			Admin admin=new Admin();
+			String oldadminId=request.getParameter("oldadminId");
+			
+			admin.setAdminId(request.getParameter("adminId"));  
+			admin.setAdminName(request.getParameter("adminName"));
+			admin.setAdminPhoneNo(Long.parseLong(request.getParameter("adminPhoneNo")));
+			admin.setAdminEmailId(request.getParameter("adminEmailId"));
+			admin.setAdminAddress(request.getParameter("adminAddress"));
+			admin.setAdminPassword(request.getParameter("adminPassword"));
 			try {
-				row=adminFlight.modifyFlight(oldFlightId, newFlight);
+				row=adminBl.modifyAdmin(oldadminId, admin);
+				
 			} catch (ClassNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			if(row>0){
-				msg="Flight Successfully Updated";
+				msg="Admin Successfully Updated";
 				session.setAttribute("msg",msg);
 				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulFlightInsertion.jsp");
 				dispatch.forward(request, response);
 			}
 			else{
 				
-				msg="Flight Updation Failed";
+				msg="Admin Updation Failed";
 				session.setAttribute("msg",msg);
 				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulFlightInsertion.jsp");
 				dispatch.forward(request, response);
 			}
 		}
-		else if(option.equalsIgnoreCase("search"))
-		{
-			String searchFlightId=request.getParameter("flightId");
-			try {
-				flightSearched=flightBl.searchFlight(searchFlightId);
-			} catch (ClassNotFoundException | SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			if(flightSearched==null){
-				msg="Flight doesn't Exist with ID = "+searchFlightId;
-				session.setAttribute("msg",msg);
-				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulFlightInsertion.jsp");
-				dispatch.forward(request, response);
-			}
-			else{	
-				session.setAttribute("flightSearched",flightSearched);
-				RequestDispatcher dispatch = request.getRequestDispatcher("AdminSearchedFlight.jsp");
-				dispatch.forward(request, response);
-			}
-		}
-		else if(option.equalsIgnoreCase("display"))
-		{
-			try {
-				arrayListFlight=flightBl.displayFlight();
-			} catch (ClassNotFoundException | SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			if(arrayListFlight.isEmpty()){
-				msg="No Flights Exist ";
-				session.setAttribute("msg",msg);
-				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulFlightInsertion.jsp");
-				dispatch.forward(request, response);
-			}
-			else{
-				session.setAttribute("arrayListFlight",arrayListFlight);
-				RequestDispatcher dispatch = request.getRequestDispatcher("AdminDisplayAllFlights.jsp");
-				dispatch.forward(request, response);
-			}
-		}
+		
+		
 		
 	}
 
