@@ -8,6 +8,6 @@
 <title>Message</title>
 </head>
 <body>
-<h3>${msg}</h3>
+<h3>${msgHotel}</h3>
 </body>
 </html>

@@ -7,13 +7,13 @@
 <head>
 <style >
 body {
-background-image: url(images/bg.jpg); /*You will specify your image path here.*/
+background-image: url(images/img.jpg); /*You will specify your image path here.*/
 
 -moz-background-size: cover;
 -webkit-background-size: cover;
 background-size: cover;
 background-position: top center !important;
-background-repeat: no-repeat !important;
+background-repeat: no-repeat; !important;
 background-attachment: fixed;
 }
 </style>
@@ -27,17 +27,7 @@ background-attachment: fixed;
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>UserDashBoard</title>
 
-<SCRIPT type="text/javascript">
-    window.history.forward();
-    function noBack() { window.history.forward(); }
-</SCRIPT>
-
-
-
-
-</head>
-<body onload="noBack();"
-    onpageshow="if (event.persisted) noBack();" onunload="">
+<body>
 
 <%@ page errorPage="Logout.jsp" %>
 
@@ -56,7 +46,7 @@ if(session==null || !request.isRequestedSessionIdValid() || session.getAttribute
   <p>...................................</p> 
 </div>
 -->
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br>
 	
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid">

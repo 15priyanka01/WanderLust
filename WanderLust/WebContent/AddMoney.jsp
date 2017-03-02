@@ -14,21 +14,28 @@ function check(){
 		alert('Add a positive value');
 		document.getElementById("amount").innerHtml="";
 	}
+	if(document.getElementById("amount").value=="")
+	{
+		document.getElementById("amount").value=0;
+	}
 }
 </script>
 </head>
 <body>
 <form action="./MoneyAddded">
-<c:if test="${not empty messageFlight}">
+<c:choose>
+<c:when test="${not empty messageFlight}">
 ${messageFlight}   
-</c:if><br>
-<c:if test="${not empty messageHotel}">
+</c:when>
+<c:when test="${not empty messageHotel}">
 ${messageHotel}   
-</c:if>
-<br>
+</c:when>
+
+</c:choose> 
+
 <fieldset>
 
-Amount&nbsp;&nbsp;  :&nbsp; &nbsp; <input type="text" placeholder="Enter Amount" id="amount"name="amount" onblur="check();"/><br>
+Amount&nbsp;&nbsp;  :&nbsp; &nbsp; <input type="number" min="0" required="required" placeholder="Enter Amount"  id="amount"name="amount" onblur="check();"/><br>
 <input type="submit" value="Add" id="add" >
 
 

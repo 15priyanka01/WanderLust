@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,25 +25,26 @@ public class AdminHotelServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
-		String option = request.getParameter("option");
+		String option=(String)request.getParameter("option");
 		Hotel newHotel=(Hotel)session.getAttribute("newHotel");
-		String hotelId=(String) session.getAttribute("hotelId");
+		
 		String oldHotelId=(String) session.getAttribute("oldhotelId");
-		String searchHotelId=(String) session.getAttribute("searchHotelId");
+		
 		Hotel hotelSearched=null;
 		ArrayList<Hotel> arrayListHotel=null;
 		AdminBlMMT adminHotel=new AdminBlMMT();
 		HotelBlMMT hotelBl=new HotelBlMMT();
 		int row=0;
-		String msg=null;
-		if(option.equals("insert"))
+		String msgHotel=null;
+		if(option.equalsIgnoreCase("insert"))
 			{
+			System.out.println("Inside insert of hotel");
 			Hotel hotel=new Hotel();
 			hotel.setHotelId(request.getParameter("hotelId"));
 			hotel.setHotelLocation(request.getParameter("hotelLocation"));
 			hotel.setHotelName(request.getParameter("hotelName"));
-			hotel.getHotelInfo();
-			;
+			hotel.setHotelInfo(request.getParameter("hotelInfo"));
+			
 			try {
 				row=adminHotel.insertHotel(hotel);
 			} catch (ClassNotFoundException | SQLException e) {
@@ -50,17 +52,24 @@ public class AdminHotelServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			if(row>0){
-				msg="Hotel Successfully Added";
-				session.setAttribute("msg",msg);
+				msgHotel="Hotel Successfully Added";
+				session.setAttribute("msgHotel",msgHotel);
+				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulHotelInsertion.jsp");
+				dispatch.forward(request, response);
+				
 			}
 			else{
 				
-				msg="flight Successfully Added";
-				session.setAttribute("msg",msg);
+				msgHotel="Failed Hotel Addition";
+				session.setAttribute("msgHotel",msgHotel);
+				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulHotelInsertion.jsp");
+				dispatch.forward(request, response);
+				
 			}
 		}
 		else if(option.equals("delete"))
 		{
+			String hotelId=request.getParameter("hotelId");
 			try {
 				row=adminHotel.deleteHotel(hotelId);
 			} catch (ClassNotFoundException | SQLException e) {
@@ -68,13 +77,17 @@ public class AdminHotelServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			if(row>0){
-				msg="hotel Successfully Deleted";
-				session.setAttribute("msg",msg);
+				msgHotel="hotel Successfully Deleted";
+				session.setAttribute("msgHotel",msgHotel);
+				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulHotelInsertion.jsp");
+				dispatch.forward(request, response);
 			}
 			else{
 				
-				msg="flight Successfully Deleted";
-				session.setAttribute("msg",msg);
+				msgHotel="Hotel Deletion Failed";
+				session.setAttribute("msgHotel",msgHotel);
+				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulHotelInsertion.jsp");
+				dispatch.forward(request, response);
 			}
 		}
 		else if(option.equals("update"))
@@ -86,17 +99,18 @@ public class AdminHotelServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			if(row>0){
-				msg="hotel Successfully Updated";
-				session.setAttribute("msg",msg);
+				msgHotel="hotel Successfully Updated";
+				session.setAttribute("msgHotel",msgHotel);
 			}
 			else{
 				
-				msg="flight Successfully Updated";
-				session.setAttribute("msg",msg);
+				msgHotel="flight Successfully Updated";
+				session.setAttribute("msgHotel",msgHotel);
 			}
 		}
 		else if(option.equals("search"))
 		{
+			String searchHotelId=request.getParameter("hotelId");
 			try {
 				hotelSearched=hotelBl.searchHotel(searchHotelId);
 			} catch (ClassNotFoundException | SQLException e) {
@@ -104,14 +118,18 @@ public class AdminHotelServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			if(hotelSearched==null){
-				msg="Hotel doesn't Exist with ID = "+searchHotelId;
-				session.setAttribute("msg",msg);
+				msgHotel="Hotel doesn't Exist with ID = "+searchHotelId;
+				session.setAttribute("msgHotel",msgHotel);
+				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulHotelInsertion.jsp");
+				dispatch.forward(request, response);
 			}
 			else{	
 				session.setAttribute("hotelSearched",hotelSearched);
+				RequestDispatcher dispatch = request.getRequestDispatcher("AdminSearchedHotel.jsp");
+				dispatch.forward(request, response);
 			}
 		}
-		else if(option.equals("display"))
+		else if(option.equalsIgnoreCase("display"))
 		{
 			try {
 				arrayListHotel=hotelBl.displayHotel();
@@ -120,11 +138,15 @@ public class AdminHotelServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			if(arrayListHotel.isEmpty()){
-				msg="No hotels Exist ";
-				session.setAttribute("msg",msg);
+				msgHotel="No hotels Exist ";
+				session.setAttribute("msgHotel",msgHotel);
+				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulHotelInsertion.jsp");
+				dispatch.forward(request, response);
 			}
 			else{
 				session.setAttribute("arrayListHotel",arrayListHotel);
+				RequestDispatcher dispatch = request.getRequestDispatcher("AdminDisplayAllHotels.jsp");
+				dispatch.forward(request, response);
 			}
 		}
 		

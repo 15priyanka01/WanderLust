@@ -3,6 +3,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style >
+body {
+background-image: url(images/img.jpg); /*You will specify your image path here.*/
+
+-moz-background-size: cover;
+-webkit-background-size: cover;
+background-size: cover;
+background-position: top center !important;
+background-repeat: no-repeat; !important;
+background-attachment: fixed;
+}
+</style>
   <title>Bootstrap Case</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,15 +22,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<SCRIPT type="text/javascript">
-    window.history.forward();
-    function noBack() { window.history.forward(); }
-</SCRIPT>
-
-</head>
-
-<body onload="noBack();"
-    onpageshow="if (event.persisted) noBack();" onunload="">
+<body>
 <br>
 <br>
 <br>
@@ -32,9 +36,9 @@
          <li><a href="./AdminFlight?option=display">Display All</a></li>
           <li><a href="AdminInsertFlight.jsp?option=insert">Insert</a></li>
          
-          <li><a href="./AdminFlight?option=delete">Delete</a></li>
-           <li><a href="./AdminFlight?option=up">Update</a></li>
-            <li><a href="./AdminFlight?option=search">Search</a></li>
+          <li><a href="AdminDeleteFlight.jsp?option=delete">Delete</a></li>
+           <li><a href="AdminUpdateFlight.jsp?option=update">Update</a></li>
+            <li><a href="AdminSearchFlight.jsp?option=search">Search</a></li>
         </ul>
       </li>
       
@@ -42,10 +46,11 @@
         <ul class="dropdown-menu">
  
          <li><a href="./AdminHotel?option=display">Display All</a></li>
-          <li><a href="AdminInsertHotel.jsp?option=insert">Insert</a></li>
-          <li><a href="./AdminHotel?option=delete">Delete</a></li>
-           <li><a href="./AdminHotel?option=up">Update</a></li>
-            <li><a href="./AdminHotel?option=search">Search</a></li>
+          <!--  <li><a href="AdminInsertHotel.jsp?option=insert">Insert</a></li>-->
+         
+          <li><a href="AdminDeleteHotel.jsp?option=delete">Delete</a></li>
+         <!--   <li><a href="AdminUpdateHotel.jsp?option=update">Update</a></li>-->
+            <li><a href="AdminSearchHotel.jsp?option=search">Search</a></li>
 
          
         </ul>

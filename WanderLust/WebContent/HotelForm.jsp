@@ -88,6 +88,8 @@ $(document).ready(function() {
 	font-weight: 400;
 
 }
+body{
+color:maroon;}
   </style>
 </head>
 <body>

@@ -11,7 +11,19 @@
   <link rel="stylesheet" href="css/style.css"> 
 </head>
 
-<body>
+<SCRIPT type="text/javascript">
+    window.history.forward();
+    function noBack() { window.history.forward(); }
+</SCRIPT>
+
+
+
+
+</head>
+<body onload="noBack();"
+    onpageshow="if (event.persisted) noBack();" onunload="">
+
+
   <div class="login-page">
   <div class="form">
     <form class="register-form">
