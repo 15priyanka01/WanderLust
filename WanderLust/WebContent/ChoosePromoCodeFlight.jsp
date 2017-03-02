@@ -25,7 +25,7 @@
 		xhttp.open("GET", "flightPromo.txt", true);
 		xhttp.send();*/
 		
-		document.getElementById("demo").innerHTML="Congrats! You got a discount of "+'${pdiscountFlight}' +"%<br>Your Promotion ID is "+ ' ${pidFlight}';
+	/*	document.getElementById("demo").innerHTML="Congrats! You got a discount of "+'${pdiscountFlight}' +"%<br>Your Promotion ID is "+ ' ${pidFlight}';  */
 	}
 </script>
 <style>
@@ -64,7 +64,7 @@
 				</c:forEach>
 				 
 			</select> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input type="button"
-				id="applyPromo" value="Apply" onclick="loadDoc();" />
+				id="applyPromo" value="Apply"      onclick="loadDoc();" />
 		</p>
 		<p id="demo"></p>
 
