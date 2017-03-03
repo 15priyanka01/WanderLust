@@ -31,7 +31,8 @@ public class SignupServlet extends HttpServlet {
 		try {
 			if (blMMT.searchUser(user.getUserId()) == null) {
 				blMMT.register(user);
-				response.sendRedirect("login.jsp");
+				//response.sendRedirect("login.jsp");
+				response.sendRedirect("loginUnregistered.jsp");
 
 			} else {
 				request.setAttribute("exist", "You are already registered");

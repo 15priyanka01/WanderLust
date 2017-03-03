@@ -8,16 +8,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Add Money</title>
 <script>
+
 function check(){
-	if(document.getElementById("amount").value<0)
-	{
-		alert('Add a positive value');
-		document.getElementById("amount").innerHtml="";
-	}
-	if(document.getElementById("amount").value=="")
-	{
-		document.getElementById("amount").value=0;
-	}
+	
+	
+	
+	
+	
+	var demo = document.getElementById("demo"), msgFlight,moneyRequired;
+	msgFlight = demo.getAttribute("data_messageFlight");
+	moneyRequired = demo.getAttribute("moneyRequired");
+	if(msgFlight !=null){
+	if(document.getElementById("amount").value < moneyRequired ){
+		alert("Please Enter the Required Amount");
+	}}
+	
 }
 </script>
 </head>
@@ -38,7 +43,7 @@ ${messageHotel}
 Amount&nbsp;&nbsp;  :&nbsp; &nbsp; <input type="number" min="0" required="required" placeholder="Enter Amount"  id="amount"name="amount" onblur="check();"/><br>
 <input type="submit" value="Add" id="add" >
 
-
+<div id ="demo"  data_messageFlight=${messageFlight } moneyRequired=${moneyToBeAdded}></div>
 </fieldset>
 <br>
 <br>

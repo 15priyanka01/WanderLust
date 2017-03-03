@@ -54,7 +54,9 @@ public class ConfirmFlightBooking extends HttpServlet {
 			}
 
 			if (flightBooking != null) {
-				session.setAttribute("messageFlight", null);
+				String messageFlight=(String) session.getAttribute("messageFlight");
+				messageFlight=null;
+				session.setAttribute("messageFlight",messageFlight);
 				session.setAttribute("flightBooking", flightBooking);
 				RequestDispatcher dispatch = request.getRequestDispatcher("FinalFlightStep.jsp");
 				dispatch.forward(request, response);

@@ -25,7 +25,7 @@
 		xhttp.open("GET", "flightPromo.txt", true);
 		xhttp.send();*/
 		
-	/*	document.getElementById("demo").innerHTML="Congrats! You got a discount of "+'${pdiscountFlight}' +"%<br>Your Promotion ID is "+ ' ${pidFlight}';  */
+		document.getElementById("demo").innerHTML="Congrats! You got a discount of "+'${pdiscountFlight}' +"%<br>Your Promotion ID is "+ ' ${pidFlight}';
 	}
 </script>
 <style>

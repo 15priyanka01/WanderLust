@@ -77,6 +77,7 @@ public class PaymentHotelServlet extends HttpServlet {
 				WalletBlMMT walletBl = new WalletBlMMT();
 				double moneyToBeAdded = valueAfterPromotion - (walletBl.walletBalance(userId));
 				String message = "Add atleast " + moneyToBeAdded + " to Wallet to book hotel room";
+				session.setAttribute("moneyToBeAdded", moneyToBeAdded);
 				session.setAttribute("messageHotel", message);
 				RequestDispatcher dispatch = request.getRequestDispatcher("AddMoney.jsp");
 				dispatch.forward(request, response);
