@@ -14,20 +14,70 @@
 
 
 <h2>About Us :</h2>
-<pre>
-<div style="margin-left: 200px;">
-<img src="images/rahul.jpeg" class="img-circle" alt="Cinque Terre" width="304" height="236"> <br>
+
+<table>
+<tr>
+<td> 
+
+
+<div style="margin-left: 100px;">
+<img src="images/rahul.jpeg" class="img-circle" alt="Cinque Terre" width="200" height="200"> <br>
 <table>
 <tr>
 <td><a href="https://www.facebook.com/rahul.kr.sh"  target="_blank"><img src="images/facebook.png" class="img-circle" alt="facebook" width="100" height="100"></a> </td>
 <td> <a href="https://www.facebook.com/rahul_kr_sh"  target="_blank"><img src="images/twitter.png" class="img-circle" alt="twitter" width="100" height="100"></a> </td>
 </tr>
 </table>
-
-
-
 </div>
 
+</td>
+<td> 
+<div style="margin-left: 100px;">
+<img src="images/tupur.jpg" class="img-circle" alt="Cinque Terre" width="200" height="200"> <br>
+<table>
+<tr>
+<td><a href="https://www.facebook.com/shreyoshi.mahato"  target="_blank"><img src="images/facebook.png" class="img-circle" alt="facebook" width="100" height="100"></a> </td>
+<td> <a href=""  target="_blank"><img src="images/twitter.png" class="img-circle" alt="twitter" width="100" height="100"></a> </td>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td> 
+
+<div style="margin-left: 100px;">
+<img src="images/rupank.jpg" class="img-circle" alt="Cinque Terre" width="200" height="200"> <br>
+<table>
+<tr>
+<td><a href="https://www.facebook.com/rupank.bansal"  target="_blank"><img src="images/facebook.png" class="img-circle" alt="facebook" width="100" height="100"></a> </td>
+<td> <a href=""  target="_blank"><img src="images/twitter.png" class="img-circle" alt="twitter" width="100" height="100"></a> </td>
+</tr>
+</table>
+</div>
+
+</td>
+<td> 
+
+
+<div style="margin-left: 100px;">
+<img src="images/rahul.jpeg" class="img-circle" alt="Cinque Terre" width="200" height="200"> <br>
+<table>
+<tr>
+<td><a href="https://www.facebook.com/rahul.kr.sh"  target="_blank"><img src="images/facebook.png" class="img-circle" alt="facebook" width="100" height="100"></a> </td>
+<td> <a href="https://www.facebook.com/rahul_kr_sh"  target="_blank"><img src="images/twitter.png" class="img-circle" alt="twitter" width="100" height="100"></a> </td>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+</table>
+
+
+
+<pre>
 Nurtured from the seed of a single great idea - to empower the traveller - MakeMyTrip went on to pioneer the entire online travel industry in India. 
 Wander Lust has revolutionised the travel industry. This is the story of Wander Lust, India’s Online Travel website.
 
