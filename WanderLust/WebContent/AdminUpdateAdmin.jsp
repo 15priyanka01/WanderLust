@@ -7,11 +7,26 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Update Admin</title>
+<script>
+  function phonenumber(inputtxt)  
+  {  
+    var phoneno = /^\d{10}$/;  
+    if(inputtxt.value.match(phoneno))  
+    {  
+        return true;  
+    }  
+    else  
+    {  
+       alert("Enter 10 digit Phone Number");  
+       return false;  
+    }  
+    }  
+  </script>
 </head>
 <body>
 <c:set var="option" scope="session" value="${option}"/>
 <c:out value="${option}"></c:out>
-<form action="./AdminProfile">
+<form  name="form1" action="./AdminProfile">
 <fieldset>
 <legend>Fill Flight Details</legend><br><br>
 <input type="hidden" name="option" value="update"/>
@@ -19,7 +34,7 @@
 <tr><td>Old Admin ID</td><td><input type="text" name="oldadminId" placeholder="Enter Id" required/></td></tr>
 <tr><td>Admin ID</td><td><input type="text" name="adminId" placeholder="Enter New Admin Id" required/></td></tr>
 <tr><td>Admin Name</td><td><input type="text" name="adminName" placeholder="Enter New Admin Name" required/></td></tr>
-<tr><td>Admin Phone No</td><td><input type="number" name="adminPhoneNo" placeholder="Enter New Phone No" required/></td></tr>
+<tr><td>Admin Phone No</td><td><input type="number" name="adminPhoneNo" placeholder="Enter New Phone No" onblur="phonenumber(document.form1.userPhoneNo)" required/></td></tr>
 <tr><td>Admin EmailId</td><td><input type="email" name="adminEmailId" placeholder="Enter New EmailId" required/></td></tr>
 <tr><td>Admin Address</td><td><input type="text" name="adminAddress" placeholder="Enter New Address" required/></td></tr>
 <tr><td>Admin Password</td><td><input type="text" name="adminPassword" placeholder="Enter New Password" required/></td></tr>

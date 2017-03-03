@@ -12,6 +12,21 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+  function phonenumber(inputtxt)  
+  {  
+    var phoneno = /^\d{10}$/;  
+    if(inputtxt.value.match(phoneno))  
+    {  
+        return true;  
+    }  
+    else  
+    {  
+       alert("Enter 10 digit Phone Number");  
+       return false;  
+    }  
+    }  
+  </script>
 <style>
  #submit{
 	border-style: solid;
@@ -34,7 +49,7 @@
 
 <div class="container">
   <h2>Enter Information Here</h2>
-  <form class="form-horizontal" action="./Signup">
+  <form name="form1" class="form-horizontal" action="./Signup">
     <div class="form-group">
       <label class="control-label col-sm-2" for="userId">User Id:</label>
       <div class="col-sm-10">
@@ -50,7 +65,7 @@
      <div class="form-group">
       <label class="control-label col-sm-2" for="userPhoneNo">Phone no:</label>
       <div class="col-sm-10">          
-        <input type="tel" class="form-control" name="userPhoneNo" id="userPhoneNo" placeholder="Enter phone no"  required/>
+        <input type="tel" class="form-control" name="userPhoneNo" id="userPhoneNo" placeholder="Enter phone no" onblur="phonenumber(document.form1.userPhoneNo)" required/>
       </div>
     </div>
      <div class="form-group">
