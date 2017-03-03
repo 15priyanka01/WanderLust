@@ -21,9 +21,9 @@
         <table class="table table-bordered" style="border-color: #0d97ba" >
             <thead>
                 <tr>
-                    <th>flightBookingId</th>
-                    <th>flightId</th>
-                    <th>flightBookingDate</th>
+                    <th>Flight Booking ID</th>
+                    <th>Flight ID</th>
+                    <th>Flight Booking Date</th>
                     <th></th>
                    
                 </tr>
@@ -40,7 +40,7 @@
                     
                     <c:set var="viewFlightBookingDate" scope="session" value="${ list.getFlightBookingDate()}"/>
                		 <c:set var="viewFlightId" scope="session" value="${list.getFlightId()}"/>
-                 	<td><button type="submit" class="btn btn-info" id="view">View Details</button></td>
+                 	<td><button type="submit" class="btn btn-default" id="view">View Details</button></td>
                 </tr>
             </tbody>
             </form>

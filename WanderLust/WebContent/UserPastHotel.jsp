@@ -11,22 +11,22 @@
 <jsp:include page="UserDashBoard.jsp"></jsp:include>
 
 	
-<div class="panel panel-default">
+<div class="panel panel-default" style="background-image: url('images/bg1.jpg'); background-attachment: fixed; border-color: #0d97ba">
     <div class="panel-heading" style="background-image: url('images/bg1.jpg'); background-attachment: fixed;">Details of booked hotels</div>
     <div class="panel-body">
         
     </div>
 
-    <div class="table-responsive">
-        <table class="table table-bordered" style="background-image: url('images/bg1.jpg'); background-attachment: fixed;">
+    <div class="table-responsive" style="border-color: #0d97ba">
+        <table class="table table-bordered" style="background-image: url('images/bg1.jpg'); background-attachment: fixed; "border-color: #0d97ba;">
             <thead>
                 <tr>
-                    <th>hotelBookingId</th>
-                    <th>hotelId</th>
-                    <th>roomNo</th>
-                    <th>hotelCheckInDate</th>
-                    <th>hotelCheckOutDate</th>
-                    <th>stayDuration</th>
+                    <th>Hotel Booking ID</th>
+                    <th>Hotel ID</th>
+                    <th>Room No</th>
+                    <th>Check In</th>
+                    <th>Check Out</th>
+                    <th>StayDuration (Days)</th>
                    
                 </tr>
             </thead>
