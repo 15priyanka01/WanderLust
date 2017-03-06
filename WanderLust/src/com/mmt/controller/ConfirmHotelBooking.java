@@ -20,7 +20,8 @@ import com.mmt.model.bl.WalletBlMMT;
 
 public class ConfirmHotelBooking extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	HotelBlMMT hotelBlMMT = new HotelBlMMT();
+	HotelBooking hotelBooking = new HotelBooking();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
@@ -41,8 +42,7 @@ public class ConfirmHotelBooking extends HttpServlet {
 
 		if (paymentStatus) {
 			SimpleDateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd");
-			HotelBlMMT hotelBlMMT = new HotelBlMMT();
-			HotelBooking hotelBooking = new HotelBooking();
+			
 
 			Date CheckInDate = null;
 			CheckInDate = (Date) session.getAttribute("din");
@@ -69,13 +69,13 @@ public class ConfirmHotelBooking extends HttpServlet {
 				RequestDispatcher dispatch = request.getRequestDispatcher("FinalHotelStep.jsp");
 				dispatch.forward(request, response);
 			}
-			else{
-				String messageHotel=(String) session.getAttribute("messageHotel");
-				messageHotel=null;
-				session.setAttribute("messageHotel",messageHotel);
-				RequestDispatcher dispatch = request.getRequestDispatcher("NoHotelBooking.jsp");
-				dispatch.forward(request, response);
-			}
+		}
+		else if(!paymentStatus && hotelBooking==null){
+			String messageHotel=(String) session.getAttribute("messageHotel");
+			messageHotel=null;
+			session.setAttribute("messageHotel",messageHotel);
+			RequestDispatcher dispatch = request.getRequestDispatcher("NoHotelBooking.jsp");
+			dispatch.forward(request, response);
 		}
 	}
 
