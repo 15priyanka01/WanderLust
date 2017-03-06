@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="div">
-Wallet Status&nbsp; :&nbsp;${balance}
+Wallet Money&nbsp; :&nbsp;${balance}
 </div>
 </body>
 </html>

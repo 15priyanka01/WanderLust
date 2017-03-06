@@ -30,6 +30,7 @@ public class PaymentHotelServlet extends HttpServlet {
 		String hotelIDPicked = (String) session.getAttribute("hotelId");
 		User user = (User) session.getAttribute("user");
 		String userId = user.getUserId();
+		int noOfRooms=(int) session.getAttribute("noOfRooms");
 		double roomPrice = (double) session.getAttribute("RoomPrice");
 		String dcheckIn = (String) session.getAttribute("from");
 		String dcheckOut = (String) session.getAttribute("to");
@@ -38,7 +39,7 @@ public class PaymentHotelServlet extends HttpServlet {
 		HotelBlMMT hotelBlMMT = new HotelBlMMT();
 		HotelPaymentBl hotelPaymentBl = new HotelPaymentBl();
 		double cartValue = 0;
-		cartValue = hotelPaymentBl.cartValue(roomPrice, duration);
+		cartValue = hotelPaymentBl.cartValue(roomPrice, duration)*noOfRooms;
 		PromotionBlMMT promotionBlMMT = new PromotionBlMMT();
 		double valueAfterPromotion = 0;
 
