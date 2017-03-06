@@ -69,7 +69,7 @@ color:maroon;}
 <form action="./SearchFlightBySnD">
 <table style="padding-bottom: 40px;padding-top: 50px;">
 <tr>
-
+<td><b>Source</b></td>
 <td>
 <select id="source" name="source" required="required">
 	
