@@ -82,9 +82,9 @@ public class FlightBookingBlMMT {
 	
 	
 	public ArrayList<String> getSourceList() throws ClassNotFoundException, SQLException, IOException{
-		ArrayList<Flight> flightList= new ArrayList<Flight>();
-		flightList = new FlightDaoImplMMT().displayFlight();
-		ArrayList<String> sourceList=null;
+		ArrayList<Flight> flightList= new FlightDaoImplMMT().displayFlight();
+		
+		ArrayList<String> sourceList=new ArrayList<String>();
 		for(Flight flight: flightList){
 			
 			sourceList.add(flight.getFlightSource());
@@ -94,9 +94,9 @@ public class FlightBookingBlMMT {
 	}
 	
 	public ArrayList<String> getDestinationList() throws ClassNotFoundException, SQLException, IOException{
-		ArrayList<Flight> flightList= new ArrayList<Flight>();
-		flightList = new FlightDaoImplMMT().displayFlight();
-		ArrayList<String> destList=null;
+		ArrayList<Flight> flightList= new FlightDaoImplMMT().displayFlight();
+	
+		ArrayList<String> destList= new ArrayList<String>();
 		for(Flight flight: flightList){
 			
 			destList.add(flight.getFlightDestination());
