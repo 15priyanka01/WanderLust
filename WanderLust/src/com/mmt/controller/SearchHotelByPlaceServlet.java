@@ -29,8 +29,9 @@ public class SearchHotelByPlaceServlet extends HttpServlet {
 		String place = request.getParameter("place");
 		String from = request.getParameter("from");
 		String to = request.getParameter("to");
-		
-
+		String rooms=request.getParameter("room");
+		int noOfRooms=Integer.parseInt(rooms);
+		session.setAttribute("noOfRooms", noOfRooms);
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date d1 = null;
 		try {
