@@ -1,3 +1,5 @@
+<%@page import="com.mmt.model.bl.HotelBlMMT"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
@@ -94,6 +96,19 @@ color:maroon;}
 
 <p>
 <b>Place</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="places" name="place">
+
+<%
+ArrayList<String >hotelLocationList=new HotelBlMMT().getHotelLocationList() ;
+for(String location:hotelLocationList){
+	%>
+	   <option value="<%=location %>"><%=location %></option>
+
+<% }%>
+</select></p>
+
+<%--
+<p>
+<b>Place</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="places" name="place">
    <option value="delhi">New Delhi</option>
     <option value="mumbai">Mumbai</option>
     <option value="jaipur">Jaipur</option>
@@ -101,6 +116,7 @@ color:maroon;}
     <option value="goa">Goa</option>
 </select></p>
 
+--%>
 <p><b>Check-In</b>&nbsp; &nbsp;&nbsp; <input type="date" name="from" id="from" placeholder="dd-mm-yyyy" min="" required/></p>
 <p><b>Check-Out</b> &nbsp;<input type="date" id="to" name="to" placeholder="dd-mm-yyyy" min="" required/></p> 
 <p><b>Room</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="room" value="1" min="1"/></p>
