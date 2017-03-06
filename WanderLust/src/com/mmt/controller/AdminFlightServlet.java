@@ -5,12 +5,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 
 import com.mmt.model.bean.Flight;
 import com.mmt.model.bl.AdminBlMMT;
@@ -20,7 +16,7 @@ import com.mmt.model.bl.FlightBookingBlMMT;
 public class AdminFlightServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
+	private static Logger logger=Logger.getLogger(AdminFlightServlet.class);
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String option=(String)request.getParameter("option");
@@ -50,6 +46,8 @@ public class AdminFlightServlet extends HttpServlet {
 			if(row>0){
 				
 				msg="Flight Successfully Added";
+				BasicConfigurator.configure();
+		 	    logger.info("Flight Successfully Added"); 
 				session.setAttribute("msg",msg);
 				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulFlightInsertion.jsp");
 				dispatch.forward(request, response);
@@ -75,6 +73,7 @@ public class AdminFlightServlet extends HttpServlet {
 			}
 			if(row>0){
 				msg="Flight Successfully Deleted";
+				logger.info("Flight Successfully Deleted");
 				session.setAttribute("msg",msg);
 				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulFlightInsertion.jsp");
 				dispatch.forward(request, response);
@@ -108,6 +107,7 @@ public class AdminFlightServlet extends HttpServlet {
 			}
 			if(row>0){
 				msg="Flight Successfully Updated";
+				logger.info("Flight Successfully Updated");
 				session.setAttribute("msg",msg);
 				RequestDispatcher dispatch = request.getRequestDispatcher("SuccessfulFlightInsertion.jsp");
 				dispatch.forward(request, response);
