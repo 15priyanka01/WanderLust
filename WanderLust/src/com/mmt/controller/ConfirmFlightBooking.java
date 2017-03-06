@@ -63,6 +63,9 @@ public class ConfirmFlightBooking extends HttpServlet {
 			}
 
 			else {
+				String messageFlight=(String) session.getAttribute("messageFlight");
+				messageFlight=null;
+				session.setAttribute("messageFlight",messageFlight);
 				RequestDispatcher dispatch = request.getRequestDispatcher("NoFlightBooking.jsp");
 				dispatch.forward(request, response);
 			}
