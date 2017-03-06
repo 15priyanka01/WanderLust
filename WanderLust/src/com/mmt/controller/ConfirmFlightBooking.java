@@ -16,6 +16,8 @@ import com.mmt.model.bl.FlightBookingBlMMT;
 import com.mmt.model.bl.WalletBlMMT;
 
 public class ConfirmFlightBooking extends HttpServlet {
+	FlightBookingBlMMT flightBookingBlMMT = new FlightBookingBlMMT();
+	FlightBooking flightBooking = new FlightBooking();
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -36,8 +38,7 @@ public class ConfirmFlightBooking extends HttpServlet {
 		}
 
 		if (paymentStatus) {
-			FlightBookingBlMMT flightBookingBlMMT = new FlightBookingBlMMT();
-			FlightBooking flightBooking = new FlightBooking();
+			
 			String flightIDPicked = (String) session.getAttribute("flightId");
 			String source = (String) session.getAttribute("source");
 			String destination = (String) session.getAttribute("destination");
@@ -62,13 +63,13 @@ public class ConfirmFlightBooking extends HttpServlet {
 				dispatch.forward(request, response);
 			}
 
-			else {
-				String messageFlight=(String) session.getAttribute("messageFlight");
-				messageFlight=null;
-				session.setAttribute("messageFlight",messageFlight);
-				RequestDispatcher dispatch = request.getRequestDispatcher("NoFlightBooking.jsp");
-				dispatch.forward(request, response);
-			}
+		}
+		else if(!paymentStatus && flightBooking==null){
+			String messageFlight=(String) session.getAttribute("messageFlight");
+			messageFlight=null;
+			session.setAttribute("messageFlight",messageFlight);
+			RequestDispatcher dispatch = request.getRequestDispatcher("NoFlightBooking.jsp");
+			dispatch.forward(request, response);
 		}
 	}
 
