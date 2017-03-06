@@ -69,13 +69,22 @@ public class ConfirmHotelBooking extends HttpServlet {
 				RequestDispatcher dispatch = request.getRequestDispatcher("FinalHotelStep.jsp");
 				dispatch.forward(request, response);
 			}
-		}
-		else if(!paymentStatus && hotelBooking==null){
-			String messageHotel=(String) session.getAttribute("messageHotel");
-			messageHotel=null;
-			session.setAttribute("messageHotel",messageHotel);
-			RequestDispatcher dispatch = request.getRequestDispatcher("NoHotelBooking.jsp");
-			dispatch.forward(request, response);
+			else{
+				try {
+					paymentStatus = walletBlMMT.addWalletMoney(user.getUserId(), valueAfterPromotion);
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				String messageHotel=(String) session.getAttribute("messageHotel");
+				messageHotel=null;
+				session.setAttribute("messageHotel",messageHotel);
+				RequestDispatcher dispatch = request.getRequestDispatcher("NoHotelBooking.jsp");
+				dispatch.forward(request, response);
+			}
 		}
 	}
 

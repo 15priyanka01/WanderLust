@@ -16,8 +16,7 @@ import com.mmt.model.bl.FlightBookingBlMMT;
 import com.mmt.model.bl.WalletBlMMT;
 
 public class ConfirmFlightBooking extends HttpServlet {
-	FlightBookingBlMMT flightBookingBlMMT = new FlightBookingBlMMT();
-	FlightBooking flightBooking = new FlightBooking();
+	
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -38,7 +37,8 @@ public class ConfirmFlightBooking extends HttpServlet {
 		}
 
 		if (paymentStatus) {
-			
+			FlightBookingBlMMT flightBookingBlMMT = new FlightBookingBlMMT();
+			FlightBooking flightBooking = new FlightBooking();
 			String flightIDPicked = (String) session.getAttribute("flightId");
 			String source = (String) session.getAttribute("source");
 			String destination = (String) session.getAttribute("destination");
@@ -62,15 +62,25 @@ public class ConfirmFlightBooking extends HttpServlet {
 				RequestDispatcher dispatch = request.getRequestDispatcher("FinalFlightStep.jsp");
 				dispatch.forward(request, response);
 			}
+			else if(flightBooking==null){
+				try {
+					paymentStatus = walletBlMMT.addWalletMoney(user.getUserId(), valueAfterPromotion);
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				String messageFlight=(String) session.getAttribute("messageFlight");
+				messageFlight=null;
+				session.setAttribute("messageFlight",messageFlight);
+				RequestDispatcher dispatch = request.getRequestDispatcher("NoFlightBooking.jsp");
+				dispatch.forward(request, response);
+			}
 
 		}
-		else if(!paymentStatus && flightBooking==null){
-			String messageFlight=(String) session.getAttribute("messageFlight");
-			messageFlight=null;
-			session.setAttribute("messageFlight",messageFlight);
-			RequestDispatcher dispatch = request.getRequestDispatcher("NoFlightBooking.jsp");
-			dispatch.forward(request, response);
-		}
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
