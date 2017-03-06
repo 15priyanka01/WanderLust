@@ -1,6 +1,7 @@
 
 
-
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.mmt.model.bl.FlightBookingBlMMT"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -69,24 +70,59 @@ color:maroon;}
 <form action="./SearchFlightBySnD">
 <table style="padding-bottom: 40px;padding-top: 50px;">
 <tr>
-<td><b>Source</b></td><td>
+<td><b>Source</b></td>
+
+<td>
 <select id="source" name="source" required="required">
 	
+   
+   
+   <%
+ArrayList<String > getSourceList=new FlightBookingBlMMT().getSourceList();
+for(String source:getSourceList){
+	%>
+	   <option value="<%=source %>"><%=source %></option>
+
+<% }%>
+   
+   
+   
+   
+   
+   <%-- 
    <option value="delhi">New Delhi</option>
     <option value="mumbai">Mumbai</option>
     <option value="bangalore">Bangalore</option>
     <option value="chennai">Chennai</option>
     <option value="goa">Goa</option>
-</select></td></tr>
+    --%>
+</select>
+
+
+</td>
+
+</tr>
 <tr>
 <td>
 <b>Destination:</b></td><td>
 <select id="destination" name="destination" required="required">
+
+
+ <%
+ArrayList<String > getDestList=new FlightBookingBlMMT().getDestinationList();
+for(String destination:getDestList){
+	%>
+	   <option value="<%=destination %>"><%=destination %></option>
+
+<% }%>
+<%-- 
 		<option value="mumbai">Mumbai</option>
    <option value="delhi">New Delhi</option>
      <option value="bangalore">Bangalore</option>
     <option value="chennai">Chennai</option>
     <option value="goa">Goa</option>
+    
+--%>
 </select></td>
 
 </tr>

@@ -79,5 +79,30 @@ public class FlightBookingBlMMT {
 			}
 		}
 	}
+	
+	
+	public ArrayList<String> getSourceList() throws ClassNotFoundException, SQLException, IOException{
+		ArrayList<Flight> flightList= new ArrayList<Flight>();
+		flightList = new FlightDaoImplMMT().displayFlight();
+		ArrayList<String> sourceList=null;
+		for(Flight flight: flightList){
+			
+			sourceList.add(flight.getFlightSource());
+		}
+		return sourceList;
+		
+	}
+	
+	public ArrayList<String> getDestinationList() throws ClassNotFoundException, SQLException, IOException{
+		ArrayList<Flight> flightList= new ArrayList<Flight>();
+		flightList = new FlightDaoImplMMT().displayFlight();
+		ArrayList<String> destList=null;
+		for(Flight flight: flightList){
+			
+			destList.add(flight.getFlightDestination());
+		}
+		return destList;
+		
+	}
 
 }
