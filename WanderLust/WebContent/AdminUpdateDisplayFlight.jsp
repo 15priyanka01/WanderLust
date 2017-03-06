@@ -43,20 +43,36 @@ tr:hover{background-color:#f5f5f5}
 	<tr>
 	<th>Flight Id</th>
 	<th>Airline</th>
+	<th>Source</th>
+	<th>Destination</th>
 	<th>Depart</th>
 	<th>Arrive</th>
 	<th>Price</th>
-	<th>Total Seats</th>
+	<th></th>
 	</tr>
 <c:forEach items="${arrayListFlight}" var="flight">
 <tr>
      <td><c:out value="${flight.getFlightId()}" /></td>
     <td>  <c:out value="${flight.getFlightCompanyName()}" /></td>
+     <td>  <c:out value="${flight. getFlightSource()}" /></td>
+     <td>  <c:out value="${flight.getFlightDestination()}" /></td>
+    
       <td> <c:out value="${flight.getFlightDepartureTime()}" /></td>
      <td>  <c:out value="${flight.getFlightArrivalTime()}" /></td>
       <td> <c:out value="${flight.getFlightTicketPrice()}" /></td>
-       <td> <c:out value="${flight.getAvailableSeats()}" /></td>
-      
+      <td>
+       <form action="AdminUpdateFlight.jsp">
+      <c:set var="flightCompanyName" scope="session" value="${flight.getFlightCompanyName()}"/>
+      <c:set var="flightId" scope="session" value="${flight.getFlightId()}"/>
+       <c:set var="arrivalTime" scope="session" value="${flight.getFlightArrivalTime()}"/>
+       <c:set var="Source" scope="session" value="${flight. getFlightSource()}"/>
+       <c:set var="Destination" scope="session" value="${flight.getFlightDestination()}"/>
+        <c:set var="departureTime" scope="session" value="${flight.getFlightDepartureTime()}"/>
+        <c:set var="flightTicketPrice" scope="session" value="${flight.getFlightTicketPrice()}"/>
+         <c:set var="flightAvailableSeat" scope="session" value="${flight.getAvailableSeats()}"/>
+      <button type="submit" id="book">Update</button>
+      </form>
+      </td>
       
   </tr>
 </c:forEach> 

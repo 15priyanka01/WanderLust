@@ -37,7 +37,7 @@ background-attachment: fixed;
           <li><a href="AdminInsertFlight.jsp?option=insert">Insert</a></li>
          
           <li><a href="AdminDeleteFlight.jsp?option=delete">Delete</a></li>
-           <li><a href="AdminUpdateFlight.jsp?option=update">Update</a></li>
+           <li><a href="AdminUpdateDisplayFlight.jsp?option=update">Update</a></li>
             <li><a href="AdminSearchFlight.jsp?option=search">Search</a></li>
         </ul>
       </li>
